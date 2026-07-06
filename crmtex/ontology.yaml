@@ -1,0 +1,13 @@
+schema_version: 2
+ontology:
+  family: cidoc-crm
+  kind: extension
+  namespace: http://www.cidoc-crm.org/extensions/crmtex/
+  prefix: crmtex
+  prefixes: [crmtex]
+  title: CRMtex
+require:
+  - {module: github.com/pletka-io/ontologies/crm, version: 7.1.3}
+sources:
+  files: [src/CRMtex_v2.rdf]
+  primary: src/CRMtex_v2.rdf
