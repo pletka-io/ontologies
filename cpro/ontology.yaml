@@ -9,5 +9,5 @@ ontology:
 require:
   - {module: github.com/pletka-io/ontologies/aaao, version: "2.2"}
 sources:
-  files: [src/CPRo_v2.rdf]
-  primary: src/CPRo_v2.rdf
+  files: [src/CPRO_v2.3.rdf]
+  primary: src/CPRO_v2.3.rdf
