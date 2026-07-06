@@ -1,0 +1,11 @@
+schema_version: 2
+ontology:
+  family: europeana-data-model
+  kind: base
+  namespace: http://www.europeana.eu/schemas/edm/
+  prefix: edm
+  prefixes: [edm]
+  title: Europeana Data Model
+sources:
+  files: [src/edm_extended.rdf]
+  primary: src/edm_extended.rdf
