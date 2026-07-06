@@ -1,0 +1,13 @@
+schema_version: 2
+ontology:
+  family: cidoc-crm
+  kind: base
+  namespace: http://www.cidoc-crm.org/cidoc-crm/
+  prefix: crm
+  prefixes: [crm]
+  title: CIDOC CRM
+sources:
+  companions:
+    - {description: "CRMpc 1.1 Property Classes module for n-ary relations (.1 properties), compatible with CRM 6.2", file: src/CIDOC_CRM_v6.2_PC.rdfs}
+  files: [src/CIDOC_CRM_v6.2.rdfs, src/CIDOC_CRM_v6.2_PC.rdfs]
+  primary: src/CIDOC_CRM_v6.2.rdfs
