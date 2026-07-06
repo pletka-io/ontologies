@@ -1,0 +1,235 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rdf:RDF xmlns:crm="http://www.cidoc-crm.org/cidoc-crm/" xmlns:lrmoo="http://iflastandards.info/ns/lrm/lrmoo/" xmlns:owl="http://www.w3.org/2002/07/owl#" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#" xmlns:xml="http://www.w3.org/XML/1998/namespace" xmlns:xsd="http://www.w3.org/2001/XMLSchema#" xmlns="https://r11.eu/ns/spec/">
+  <rdf:Description rdf:about="https://r11.eu/ns/spec">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Ontology"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://r11.eu/ns/spec">
+    <owl:imports rdf:resource="http://iflastandards.info/ns/lrm/lrmoo/"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://r11.eu/ns/spec">
+    <owl:imports rdf:resource="http://www.cidoc-crm.org/cidoc-crm/7.1.2"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://r11.eu/ns/spec">
+    <rdfs:comment xml:lang="en">This ontology contains the subclasses of and shortcuts for CIDOC-CRM elements that are necessary for distinguishing different sorts of RELEVEN data that belong to the same CRM superclass.</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="genid1">
+    <rdf:first rdf:resource="http://www.cidoc-crm.org/cidoc-crm/P108_has_produced"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="genid1">
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="genid2">
+    <rdf:first rdf:resource="http://www.cidoc-crm.org/cidoc-crm/P16i_was_used_for"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="genid2">
+    <rdf:rest rdf:nodeID="genid1"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://r11.eu/ns/spec/L1_was_used_to_produce">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:label xml:lang="en">was used to produce</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://r11.eu/ns/spec/L1_was_used_to_produce">
+    <rdfs:domain rdf:resource="http://www.cidoc-crm.org/cidoc-crm/E70_Thing"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://r11.eu/ns/spec/L1_was_used_to_produce">
+    <rdfs:range rdf:resource="http://www.cidoc-crm.org/cidoc-crm/E24_Physical_Human-Made_Thing"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://r11.eu/ns/spec/L1_was_used_to_produce">
+    <owl:propertyChainAxiom rdf:nodeID="genid2"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://r11.eu/ns/spec/L2_had_addressee">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:label xml:lang="en">had addressee</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://r11.eu/ns/spec/L2_had_addressee">
+    <rdfs:domain rdf:resource="https://r11.eu/ns/spec/Letter"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://r11.eu/ns/spec/L2_had_addressee">
+    <rdfs:range rdf:resource="http://www.cidoc-crm.org/cidoc-crm/E39_Actor"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://r11.eu/ns/spec/L3_succeeded_by">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:label xml:lang="en">succeeded by</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://r11.eu/ns/spec/L3_succeeded_by">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#IrreflexiveProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://r11.eu/ns/spec/L3_succeeded_by">
+    <rdfs:domain rdf:resource="http://www.cidoc-crm.org/cidoc-crm/E53_Place"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://r11.eu/ns/spec/L3_succeeded_by">
+    <rdfs:range rdf:resource="http://www.cidoc-crm.org/cidoc-crm/E53_Place"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="genid3">
+    <rdf:first rdf:resource="http://www.cidoc-crm.org/cidoc-crm/P4i_is_time-span_of"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="genid3">
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="genid4">
+    <rdf:first rdf:resource="http://www.cidoc-crm.org/cidoc-crm/P4_has_time-span"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="genid4">
+    <rdf:rest rdf:nodeID="genid3"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://r11.eu/ns/spec/L4_coterminous_with">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:label xml:lang="en">coterminous with</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://r11.eu/ns/spec/L4_coterminous_with">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#SymmetricProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://r11.eu/ns/spec/L4_coterminous_with">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#IrreflexiveProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://r11.eu/ns/spec/L4_coterminous_with">
+    <rdfs:domain rdf:resource="http://www.cidoc-crm.org/cidoc-crm/E4_Period"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://r11.eu/ns/spec/L4_coterminous_with">
+    <rdfs:range rdf:resource="http://www.cidoc-crm.org/cidoc-crm/E4_Period"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://r11.eu/ns/spec/L4_coterminous_with">
+    <owl:propertyChainAxiom rdf:nodeID="genid4"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://r11.eu/ns/spec/Author_Group">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:label xml:lang="en">Author Group</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://r11.eu/ns/spec/Author_Group">
+    <rdfs:subClassOf rdf:resource="http://www.cidoc-crm.org/cidoc-crm/E74_Group"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://r11.eu/ns/spec/Authority_Status_Type">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:label xml:lang="en">Authority Status Type</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://r11.eu/ns/spec/Authority_Status_Type">
+    <rdfs:subClassOf rdf:resource="http://www.cidoc-crm.org/cidoc-crm/E55_Type"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://r11.eu/ns/spec/Bibliography">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:label xml:lang="en">Bibliography</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://r11.eu/ns/spec/Bibliography">
+    <rdfs:subClassOf rdf:resource="http://www.cidoc-crm.org/cidoc-crm/E73_Information_Object"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://r11.eu/ns/spec/Boulloterion">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:label xml:lang="en">Boulloterion</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://r11.eu/ns/spec/Boulloterion">
+    <rdfs:subClassOf rdf:resource="http://www.cidoc-crm.org/cidoc-crm/E22_Human-Made_Object"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://r11.eu/ns/spec/Boulloterion_Type">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:label xml:lang="en">Boulloterion Type</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://r11.eu/ns/spec/Boulloterion_Type">
+    <rdfs:subClassOf rdf:resource="http://www.cidoc-crm.org/cidoc-crm/E55_Type"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://r11.eu/ns/spec/Correspondence">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:label xml:lang="en">Correspondence</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://r11.eu/ns/spec/Correspondence">
+    <rdfs:subClassOf rdf:resource="http://www.cidoc-crm.org/cidoc-crm/E22_Human-Made_Object"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://r11.eu/ns/spec/Ethnic_Group">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:label xml:lang="en">Ethnic Group</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://r11.eu/ns/spec/Ethnic_Group">
+    <rdfs:subClassOf rdf:resource="http://www.cidoc-crm.org/cidoc-crm/E74_Group"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://r11.eu/ns/spec/Gender_Assignment">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:label xml:lang="en">Gender Assignment</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://r11.eu/ns/spec/Gender_Assignment">
+    <rdfs:subClassOf rdf:resource="http://www.cidoc-crm.org/cidoc-crm/E17_Type_Assignment"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://r11.eu/ns/spec/Geopolitical_Event">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:label xml:lang="en">Geopolitical Event</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://r11.eu/ns/spec/Geopolitical_Event">
+    <rdfs:subClassOf rdf:resource="http://www.cidoc-crm.org/cidoc-crm/E7_Activity"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://r11.eu/ns/spec/Geopolitical_Event_Type">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:label xml:lang="en">Geopolitical Event Type</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://r11.eu/ns/spec/Geopolitical_Event_Type">
+    <rdfs:subClassOf rdf:resource="http://www.cidoc-crm.org/cidoc-crm/E55_Type"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://r11.eu/ns/spec/Lead_Seal">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:label xml:lang="en">Lead Seal</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://r11.eu/ns/spec/Lead_Seal">
+    <rdfs:subClassOf rdf:resource="http://www.cidoc-crm.org/cidoc-crm/E22_Human-Made_Object"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://r11.eu/ns/spec/Letter">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:label xml:lang="en">Letter</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://r11.eu/ns/spec/Letter">
+    <rdfs:subClassOf rdf:resource="http://iflastandards.info/ns/lrm/lrmoo/F2_Expression"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://r11.eu/ns/spec/Manuscript">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:label xml:lang="en">Manuscript</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://r11.eu/ns/spec/Manuscript">
+    <rdfs:subClassOf rdf:resource="http://www.cidoc-crm.org/cidoc-crm/E22_Human-Made_Object"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://r11.eu/ns/spec/Manuscript_Type">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:label xml:lang="en">Manuscript Type</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://r11.eu/ns/spec/Manuscript_Type">
+    <rdfs:subClassOf rdf:resource="http://www.cidoc-crm.org/cidoc-crm/E55_Type"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://r11.eu/ns/spec/Passage">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:label xml:lang="en">Passage</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://r11.eu/ns/spec/Passage">
+    <rdfs:subClassOf rdf:resource="http://www.cidoc-crm.org/cidoc-crm/E33_Linguistic_Object"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://r11.eu/ns/spec/Place_Type">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:label xml:lang="en">Place Type</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://r11.eu/ns/spec/Place_Type">
+    <rdfs:subClassOf rdf:resource="http://www.cidoc-crm.org/cidoc-crm/E55_Type"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://r11.eu/ns/spec/Publication">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:label xml:lang="en">Publication</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://r11.eu/ns/spec/Publication">
+    <rdfs:subClassOf rdf:resource="http://iflastandards.info/ns/lrm/lrmoo/F2_Expression"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://r11.eu/ns/spec/Relationship_Category">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:label xml:lang="en">Relationship Category</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://r11.eu/ns/spec/Relationship_Category">
+    <rdfs:subClassOf rdf:resource="http://www.cidoc-crm.org/cidoc-crm/E55_Type"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://r11.eu/ns/spec/Text_Expression">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:label xml:lang="en">Text Expression</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://r11.eu/ns/spec/Text_Expression">
+    <rdfs:subClassOf rdf:resource="http://iflastandards.info/ns/lrm/lrmoo/F2_Expression"/>
+  </rdf:Description>
+  <!-- Added by Pletka team: property linking WE13_Visit to the actor visited -->
+  <rdf:Description rdf:about="https://r11.eu/ns/spec/Visited_Actor">
+    <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
+    <rdfs:label xml:lang="en">Visited Actor</rdfs:label>
+    <rdfs:comment xml:lang="en">This property connects a visit event to the actor who was visited.</rdfs:comment>
+    <rdfs:domain rdf:resource="https://w3id.org/pwro/WE13_Visit"/>
+    <rdfs:range rdf:resource="http://www.cidoc-crm.org/cidoc-crm/E39_Actor"/>
+  </rdf:Description>
+</rdf:RDF>

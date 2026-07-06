@@ -1,0 +1,13 @@
+schema_version: 2
+ontology:
+  family: sdh
+  kind: extension
+  namespace: https://r11.eu/ns/spec/
+  prefix: spec
+  prefixes: [spec]
+  title: RELEVEN spec
+require:
+  - {module: github.com/pletka-io/ontologies/sdh, version: "1.0"}
+sources:
+  files: [src/spec_v0.1.rdf]
+  primary: src/spec_v0.1.rdf
