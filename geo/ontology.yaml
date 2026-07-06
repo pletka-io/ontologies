@@ -1,0 +1,13 @@
+schema_version: 2
+ontology:
+  family: cidoc-crm
+  kind: extension
+  namespace: http://www.opengis.net/ont/geosparql#
+  prefix: geo
+  prefixes: [geo]
+  title: GeoSPARQL
+require:
+  - {module: github.com/pletka-io/ontologies/crm, version: 7.1.3}
+sources:
+  files: [src/GeoSPARQL_v1.0.rdf]
+  primary: src/GeoSPARQL_v1.0.rdf
