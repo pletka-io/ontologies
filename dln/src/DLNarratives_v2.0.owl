@@ -1,0 +1,601 @@
+<?xml version="1.0"?>
+<rdf:RDF xmlns="http://www.w3.org/2002/07/owl#"
+     xml:base="http://www.w3.org/2002/07/owl"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:skos="http://www.w3.org/2004/02/skos/core#"
+     xmlns:current="http://erlangen-crm.org/current/">
+    <Ontology/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Annotation properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+
+    
+
+
+    <!-- http://www.w3.org/2004/02/skos/core#notation -->
+
+
+    <AnnotationProperty rdf:about="http://www.w3.org/2004/02/skos/core#notation"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Datatypes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+
+    
+
+
+    <!-- http://www.opengis.net/ont/geosparql#wktLiteral -->
+
+
+    <rdfs:Datatype rdf:about="http://www.opengis.net/ont/geosparql#wktLiteral"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+
+    
+
+
+
+
+
+    <!-- http://www.opengis.net/ont/geosparql#hasDefaultGeometry -->
+
+
+    <ObjectProperty rdf:about="http://www.opengis.net/ont/geosparql#hasDefaultGeometry">
+        <rdfs:subPropertyOf rdf:resource="http://www.opengis.net/ont/geosparql#hasGeometry"/>
+        <rdfs:domain rdf:resource="http://www.opengis.net/ont/geosparql#Feature"/>
+        <rdfs:range rdf:resource="http://www.opengis.net/ont/geosparql#Geometry"/>
+        <rdfs:comment>The default geometry to be used in spatial calculations, usually the most detailed geometry.</rdfs:comment>
+    </ObjectProperty>
+    
+
+
+    <!-- http://www.opengis.net/ont/geosparql#hasGeometry -->
+
+
+    <ObjectProperty rdf:about="http://www.opengis.net/ont/geosparql#hasGeometry">
+        <rdfs:domain rdf:resource="http://www.opengis.net/ont/geosparql#Feature"/>
+        <rdfs:range rdf:resource="http://www.opengis.net/ont/geosparql#Geometry"/>
+        <rdfs:comment>This property relates a proposition to its subject (an event).</rdfs:comment>
+    </ObjectProperty>
+    
+
+    
+
+
+ 
+    
+
+
+    <!-- https://dlnarratives.eu/crmgeo/Q5_defined_in -->
+
+
+    <ObjectProperty rdf:about="https://dlnarratives.eu/crmgeo/Q5_defined_in">
+        <rdfs:domain rdf:resource="http://erlangen-crm.org/current/E53_Place"/>
+        <rdfs:range rdf:resource="https://dlnarratives.eu/crmgeo/SP3_Reference_Space"/>
+    </ObjectProperty>
+    
+
+
+    <!-- https://dlnarratives.eu/crmgeo/Q7_describes -->
+
+
+    <ObjectProperty rdf:about="https://dlnarratives.eu/crmgeo/Q7_describes">
+        <rdfs:domain rdf:resource="https://dlnarratives.eu/crmgeo/SP4_Spatial_Coordinate_Reference_System"/>
+        <rdfs:range rdf:resource="https://dlnarratives.eu/crmgeo/SP3_Reference_Space"/>
+    </ObjectProperty>
+    
+
+
+
+    
+
+
+    <!-- https://dlnarratives.eu/ontology#causallyDependsOn -->
+
+
+    <ObjectProperty rdf:about="https://dlnarratives.eu/ontology#causallyDependsOn">
+        <rdfs:domain rdf:resource="http://erlangen-crm.org/current/E5_Event"/>
+        <rdfs:range rdf:resource="http://erlangen-crm.org/current/E5_Event"/>
+        <rdfs:comment>This property relates an event with another event that caused it.This property connects events that in normal discourse are predicatedto have a cause-effect relation, e.g. the eruption of the Vesuviuscaused the destruction of Pompeii.</rdfs:comment>
+    </ObjectProperty>
+    
+
+
+    <!-- https://dlnarratives.eu/ontology#hadParticipant -->
+
+
+    <ObjectProperty rdf:about="https://dlnarratives.eu/ontology#hadParticipant">
+        <rdfs:domain rdf:resource="http://erlangen-crm.org/current/E5_Event"/>
+        <rdfs:range rdf:resource="https://dlnarratives.eu/ontology#ActorWithRole"/>
+        <rdfs:comment>This property relates an event with an instance of the class ActorWithRole.</rdfs:comment>
+    </ObjectProperty>
+    
+
+
+    <!-- https://dlnarratives.eu/ontology#hasEntity -->
+
+
+    <ObjectProperty rdf:about="https://dlnarratives.eu/ontology#hasEntity">
+        <rdfs:domain rdf:resource="http://erlangen-crm.org/current/E5_Event"/>
+        <rdfs:range rdf:resource="http://erlangen-crm.org/current/E1_CRM_Entity"/>
+        <rdfs:comment>This property relates an entity to his event.</rdfs:comment>
+    </ObjectProperty>
+    
+
+
+    <!-- https://dlnarratives.eu/ontology#hasReference -->
+
+
+    <ObjectProperty rdf:about="https://dlnarratives.eu/ontology#hasReference">
+        <rdfs:domain rdf:resource="http://erlangen-crm.org/current/E73_Information_Object"/>
+        <rdfs:range rdf:resource="http://erlangen-crm.org/efrbroo/F23_Expression_Fragment"/>
+        <rdfs:comment>This property relates a proposition with a reference fragment.For instance, the reference fragment &quot;Inferno II, 121&quot; +refers to a specific part of the work &quot;Divine Comedy&quot;.</rdfs:comment>
+    </ObjectProperty>
+    
+
+
+    <!-- https://dlnarratives.eu/ontology#hasRole -->
+
+
+    <ObjectProperty rdf:about="https://dlnarratives.eu/ontology#hasRole">
+        <rdfs:domain rdf:resource="https://dlnarratives.eu/ontology#ActorWithRole"/>
+        <rdfs:range rdf:resource="https://dlnarratives.eu/ontology#Role"/>
+        <rdfs:comment>This property relates the class ActorWithRole with a literal that represents.</rdfs:comment>
+    </ObjectProperty>
+    
+
+
+    <!-- https://dlnarratives.eu/ontology#hasSource -->
+
+
+    <ObjectProperty rdf:about="https://dlnarratives.eu/ontology#hasSource">
+        <rdfs:domain rdf:resource="http://erlangen-crm.org/current/E73_Information_Object"/>
+        <rdfs:range rdf:resource="https://dlnarratives.eu/crminf/S15_Observable_Entity"/>
+        <rdfs:comment>This property directly relates a proposition with an observable entity.</rdfs:comment>
+    </ObjectProperty>
+    
+
+
+    <!-- https://dlnarratives.eu/ontology#hasSubject -->
+
+
+    <ObjectProperty rdf:about="https://dlnarratives.eu/ontology#hasSubject">
+        <rdfs:domain rdf:resource="https://dlnarratives.eu/ontology#ActorWithRole"/>
+        <rdfs:range rdf:resource="http://erlangen-crm.org/current/E39_Actor"/>
+        <rdfs:comment>This property relates the class ActorWithRole with the class E39 Actor.</rdfs:comment>
+    </ObjectProperty>
+    
+
+
+    <!-- https://dlnarratives.eu/ontology#hasText -->
+
+
+    <ObjectProperty rdf:about="https://dlnarratives.eu/ontology#hasText">
+        <rdfs:domain rdf:resource="https://dlnarratives.eu/ontology#Narrative"/>
+        <rdfs:range rdf:resource="http://erlangen-crm.org/current/E90_Symbolic_Object"/>
+        <rdfs:comment>This property relates a narrative to the text that expresses it.</rdfs:comment>
+    </ObjectProperty>
+    
+
+
+    <!-- https://dlnarratives.eu/ontology#hasTextFragment -->
+
+
+    <ObjectProperty rdf:about="https://dlnarratives.eu/ontology#hasTextFragment">
+        <rdfs:domain rdf:resource="http://erlangen-crm.org/current/E73_Information_Object"/>
+        <rdfs:range rdf:resource="http://erlangen-crm.org/efrbroo/F23_Expression_Fragment"/>
+        <rdfs:comment>This property relates a proposition with a text fragment.</rdfs:comment>
+    </ObjectProperty>
+    
+
+
+    <!-- https://dlnarratives.eu/ontology#holdsBelief -->
+
+
+    <ObjectProperty rdf:about="https://dlnarratives.eu/ontology#holdsBelief">
+        <rdfs:domain rdf:resource="http://erlangen-crm.org/current/E39_Actor"/>
+        <rdfs:range rdf:resource="https://dlnarratives.eu/crminf/I2_Belief"/>
+        <rdfs:comment>This property relates an actor to the belief held by him/her.</rdfs:comment>
+    </ObjectProperty>
+    
+
+
+    <!-- https://dlnarratives.eu/ontology#instantEquals -->
+
+
+    <ObjectProperty rdf:about="https://dlnarratives.eu/ontology#instantEquals">
+        <rdfs:domain rdf:resource="http://www.w3.org/2006/time#Instant"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2006/time#Instant"/>
+        <rdfs:comment>This property relates an instant with another instant that is equal to it.This is needed to match uncertain instants that are inferred to be the same by the reasoner.</rdfs:comment>
+    </ObjectProperty>
+    
+
+
+    <!-- https://dlnarratives.eu/ontology#isAboutCountry -->
+
+
+    <ObjectProperty rdf:about="https://dlnarratives.eu/ontology#isAboutCountry">
+        <rdfs:subPropertyOf rdf:resource="http://erlangen-crm.org/current/P129_is_about"/>
+        <rdfs:domain rdf:resource="http://erlangen-crm.org/current/E89_Propositional_Object"/>
+        <rdfs:range rdf:resource="http://erlangen-crm.org/current/E1_CRM_Entity"/>
+        <rdfs:comment>This property relates a narratives with a country.</rdfs:comment>
+    </ObjectProperty>
+    
+
+
+    <!-- https://dlnarratives.eu/ontology#isAboutLAU -->
+
+
+    <ObjectProperty rdf:about="https://dlnarratives.eu/ontology#isAboutLAU">
+        <rdfs:subPropertyOf rdf:resource="http://erlangen-crm.org/current/P129_is_about"/>
+        <rdfs:domain rdf:resource="http://erlangen-crm.org/current/E89_Propositional_Object"/>
+        <rdfs:range rdf:resource="http://erlangen-crm.org/current/E1_CRM_Entity"/>
+        <rdfs:comment>This property relates a narratives with a LAU.</rdfs:comment>
+    </ObjectProperty>
+    
+
+
+    <!-- https://dlnarratives.eu/ontology#isEntityOf -->
+
+
+    <ObjectProperty rdf:about="https://dlnarratives.eu/ontology#isEntityOf">
+        <rdfs:domain rdf:resource="http://erlangen-crm.org/current/E1_CRM_Entity"/>
+        <rdfs:range rdf:resource="http://erlangen-crm.org/current/E5_Event"/>
+        <rdfs:comment>This property relates an event to his entity.</rdfs:comment>
+    </ObjectProperty>
+    
+
+
+    <!-- https://dlnarratives.eu/ontology#partOfNarrative -->
+
+
+    <ObjectProperty rdf:about="https://dlnarratives.eu/ontology#partOfNarrative">
+        <rdfs:domain rdf:resource="http://erlangen-crm.org/current/E5_Event"/>
+        <rdfs:range rdf:resource="https://dlnarratives.eu/ontology#Narrative"/>
+        <rdfs:comment>This property relates an event to the narrative that contains it.</rdfs:comment>
+    </ObjectProperty>
+    
+
+
+    <!-- https://dlnarratives.eu/ontology#propObject -->
+
+
+    <ObjectProperty rdf:about="https://dlnarratives.eu/ontology#propObject">
+        <rdfs:domain rdf:resource="https://dlnarratives.eu/ontology#Proposition"/>
+        <rdfs:range rdf:resource="http://erlangen-crm.org/current/E1_CRM_Entity"/>
+        <rdfs:comment>This property relates a proposition to its object (a CRM entity).</rdfs:comment>
+    </ObjectProperty>
+    
+
+
+    <!-- https://dlnarratives.eu/ontology#propPredicate -->
+
+
+    <ObjectProperty rdf:about="https://dlnarratives.eu/ontology#propPredicate">
+        <rdfs:domain rdf:resource="https://dlnarratives.eu/ontology#Proposition"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+        <rdfs:comment>This property relates a proposition to its predicate (a property).</rdfs:comment>
+    </ObjectProperty>
+    
+
+
+    <!-- https://dlnarratives.eu/ontology#propSubject -->
+
+
+    <ObjectProperty rdf:about="https://dlnarratives.eu/ontology#propSubject">
+        <rdfs:domain rdf:resource="https://dlnarratives.eu/ontology#Proposition"/>
+        <rdfs:range rdf:resource="http://erlangen-crm.org/current/E5_Event"/>
+        <rdfs:comment>This property relates a proposition to its subject (an event).</rdfs:comment>
+    </ObjectProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Data properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+
+    
+
+
+
+    
+
+
+    <!-- http://www.opengis.net/ont/geosparql#asWKT -->
+
+
+    <DatatypeProperty rdf:about="http://www.opengis.net/ont/geosparql#asWKT">
+        <rdfs:subPropertyOf rdf:resource="http://www.opengis.net/ont/geosparql#hasSerialization"/>
+        <rdfs:domain rdf:resource="http://www.opengis.net/ont/geosparql#Geometry"/>
+        <rdfs:range rdf:resource="http://www.opengis.net/ont/geosparql#wktLiteral"/>
+    </DatatypeProperty>
+    
+
+
+    <!-- http://www.opengis.net/ont/geosparql#hasSerialization -->
+
+
+    <DatatypeProperty rdf:about="http://www.opengis.net/ont/geosparql#hasSerialization">
+        <rdfs:domain rdf:resource="http://www.opengis.net/ont/geosparql#Geometry"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
+    </DatatypeProperty>
+    
+
+
+ 
+
+
+    <!-- https://dlnarratives.eu/ontology#hasDescription -->
+
+
+    <DatatypeProperty rdf:about="https://dlnarratives.eu/ontology#hasDescription">
+        <rdfs:domain rdf:resource="http://erlangen-crm.org/current/E5_Event"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </DatatypeProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+
+    
+
+
+
+    
+
+
+    <!-- http://www.opengis.net/ont/geosparql#Feature -->
+
+
+    <Class rdf:about="http://www.opengis.net/ont/geosparql#Feature">
+        <rdfs:subClassOf rdf:resource="http://www.opengis.net/ont/geosparql#SpatialObject"/>
+        <rdfs:comment>This class represents the top-level feature type. This class is equivalent to GFI_Feature defined in ISO 19156, and it is superclass of all feature types.</rdfs:comment>
+    </Class>
+    
+
+
+    <!-- http://www.opengis.net/ont/geosparql#Geometry -->
+
+
+    <Class rdf:about="http://www.opengis.net/ont/geosparql#Geometry">
+        <rdfs:subClassOf rdf:resource="http://www.opengis.net/ont/geosparql#SpatialObject"/>
+        <rdfs:comment>The class represents the top-level geometry type. This class is equivalent to the UML class GM_Object defined in ISO 19107, and it is superclass of all geometry types.</rdfs:comment>
+    </Class>
+    
+
+
+    <!-- http://www.opengis.net/ont/geosparql#SpatialObject -->
+
+
+    <Class rdf:about="http://www.opengis.net/ont/geosparql#SpatialObject">
+        <rdfs:comment>The class Spatial Object represents everything that can have a spatial representation. It is superclass of feature  and geometry</rdfs:comment>
+    </Class>
+    
+
+
+    <!-- http://www.w3.org/2002/07/owl#ObjectProperty -->
+
+
+    <Class rdf:about="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    
+
+
+
+    
+
+
+    <!-- https://dlnarratives.eu/crmgeo/SP2_Phenomenal_Place -->
+
+
+    <Class rdf:about="https://dlnarratives.eu/crmgeo/SP2_Phenomenal_Place">
+        <rdfs:subClassOf rdf:resource="http://erlangen-crm.org/current/E53_Place"/>
+        <rdfs:subClassOf rdf:resource="http://www.opengis.net/ont/geosparql#Feature"/>
+        <rdfs:comment>This class compromises systems that are used to describe locations.</rdfs:comment>
+    </Class>
+    
+
+
+    <!-- https://dlnarratives.eu/crmgeo/SP3_Reference_Space -->
+
+
+    <Class rdf:about="https://dlnarratives.eu/crmgeo/SP3_Reference_Space"/>
+    
+
+
+    <!-- https://dlnarratives.eu/crmgeo/SP4_Spatial_Coordinate_Reference_System -->
+
+
+    <Class rdf:about="https://dlnarratives.eu/crmgeo/SP4_Spatial_Coordinate_Reference_System">
+        <rdfs:subClassOf rdf:resource="http://erlangen-crm.org/current/E29_Design_or_Procedure"/>
+        <rdfs:comment>This class compromises systems that are used to describe locations.</rdfs:comment>
+    </Class>
+    
+
+
+    <!-- https://dlnarratives.eu/crmgeo/SP5_Geometric_Place_Expression -->
+
+
+    <Class rdf:about="https://dlnarratives.eu/crmgeo/SP5_Geometric_Place_Expression">
+        <rdfs:subClassOf rdf:resource="http://erlangen-crm.org/current/E47_Spatial_Coordinates"/>
+        <rdfs:subClassOf rdf:resource="http://erlangen-crm.org/current/E73_Information_Object"/>
+        <rdfs:subClassOf rdf:resource="http://erlangen-crm.org/current/E94_Space_primitive"/>
+        <rdfs:subClassOf rdf:resource="http://www.opengis.net/ont/geosparql#Geometry"/>
+        <rdfs:comment>This class comprises definitions of places by quantitative expressions.</rdfs:comment>
+    </Class>
+    
+
+
+    <!-- https://dlnarratives.eu/crmgeo/SP6_Declarative_Place -->
+
+
+    <Class rdf:about="https://dlnarratives.eu/crmgeo/SP6_Declarative_Place">
+        <rdfs:subClassOf rdf:resource="http://erlangen-crm.org/current/E53_Place"/>
+        <rdfs:subClassOf rdf:resource="http://erlangen-crm.org/current/E89_Propositional_Object"/>
+        <rdfs:subClassOf rdf:resource="http://www.opengis.net/ont/geosparql#Geometry"/>
+        <rdfs:comment>This class comprises instances of E53 Place (S) whose extent (U) and position is defined by an E94 Space Primitive (S).</rdfs:comment>
+    </Class>
+    
+
+
+    <!-- https://dlnarratives.eu/crminf/I2_Belief -->
+
+
+    <Class rdf:about="https://dlnarratives.eu/crminf/I2_Belief"/>
+    
+
+
+    <!-- https://dlnarratives.eu/crminf/I4_Proposition_Set -->
+
+
+    <Class rdf:about="https://dlnarratives.eu/crminf/I4_Proposition_Set"/>
+    
+
+
+    <!-- https://dlnarratives.eu/crminf/I5_Inference_Making -->
+
+
+    <Class rdf:about="https://dlnarratives.eu/crminf/I5_Inference_Making"/>
+    
+
+
+    <!-- https://dlnarratives.eu/crminf/S15_Observable_Entity -->
+
+
+    <Class rdf:about="https://dlnarratives.eu/crminf/S15_Observable_Entity"/>
+    
+
+
+    <!-- https://dlnarratives.eu/crminf/S4_Observation -->
+
+
+    <Class rdf:about="https://dlnarratives.eu/crminf/S4_Observation"/>
+    
+
+
+    <!-- https://dlnarratives.eu/ontology#ActorWithRole -->
+
+
+    <Class rdf:about="https://dlnarratives.eu/ontology#ActorWithRole">
+        <rdfs:subClassOf rdf:resource="http://erlangen-crm.org/current/E1_CRM_Entity"/>
+        <rdfs:comment>In order to assign a role to an actor, this reification class was introduced.Through the property hadParticipant an event is related with this class.ActorWithRole is related with the class Actor through the property hasSubjectand to a literal that represents the role through the property hasRole.</rdfs:comment>
+    </Class>
+    
+
+
+    <!-- https://dlnarratives.eu/ontology#Biography -->
+
+
+    <Class rdf:about="https://dlnarratives.eu/ontology#Biography">
+        <rdfs:subClassOf rdf:resource="https://dlnarratives.eu/ontology#Narrative"/>
+        <rdfs:comment>This class represents a biographical narrative.</rdfs:comment>
+    </Class>
+    
+
+
+    <!-- https://dlnarratives.eu/ontology#Event -->
+
+
+    <Class rdf:about="https://dlnarratives.eu/ontology#Event">
+        <rdfs:subClassOf rdf:resource="http://erlangen-crm.org/current/E1_CRM_Entity"/>
+        <rdfs:comment>This class represents an event. Equivalent to the CRM class E5 Event.</rdfs:comment>
+    </Class>
+    
+
+
+    <!-- https://dlnarratives.eu/ontology#Fabula -->
+
+
+    <Class rdf:about="https://dlnarratives.eu/ontology#Fabula">
+        <rdfs:subClassOf rdf:resource="http://erlangen-crm.org/current/E4_Period"/>
+        <rdfs:comment>This class represents the fabula of a narrative, i.e. the sequence of events in chronological order.</rdfs:comment>
+    </Class>
+    
+
+
+    <!-- https://dlnarratives.eu/ontology#Narration -->
+
+
+    <Class rdf:about="https://dlnarratives.eu/ontology#Narration">
+        <rdfs:subClassOf rdf:resource="http://erlangen-crm.org/efrbroo/F14_Individual_Work"/>
+        <rdfs:comment>This class represents the narration of a narrative, i.e. an individual work that tells the events of the narrative through some form of media (text, video, audio, etc.).</rdfs:comment>
+    </Class>
+    
+
+
+    <!-- https://dlnarratives.eu/ontology#Narrative -->
+
+
+    <Class rdf:about="https://dlnarratives.eu/ontology#Narrative">
+        <rdfs:subClassOf rdf:resource="http://erlangen-crm.org/current/E73_Information_Object"/>
+        <rdfs:comment>This class represents a narrative.</rdfs:comment>
+    </Class>
+    
+
+
+    <!-- https://dlnarratives.eu/ontology#Proposition -->
+
+
+    <Class rdf:about="https://dlnarratives.eu/ontology#Proposition">
+        <rdfs:subClassOf rdf:resource="http://erlangen-crm.org/current/E1_CRM_Entity"/>
+        <rdfs:comment>This class represents a proposition endowed with a subject, predicate, and object.</rdfs:comment>
+    </Class>
+    
+
+
+    <!-- https://dlnarratives.eu/ontology#Role -->
+
+
+    <Class rdf:about="https://dlnarratives.eu/ontology#Role">
+        <rdfs:subClassOf rdf:resource="http://erlangen-crm.org/current/E1_CRM_Entity"/>
+        <rdfs:comment>This class represents a role in the event.</rdfs:comment>
+    </Class>
+    
+
+
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 5.1.19.2021-07-31T19:16:32Z) https://github.com/owlcs/owlapi/ -->
+
+

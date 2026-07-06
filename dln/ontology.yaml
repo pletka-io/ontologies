@@ -1,0 +1,13 @@
+schema_version: 2
+ontology:
+  family: cidoc-crm
+  kind: extension
+  namespace: https://dlnarratives.eu/ontology#
+  prefix: dln
+  prefixes: [dln]
+  title: DLNarratives
+require:
+  - {module: github.com/pletka-io/ontologies/crm, version: 7.1.3}
+sources:
+  files: [src/DLNarratives_v2.0.owl]
+  primary: src/DLNarratives_v2.0.owl
