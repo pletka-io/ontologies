@@ -1,0 +1,13 @@
+schema_version: 2
+ontology:
+  family: sdh
+  kind: base
+  namespace: https://sdhss.org/ontology/core/1.0/
+  prefix: sdh
+  prefixes: [sdh]
+  title: SDH
+require:
+  - {module: github.com/pletka-io/ontologies/crm, version: 7.1.3}
+sources:
+  files: [src/SDH_v1.0.rdf]
+  primary: src/SDH_v1.0.rdf
