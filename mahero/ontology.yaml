@@ -1,0 +1,13 @@
+schema_version: 2
+ontology:
+  family: swiss-art-research
+  kind: extension
+  namespace: https://takin.solutions/ontologies/mahero/
+  prefix: mahero
+  prefixes: [mahero]
+  title: MAHERo
+require:
+  - {module: github.com/pletka-io/ontologies/aaao, version: "2.2"}
+sources:
+  files: [src/mahero_v1.0.rdf]
+  primary: src/mahero_v1.0.rdf

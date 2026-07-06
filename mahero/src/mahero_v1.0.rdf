@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+         xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+         xmlns:owl="http://www.w3.org/2002/07/owl#"
+         xmlns:skos="http://www.w3.org/2004/02/skos/core#"
+         xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+         xmlns:crm="http://www.cidoc-crm.org/cidoc-crm/"
+         xmlns:aaao="https://ontology.swissartresearch.net/aaao/"
+         xmlns:mahero="https://takin.solutions/ontologies/mahero/"
+         xml:base="https://takin.solutions/ontologies/mahero/">
+  <!--
+						Māori Heritage Ontology (MaHerO) namespace definition
+						Exported from OntoME: Māori Heritage Ontology ongoing
+						Official URI : https://takin.solutions/ontologies/mahero/
+						Prefix: mahero
+						Version: 1.0
+						An extension of the Art and Architectural Argumentation Ontology (AAAo)
+						and the CIDOC CRM, developed to support the representation of Māori
+						intangible heritage data within the Arches Heritage Environment Record
+						system for the Department of Conservation Te Papa Atawhai, New Zealand.
+						Prepared by: Takin.solutions Ltd
+						-->
+  <!-- ======================================================================== -->
+  <!-- mahero Classes                                                           -->
+  <!-- ======================================================================== -->
+  <rdfs:Class rdf:about="https://takin.solutions/ontologies/mahero/MA1_Whakapapa_Status">
+    <skos:notation rdf:datatype="http://www.w3.org/2001/XMLSchema#string">MA1</skos:notation>
+    <rdfs:comment xml:lang="en" rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Instances of this class comprise the genealogical standing and ancestral connections that define the relational identity of an entity within a whakapapa network. Whakapapa Status documents the lines of descent, kinship bonds, and ancestral affiliations through which persons, places, biological beings, artefacts, and monuments are situated within te ao Māori.
+Whakapapa Status serves as a mediating node between an entity and its ancestors, enabling the formal documentation of who or what an entity descends from, is related to, or is genealogically connected with. It is not a mere assertion of kinship but a structured declaration of genealogical position as understood and maintained by a specific community.
+This class is inherently many-to-many: a single entity may hold multiple whakapapa connections (e.g., a person descending from several tūpuna, or a place connected to multiple ancestral figures), and a single ancestor may be ascribed through whakapapa to multiple entities across different ontological categories (e.g., an ancestor who is connected to both a mountain and a river, to both an iwi and an artefact).
+Whakapapa Status is always understood as held within a specific cultural context. The genealogical knowledge it records is maintained by the iwi, hapū, or whānau to whom it belongs.</rdfs:comment>
+    <rdfs:label xml:lang="en">Whakapapa Status</rdfs:label>
+    <rdfs:subClassOf rdf:resource="https://ontology.swissartresearch.net/aaao/ZE1_Institutional_Fact"/>
+  </rdfs:Class>
+  <!-- ======================================================================== -->
+  <!-- mahero Properties                                                        -->
+  <!-- ======================================================================== -->
+  <rdf:Property rdf:about="https://takin.solutions/ontologies/mahero/MP1_ascribes_ancestor">
+    <rdfs:domain rdf:resource="https://takin.solutions/ontologies/mahero/MA1_Whakapapa_Status"/>
+    <rdfs:range rdf:resource="https://ontology.swissartresearch.net/aaao/ZE36_Persons"/>
+    <rdfs:comment xml:lang="en">This property associates an instance of MA1 Whakapapa Status with the ancestral entity to which the subject is genealogically connected. The ancestor is the entity from whom, or from which, descent, origin, or genealogical connection is claimed within the relevant whakapapa tradition.
+The range of this property is ZE36 Persons, reflecting that ancestors in te ao Māori encompass not only human tūpuna but also atua (deities), kaitiaki taniwha (guardian spirits), and ancestral entities that may simultaneously manifest as places, mountains, rivers, or other natural features. The personhood of the ancestor is what qualifies it as ZE36 Persons regardless of its physical manifestation.</rdfs:comment>
+    <rdfs:label xml:lang="en">ascribes ancestor</rdfs:label>
+    <skos:notation rdf:datatype="http://www.w3.org/2001/XMLSchema#string">MP1</skos:notation>
+    <owl:inverseOf rdf:resource="https://takin.solutions/ontologies/mahero/MP1i_is_ancestor_ascribed_by"/>
+  </rdf:Property>
+  <rdf:Property rdf:about="https://takin.solutions/ontologies/mahero/MP1i_is_ancestor_ascribed_by">
+    <rdfs:domain rdf:resource="https://ontology.swissartresearch.net/aaao/ZE36_Persons"/>
+    <rdfs:range rdf:resource="https://takin.solutions/ontologies/mahero/MA1_Whakapapa_Status"/>
+    <rdfs:comment xml:lang="en">This property is the inverse of MP1 ascribes ancestor.</rdfs:comment>
+    <rdfs:label xml:lang="en">is ancestor ascribed by</rdfs:label>
+    <skos:notation rdf:datatype="http://www.w3.org/2001/XMLSchema#string">MP1i</skos:notation>
+    <owl:inverseOf rdf:resource="https://takin.solutions/ontologies/mahero/MP1_ascribes_ancestor"/>
+  </rdf:Property>
+  <rdf:Property rdf:about="https://takin.solutions/ontologies/mahero/MP2_has_whakapapa_status_subject">
+    <rdfs:domain rdf:resource="https://takin.solutions/ontologies/mahero/MA1_Whakapapa_Status"/>
+    <rdfs:range rdf:resource="http://www.cidoc-crm.org/cidoc-crm/E1_CRM_Entity"/>
+    <rdfs:comment xml:lang="en">This property associates an instance of MA1 Whakapapa Status with the entity whose genealogical standing is being documented. The subject is the entity for which an ancestral connection is declared within the relevant whakapapa tradition. The range of this property spans multiple ontological categories, reflecting that in te ao Māori, whakapapa is not limited to human genealogy. Places, biological beings, artefacts, and monuments may all possess genealogical standing. Any entity that participates in a whakapapa network as a subject of genealogical connection may be the subject of a Whakapapa Status instance.</rdfs:comment>
+    <rdfs:label xml:lang="en">has whakapapa status subject</rdfs:label>
+    <skos:notation rdf:datatype="http://www.w3.org/2001/XMLSchema#string">MP2</skos:notation>
+    <owl:inverseOf rdf:resource="https://takin.solutions/ontologies/mahero/MP2i_is_whakapapa_status_subject_of"/>
+  </rdf:Property>
+  <rdf:Property rdf:about="https://takin.solutions/ontologies/mahero/MP2i_is_whakapapa_status_subject_of">
+    <rdfs:domain rdf:resource="http://www.cidoc-crm.org/cidoc-crm/E1_CRM_Entity"/>
+    <rdfs:range rdf:resource="https://takin.solutions/ontologies/mahero/MA1_Whakapapa_Status"/>
+    <rdfs:comment xml:lang="en">This property is the inverse of MP2 has whakapapa status subject.</rdfs:comment>
+    <rdfs:label xml:lang="en">is whakapapa status subject of</rdfs:label>
+    <skos:notation rdf:datatype="http://www.w3.org/2001/XMLSchema#string">MP2i</skos:notation>
+    <owl:inverseOf rdf:resource="https://takin.solutions/ontologies/mahero/MP2_has_whakapapa_status_subject"/>
+  </rdf:Property>
+  <rdf:Property rdf:about="https://takin.solutions/ontologies/mahero/MP3_ascribes_whakapapa_relation">
+    <rdfs:domain rdf:resource="https://takin.solutions/ontologies/mahero/MA1_Whakapapa_Status"/>
+    <rdfs:range rdf:resource="http://www.cidoc-crm.org/cidoc-crm/E55_Type"/>
+    <rdfs:comment xml:lang="en">This property associates an instance of MA1 Whakapapa Status with the type of genealogical relationship that holds between the subject and the ascribed ancestor. It qualifies the nature of the whakapapa connection, specifying how the subject relates to the ancestor within the genealogical network.</rdfs:comment>
+    <rdfs:label xml:lang="en">ascribes whakapapa relation</rdfs:label>
+    <skos:notation rdf:datatype="http://www.w3.org/2001/XMLSchema#string">MP3</skos:notation>
+    <owl:inverseOf rdf:resource="https://takin.solutions/ontologies/mahero/MP3i_is_whakapapa_relation_ascribed_by"/>
+  </rdf:Property>
+  <rdf:Property rdf:about="https://takin.solutions/ontologies/mahero/MP3i_is_whakapapa_relation_ascribed_by">
+    <rdfs:domain rdf:resource="http://www.cidoc-crm.org/cidoc-crm/E55_Type"/>
+    <rdfs:range rdf:resource="https://takin.solutions/ontologies/mahero/MA1_Whakapapa_Status"/>
+    <rdfs:comment xml:lang="en">This property is the inverse of MP3 ascribes whakapapa relation.</rdfs:comment>
+    <rdfs:label xml:lang="en">is whakapapa relation ascribed by</rdfs:label>
+    <skos:notation rdf:datatype="http://www.w3.org/2001/XMLSchema#string">MP3i</skos:notation>
+    <owl:inverseOf rdf:resource="https://takin.solutions/ontologies/mahero/MP3_ascribes_whakapapa_relation"/>
+  </rdf:Property>
+  <!-- ======================================================================== -->
+  <!-- Reference Classes (CRM)                                                  -->
+  <!-- ======================================================================== -->
+  <rdfs:Class rdf:about="http://www.cidoc-crm.org/cidoc-crm/E1_CRM_Entity">
+    <skos:notation rdf:datatype="http://www.w3.org/2001/XMLSchema#string">E1</skos:notation>
+    <rdfs:comment xml:lang="en" rdf:datatype="http://www.w3.org/2001/XMLSchema#string">This class comprises all things in the universe of discourse of the CIDOC Conceptual Reference Model. It is an abstract concept providing for three general properties:Identification by name or appellation, and in particular by a preferred identifierClassification by type, allowing further refinement of the specific subclass an instance belongs to Attachment of free text and other unstructured data for the expression of anything not captured by formal propertiesAll other classes within the CIDOC CRM are directly or indirectly specialisations of E1 CRM Entity. </rdfs:comment>
+    <rdfs:label xml:lang="en">CRM Entity</rdfs:label>
+  </rdfs:Class>
+  <rdfs:Class rdf:about="http://www.cidoc-crm.org/cidoc-crm/E55_Type">
+    <skos:notation rdf:datatype="http://www.w3.org/2001/XMLSchema#string">E55</skos:notation>
+    <rdfs:comment xml:lang="en" rdf:datatype="http://www.w3.org/2001/XMLSchema#string">This class comprises concepts denoted by terms from thesauri and controlled vocabularies used to characterize and classify instances of CIDOC CRM classes. Instances of E55 Type represent concepts in contrast to instances of E41 Appellation which are used to name instances of CIDOC CRM classes. E55 Type is the CIDOC CRM's interface to domain specific ontologies and thesauri. These can be represented in the CIDOC CRM as subclasses of E55 Type, forming hierarchies of terms, i.e., instances of E55 Type linked via P127 has broader term (has narrower term): E55 Type. Such hierarchies may be extended with additional properties. </rdfs:comment>
+    <rdfs:label xml:lang="en">Type</rdfs:label>
+  </rdfs:Class>
+  <!-- ======================================================================== -->
+  <!-- Reference Classes (AAAo)                                                 -->
+  <!-- ======================================================================== -->
+  <rdfs:Class rdf:about="https://ontology.swissartresearch.net/aaao/ZE1_Institutional_Fact">
+    <skos:notation rdf:datatype="http://www.w3.org/2001/XMLSchema#string">ZE1</skos:notation>
+    <rdfs:comment xml:lang="en" rdf:datatype="http://www.w3.org/2001/XMLSchema#string">An instance of institutional fact is an ascription of a status function to an object by a community. The institutional fact is a concretization of a collective intentionality of the community in question towards a certain object over a certain period of time.
+An instance of institutional fact is recognizable to a competent speaker/member of a symbolic community (native or learner with sufficient competence). It may not be perceived through a single sense impression but through multiple experiences and implicit reasonings (e.g.: embedded participation, behavioural observation, linguistic evidence and interview), yet typically such intermediate observations and inferences are not necessarily recorded or accessible. The historical statement is typically the assertion of the institutional fact, that such and such a fact was the case, and was in force for a given given community, at some time. The epistemic veridicality of the stated /reference instance of institutional fact is always open to contestation. The means of contestation involve analyzing the sources which support it.
+Instances of institutional fact come into existence based on conventions establishing the conditions under which they come into effect. Typically, an instance of institutional fact will come into existence either because of the performance of its stipulated, initiating speech act (e.g.: state of being married via marriage) or as a result of events fulfilling existing norm prescriptions in the community (e.g.: state of being uncle as result of birth of child of sister).  An institutional fact comes to be through the agreed fiat of a community. It typically ceases to exist either because of a stipulated, nullifying speech act (e.g. divorce proceeding), because a community ceases to support the effective rule supporting its declaration (e.g.: ownership of people) or force majeure (e.g.: object ascribed function/status or community perceiving status is eliminated).</rdfs:comment>
+    <rdfs:label xml:lang="en">Institutional Fact</rdfs:label>
+  </rdfs:Class>
+  <rdfs:Class rdf:about="https://ontology.swissartresearch.net/aaao/ZE36_Persons">
+    <skos:notation rdf:datatype="http://www.w3.org/2001/XMLSchema#string">ZE36</skos:notation>
+    <rdfs:comment xml:lang="en" rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Instances of this class comprise sentient beings endowed, to more or less extent, with intentionality, either as individuals or collectives. Instances of Persons are first causes and ends in themselves in a philosophical sense. The substance of Persons is personhood in this sense of being endowed with intentionality and the requisite respect qua sentient being. </rdfs:comment>
+    <rdfs:label xml:lang="en">Persons</rdfs:label>
+  </rdfs:Class>
+</rdf:RDF>
