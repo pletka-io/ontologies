@@ -1,0 +1,13 @@
+schema_version: 2
+ontology:
+  family: swiss-art-research
+  kind: extension
+  namespace: https://github.com/takinsolutions/crmsurv/
+  prefix: crmsurv
+  prefixes: [crmsurv]
+  title: CRMsurv
+require:
+  - {module: github.com/pletka-io/ontologies/aaao, version: "2.2"}
+sources:
+  files: [src/CRMsurv_v1.0.2.rdf]
+  primary: src/CRMsurv_v1.0.2.rdf
