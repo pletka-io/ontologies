@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rdf:RDF xmlns:owl="http://www.w3.org/2002/07/owl#" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#" xmlns:skos="http://www.w3.org/2004/02/skos/core#" xmlns:xml="http://www.w3.org/XML/1998/namespace" xmlns:xsd="http://www.w3.org/2001/XMLSchema#" xmlns="https://r11.eu/ns/similarity/">
+  <rdf:Description rdf:about="https://r11.eu/ns/similarity">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Ontology"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://r11.eu/ns/similarity">
+    <rdfs:comment xml:lang="en">This ontology is implemented according to the specifications given in Harry Halpin et al., ‘When Owl:sameAs Isn’t the Same: An Analysis of Identity in Linked Data’, in The Semantic Web – ISWC 2010 (International Semantic Web Conference, Springer, Berlin, Heidelberg, 2010), 305–20, https://doi.org/10.1007/978-3-642-17746-0_20.</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://r11.eu/ns/similarity/ID1_claimsSimilar">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:label xml:lang="en">claims Similar</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://r11.eu/ns/similarity/ID1_claimsSimilar">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ReflexiveProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://r11.eu/ns/similarity/ID2_claimsRelated">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:label xml:lang="en">claims Related</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://r11.eu/ns/similarity/ID3_similar">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:label xml:lang="en">similar</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://r11.eu/ns/similarity/ID3_similar">
+    <rdfs:subPropertyOf rdf:resource="https://r11.eu/ns/similarity/ID1_claimsSimilar"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://r11.eu/ns/similarity/ID3_similar">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#SymmetricProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://r11.eu/ns/similarity/ID3_similar">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ReflexiveProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://r11.eu/ns/similarity/ID4_claimsMatches">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:label xml:lang="en">claims Matches</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://r11.eu/ns/similarity/ID4_claimsMatches">
+    <rdfs:subPropertyOf rdf:resource="https://r11.eu/ns/similarity/ID1_claimsSimilar"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://r11.eu/ns/similarity/ID4_claimsMatches">
+    <rdfs:subPropertyOf rdf:resource="https://r11.eu/ns/similarity/ID2_claimsRelated"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://r11.eu/ns/similarity/ID4_claimsMatches">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#TransitiveProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://r11.eu/ns/similarity/ID5_related">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:label xml:lang="en">related</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://r11.eu/ns/similarity/ID5_related">
+    <rdfs:subPropertyOf rdf:resource="https://r11.eu/ns/similarity/ID2_claimsRelated"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://r11.eu/ns/similarity/ID5_related">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#SymmetricProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://r11.eu/ns/similarity/ID6_claimsIdentical">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:label xml:lang="en">claims Identical</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://r11.eu/ns/similarity/ID6_claimsIdentical">
+    <rdfs:subPropertyOf rdf:resource="https://r11.eu/ns/similarity/ID4_claimsMatches"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://r11.eu/ns/similarity/ID6_claimsIdentical">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#TransitiveProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://r11.eu/ns/similarity/ID6_claimsIdentical">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ReflexiveProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://r11.eu/ns/similarity/ID7_matches">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:label xml:lang="en">matches</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://r11.eu/ns/similarity/ID7_matches">
+    <rdfs:subPropertyOf rdf:resource="https://r11.eu/ns/similarity/ID3_similar"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://r11.eu/ns/similarity/ID7_matches">
+    <rdfs:subPropertyOf rdf:resource="https://r11.eu/ns/similarity/ID4_claimsMatches"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://r11.eu/ns/similarity/ID7_matches">
+    <rdfs:subPropertyOf rdf:resource="https://r11.eu/ns/similarity/ID5_related"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://r11.eu/ns/similarity/ID7_matches">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#SymmetricProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://r11.eu/ns/similarity/ID7_matches">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#TransitiveProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://r11.eu/ns/similarity/ID8_identical">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:label xml:lang="en">identical</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://r11.eu/ns/similarity/ID8_identical">
+    <rdfs:subPropertyOf rdf:resource="https://r11.eu/ns/similarity/ID6_claimsIdentical"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://r11.eu/ns/similarity/ID8_identical">
+    <rdfs:subPropertyOf rdf:resource="https://r11.eu/ns/similarity/ID7_matches"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://r11.eu/ns/similarity/ID8_identical">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#SymmetricProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://r11.eu/ns/similarity/ID8_identical">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#TransitiveProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://r11.eu/ns/similarity/ID8_identical">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ReflexiveProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.w3.org/2000/01/rdf-schema#seeAlso">
+    <rdfs:subPropertyOf rdf:resource="https://r11.eu/ns/similarity/ID2_claimsRelated"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.w3.org/2002/07/owl#sameAs">
+    <rdfs:subPropertyOf rdf:resource="https://r11.eu/ns/similarity/ID8_identical"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.w3.org/2004/02/skos/core#closeMatch">
+    <rdfs:subPropertyOf rdf:resource="https://r11.eu/ns/similarity/ID3_similar"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.w3.org/2004/02/skos/core#exactMatch">
+    <rdfs:subPropertyOf rdf:resource="https://r11.eu/ns/similarity/ID7_matches"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.w3.org/2004/02/skos/core#related">
+    <rdfs:subPropertyOf rdf:resource="https://r11.eu/ns/similarity/ID5_related"/>
+  </rdf:Description>
+</rdf:RDF>
