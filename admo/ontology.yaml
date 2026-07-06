@@ -1,0 +1,13 @@
+schema_version: 2
+ontology:
+  family: swiss-art-research
+  kind: extension
+  namespace: https://ontology.swissartresearch.net/admo/
+  prefix: admo
+  prefixes: [admo]
+  title: ADMo
+require:
+  - {module: github.com/pletka-io/ontologies/aaao, version: "2.2"}
+sources:
+  files: [src/admo_v1.0.rdf]
+  primary: src/admo_v1.0.rdf

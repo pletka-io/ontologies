@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:skos="http://www.w3.org/2004/02/skos/core#" xmlns:owl="http://www.w3.org/2002/07/owl#" xmlns:xsd="http://www.w3.org/2001/XMLSchema#" xmlns:swrl="http://www.w3.org/2003/11/swrl#" xmlns:swrlb="http://www.w3.org/2003/11/swrlb#" xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#" xml:base="https://ontology.swissartresearch.net/admo/">
+  <!--
+						This namespace is created to document and maintain the classes and properties derived through a ground up modelling of the needs for semantic data representation of authority data that go beyond the scope of the CIDOC CRM and CRMaaa standards.    
+						Exported from OntoME: Authority Data Management Ontology ongoing
+						Official URI : 
+						-->
+  <rdfs:Class rdf:about="http://www.cidoc-crm.org/cidoc-crm/E32_Authority_Document">
+    <skos:notation rdf:datatype="http://www.w3.org/2001/XMLSchema#string">E32</skos:notation>
+    <rdfs:comment xml:lang="en" rdf:datatype="http://www.w3.org/2001/XMLSchema#string">This class comprises encyclopaedia, thesauri, authority lists and other documents that define terminology or conceptual systems for consistent use.</rdfs:comment>
+    <rdfs:label xml:lang="en">Authority Document</rdfs:label>
+  </rdfs:Class>
+  <rdfs:Class rdf:about="http://www.cidoc-crm.org/cidoc-crm/E33_Linguistic_Object">
+    <skos:notation rdf:datatype="http://www.w3.org/2001/XMLSchema#string">E33</skos:notation>
+    <rdfs:comment xml:lang="en" rdf:datatype="http://www.w3.org/2001/XMLSchema#string">This class comprises identifiable expressions in natural language or languages. Instances of E33 Linguistic Object can be expressed in many ways: e.g., as written texts, recorded speech or sign language. However, the CIDOC CRM treats instances of E33 Linguistic Object independently from the medium or method by which they are expressed. Expressions in formal languages, such as computer code or mathematical formulae, are not treated as instances of E33 Linguistic Object by the CIDOC CRM. These should be modelled as instances of E73 Information Object.In general, an instance of E33 Linguistic Object may also contain non-linguistic information, often of artistic or aesthetic value. Only in cases in which the content of an instance of E33 Linguistic Object can completely be expressed by a series of binary-encoded symbols, its content may be documented within a respective knowledge base by the property P190 has symbolic content: E62 String. Otherwise, it should be understood as an identifiable digital resource only available independently from the respective knowledge base. In other cases, such as pages of an illuminated manuscript or recordings containing speech in a language supported by a writing system, the linguistic part of the content of an instance of E33 Linguistic Object may be documented within a respective knowledge base in a note by P3 has note: E62 String. Otherwise, it may be described using the property P165 incorporates (is incorporated in): E73 Information Object as a different object with its own identity.</rdfs:comment>
+    <rdfs:label xml:lang="en">Linguistic Object</rdfs:label>
+  </rdfs:Class>
+  <rdfs:Class rdf:about="R1_Linguistic_Authority_Document">
+    <skos:notation rdf:datatype="http://www.w3.org/2001/XMLSchema#string">R1</skos:notation>
+    <rdfs:comment xml:lang="en" rdf:datatype="http://www.w3.org/2001/XMLSchema#string">This class comprises encyclopaedia, thesauri, authority lists and other documents that define terminology or conceptual systems for consistent use. Instances of Linguistic Authority Document are defined in a language.</rdfs:comment>
+    <rdfs:label xml:lang="en">Linguistic Authority Document</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://www.cidoc-crm.org/cidoc-crm/E33_Linguistic_Object"/>
+    <rdfs:subClassOf rdf:resource="http://www.cidoc-crm.org/cidoc-crm/E32_Authority_Document"/>
+  </rdfs:Class>
+</rdf:RDF>
