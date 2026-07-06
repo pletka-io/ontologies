@@ -1,0 +1,13 @@
+schema_version: 2
+ontology:
+  family: swiss-art-research
+  kind: extension
+  namespace: https://ontology.swissartresearch.net/cpro/
+  prefix: cpro
+  prefixes: [cpro]
+  title: CPRo
+require:
+  - {module: github.com/pletka-io/ontologies/aaao, version: "2.2"}
+sources:
+  files: [src/CPRo_v2.rdf]
+  primary: src/CPRo_v2.rdf
