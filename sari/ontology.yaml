@@ -1,0 +1,13 @@
+schema_version: 2
+ontology:
+  family: swiss-art-research
+  kind: extension
+  namespace: http://w3id.org/sari#
+  prefix: sari
+  prefixes: [sari]
+  title: SARI
+require:
+  - {module: github.com/pletka-io/ontologies/aaao, version: "2.2"}
+sources:
+  files: [src/Sari_v1.rdf]
+  primary: src/Sari_v1.rdf

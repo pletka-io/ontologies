@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+         xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+         xmlns:owl="http://www.w3.org/2002/07/owl#"
+         xmlns:crm="http://www.cidoc-crm.org/cidoc-crm/"
+         xmlns:crmpc="http://www.cidoc-crm.org/cidoc-crm/"
+         xmlns:sari="http://w3id.org/sari#"
+         xml:base="http://w3id.org/sari#">
+
+  <owl:Ontology rdf:about="http://w3id.org/sari#">
+    <rdfs:label xml:lang="en">SARI Ontology Extension</rdfs:label>
+    <rdfs:comment xml:lang="en">Swiss Art Research Infrastructure ontology extension for CIDOC-CRM</rdfs:comment>
+    <owl:versionInfo>1</owl:versionInfo>
+  </owl:Ontology>
+
+  <rdf:Property rdf:about="http://w3id.org/sari#SRP1_used_language">
+    <rdfs:label xml:lang="en">used language</rdfs:label>
+    <rdfs:comment xml:lang="en">This property identifies former or current instances of E56 Language known by an E21 Person</rdfs:comment>
+    <rdfs:domain rdf:resource="http://www.cidoc-crm.org/cidoc-crm/E21_Person"/>
+    <rdfs:range rdf:resource="http://www.cidoc-crm.org/cidoc-crm/E56_Language"/>
+  </rdf:Property>
+
+  <rdf:Property rdf:about="http://w3id.org/sari#SRP1i_was_language_used_by">
+    <rdfs:label xml:lang="en">was language used by</rdfs:label>
+    <rdfs:comment xml:lang="en">This property identifies former or current instances of E56 Language known by an E39 Actor</rdfs:comment>
+    <rdfs:domain rdf:resource="http://www.cidoc-crm.org/cidoc-crm/E56_Language"/>
+    <rdfs:range rdf:resource="http://www.cidoc-crm.org/cidoc-crm/E21_Person"/>
+  </rdf:Property>
+
+  <rdf:Property rdf:about="http://w3id.org/sari#SRP2i_was_occupation_of">
+    <rdfs:label xml:lang="en">was occupation of</rdfs:label>
+    <rdfs:comment xml:lang="en">This field is used to indicate occupations/general roles that an E39 Actor has played in its life; This documentation is at the level of a general characteristic and is not the documentation of particular periods in which occupations/roles were undertaken</rdfs:comment>
+    <rdfs:domain rdf:resource="http://www.cidoc-crm.org/cidoc-crm/E55_Type"/>
+    <rdfs:range rdf:resource="http://www.cidoc-crm.org/cidoc-crm/E21_Person"/>
+    <rdfs:subPropertyOf rdf:resource="http://www.cidoc-crm.org/cidoc-crm/P2i_is_type_of"/>
+  </rdf:Property>
+
+  <rdf:Property rdf:about="http://w3id.org/sari#SRP2_had_occupation">
+    <rdfs:label xml:lang="en">had occupation</rdfs:label>
+    <rdfs:comment xml:lang="en">This relation is used to indicate occupations/general roles that a E21 Person has played in its life; This documentation is at the level of a general characteristic and is not the documentation of particular periods in which occupations/roles were undertaken</rdfs:comment>
+    <rdfs:domain rdf:resource="http://www.cidoc-crm.org/cidoc-crm/E21_Person"/>
+    <rdfs:range rdf:resource="http://www.cidoc-crm.org/cidoc-crm/E55_Type"/>
+    <rdfs:subPropertyOf rdf:resource="http://www.cidoc-crm.org/cidoc-crm/P2_has_type"/>
+  </rdf:Property>
+
+  <rdf:Property rdf:about="http://w3id.org/sari#SRP2_has_generic_part_type">
+    <rdfs:label xml:lang="en">has generic part type</rdfs:label>
+    <rdfs:comment xml:lang="en">This property is used to indicate the relation between a documented object and generic parts that are attributed to it. It is specifically to be used just for the case when the identity of the individual parts of the objects are not of importance to the overall identity of the work, but only their contribution to it qua type. For example, in installation artwork, certain generic materials may be called for to constitute the piece.</rdfs:comment>
+    <rdfs:domain rdf:resource="http://www.cidoc-crm.org/cidoc-crm/E24_Physical_Human-Made_Thing"/>
+    <rdfs:range rdf:resource="http://www.cidoc-crm.org/cidoc-crm/E55_Type"/>
+  </rdf:Property>
+
+  <rdfs:Class rdf:about="http://w3id.org/sari#SRPC3_in_social_relation">
+    <rdfs:label xml:lang="en">in social relation</rdfs:label>
+    <rdfs:comment xml:lang="en">The class SRPC3 materializes the SRP3 relation as a class. It does so to enable an n-ary construct used to indicate the nature of the relationship that holds between the instance of E21 person designated as its domain and the instance of E21 Person designated as its range. ie: if E55 instantiated as Father then the semantic interpretation of this is E21(a) 'has father' E21(b), the relation is not symmetric.</rdfs:comment>
+    <rdfs:subClassOf rdf:resource="http://www.cidoc-crm.org/cidoc-crm/PC0_Typed_CRM_Property"/>
+  </rdfs:Class>
+
+  <rdf:Property rdf:about="http://w3id.org/sari#SRP3_relation_type">
+    <rdfs:label xml:lang="en">relation type</rdfs:label>
+    <rdfs:domain rdf:resource="http://w3id.org/sari#SRPC3_in_social_relation"/>
+    <rdfs:range rdf:resource="http://www.cidoc-crm.org/cidoc-crm/E55_Type"/>
+  </rdf:Property>
+
+  <rdf:Property rdf:about="http://w3id.org/sari#SRP3i_relation_type">
+    <rdfs:label xml:lang="en">relation type (inverse)</rdfs:label>
+    <rdfs:domain rdf:resource="http://www.cidoc-crm.org/cidoc-crm/E55_Type"/>
+    <rdfs:range rdf:resource="http://w3id.org/sari#SRPC3_in_social_relation"/>
+  </rdf:Property>
+
+</rdf:RDF>
