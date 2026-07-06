@@ -1,0 +1,13 @@
+schema_version: 2
+ontology:
+  family: swiss-art-research
+  kind: extension
+  namespace: https://ontology.swissartresearch.net/pwro/
+  prefix: pwro
+  prefixes: [pwro]
+  title: PWRo
+require:
+  - {module: github.com/pletka-io/ontologies/aaao, version: "2.2"}
+sources:
+  files: [src/PWRo_v1.rdf]
+  primary: src/PWRo_v1.rdf
