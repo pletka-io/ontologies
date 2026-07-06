@@ -1,0 +1,13 @@
+schema_version: 2
+ontology:
+  family: cidoc-crm
+  kind: extension
+  namespace: http://www.ics.forth.gr/isl/CRMgeo/
+  prefix: crmgeo
+  prefixes: [crmgeo]
+  title: CRMgeo
+require:
+  - {module: github.com/pletka-io/ontologies/crm, version: "6.2"}
+sources:
+  files: [src/CRMgeo_v1.2.1.rdfs]
+  primary: src/CRMgeo_v1.2.1.rdfs
