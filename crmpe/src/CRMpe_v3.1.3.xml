@@ -1,0 +1,1026 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!--
+PARTHENOS Entities CRMpe 3.1.3 Encoded in RDFS
+
+RDFS updated by Takin.solutions 2026
+Added rdfs:comment scope notes from Parthenos Entities Model Description PDF v3.1
+Fixed typo in PP41_is_index_of range URI (double 'h' removed)
+PP43 label corrected to present tense 'supports project activity'
+
+RDFS updated by Takin.solution 19/9/22
+change of base name of CRM Dig was wrong. Reverted
+
+RDFS updated by FORTH September 14, 2018
+added rdfs:label to all Classes and Properties
+
+RDFS updated by FORTH August 30, 2018
+renamed PP53i, PP54i
+changed superproperty of PP40
+
+RDFS updated by FORTH June 29, 2018
+introducing new classes PE39 through PE44 and properties PP51 through PP60
+
+RDFS updated by FORTH April 03, 2018
+changed CRMdig base from http://www.ics.forth.gr/isl/CRMdig/ to http://www.ics.forth.gr/isl/CRMext/CRMdig.rdfs/
+
+RDFS updated by CNR ISTI September 29, 2017
+fixed base from http://pathenos.d4science.org/CRMext/CRMpe.rdfs/ to http://parthenos.d4science.org/CRMext/CRMpe.rdfs/
+
+RDFS updated by FORTH May 22, 2017
+changed base from http://www.ics.forth.gr/isl/CRMpe/ to http://pathenos.d4science.org/CRMext/CRMpe.rdfs/
+
+RDFS updated by FORTH April 13, 2017
+corrected typos that by Luca Frosini pointed out
+
+RDFS updated by FORTH March 9, 2017
+
+RDFS updated by CNR February 2, 2017
+added PE20_Volatile_Digital_Object as subclass of PE32_Curated_Thing
+
+RDFS updated by CNR January 30, 2017
+corrected PE20, PE21 and PP28i (they contained blanks)
+
+RDFS updated by FORTH-ICS September 19, 2016
+corrected some typos, added PE26, removed PE27, added PP41 and PP42
+
+RDFS created by FORTH-ICS August 19, 2016
+
+Encoding Rules:
+1. The RDF spelling rules do not allow blanks. Hence we have replaced them by underscores.
+   The blank between the concept identifier and concept name is replaced by underscore too.
+   For instance "PE1_Service" or "PP1_currently_offers".
+
+2. RDF does not allow to instantiate properties beginning from a range value.
+   Therefore, each CRMpe property is represented as two RDFS properties.
+   For instance "PP1 currently offers(is currently offered by)" is represented as:
+   "PP1_currently offers" for the domain to range direction and "PP1i_is_currently_offered_by" for the range to domain direction.
+
+-->
+<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+	xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+	xml:base="http://parthenos.d4science.org/CRMext/CRMpe.rdfs/" xml:lang="en">
+
+	<!-- =========================================================== -->
+	<!-- CLASSES                                                       -->
+	<!-- =========================================================== -->
+
+	<rdfs:Class rdf:about="PE1_Service">
+		<rdfs:label xml:lang="en">Service</rdfs:label>
+		<rdfs:subClassOf rdf:resource="http://www.cidoc-crm.org/cidoc-crm/E7_Activity"/>
+		<rdfs:comment xml:lang="en">This class comprises declared offers by some instance of E39 Actor of their willingness and ability to execute an activity or series of activities at the request of another instance of E39 Actor for the specific benefit of the latter. The identity of a service therefore depends on the individual instance of E39 actor making the offer, the type of activity(ies) offered and/or the type of product resultant from such an activity(ies). An instance of a PE1 Service begins to exist with the declaration of the ability and willingness of an instance of E39 actor to perform the particular set of activities for the benefit of another actor. The instance of PE1 Service ends when either the declared willingness or ability permanently ends. Note: this means that the ability may temporarily be interrupted, such as when an actor is on vacation or where the machine on which the service relies is being repaired, without meaning that the service as such has ended. A service need not continually be running in order for it be considered to be continuous, for example a service may be defined to fall within certain working hours. The instance of PE1 Service includes all auxiliary abilities of the same actor to execute the respective activities, but not services provided by third parties in the course of the service provisioning.</rdfs:comment>
+	</rdfs:Class>
+
+	<rdfs:Class rdf:about="PE2_Hosting_Service">
+		<rdfs:label xml:lang="en">Hosting Service</rdfs:label>
+		<rdfs:subClassOf rdf:resource="PE1_Service"/>
+		<rdfs:comment xml:lang="en">This class comprises declared offers by some instance of E39 Actor to hold, protect and provide access to one or more objects in a generic sense, either physical or conceptual, at the request of an instance of E39 Actor, where the latter may be the initial party or a second party. An instance of PE2 Hosting Service begins from the moment of agreement between the contracting parties that the host will carry out these holding and protection activities in order to provide access, upon request, to some instance or instances of E70 Thing for the sake of the client. The hosting services continue so long as the hosting actor retains the ability to provide access to the object(s) to the client. The instance of hosting service ends when the host is either no longer willing or able to provide access to the objects that they undertook to hold and protect for the client.</rdfs:comment>
+	</rdfs:Class>
+
+	<rdfs:Class rdf:about="PE3_Curating_Service">
+		<rdfs:label xml:lang="en">Curating Service</rdfs:label>
+		<rdfs:subClassOf rdf:resource="PE1_Service"/>
+		<rdfs:comment xml:lang="en">This class comprises declared offers by some instance of E39 Actor of their willingness and ability to engage in a series of selection and organization activities on a collection of objects according to a specified plan. The identity of the curation service is tied to the collection of which it is the curator. A curation service comes into existence for the curation of some determinate collection taken as a whole, and is further determined in its identity by provider of the service and the plan which is adopted in order to carry out the curation. It is, in particular, the nature of the object of curation to be a collection in the sense of a plurality of objects from which parts can be added or removed without the overall identity of that collection being changed. An instance of PE3 Curating Service begins when the curator initiates the selection and organization of a collection of objects under the declared curation plan. The curating service may take over the curation of an existing collection or begin the curation of a new collection. So as long as the curator maintains these selecting and organizing activities of these objects according to the declared plan, the curation activity is considered on-going, regardless of any particular activities or lack thereof at any one time. Should the actor no longer be willing to engage in these activities or the objects be unavailable in a permanent manner, then the instance of PE3 Curating Service is to be considered ended. While curated objects may need to be hosted, this service may or may not be undertaken by the same actor. Therefore hosting can be documented separately and attributed to the appropriate third party actor.</rdfs:comment>
+	</rdfs:Class>
+
+	<rdfs:Class rdf:about="PE5_Digital_Hosting_Service">
+		<rdfs:label xml:lang="en">Digital Hosting Service</rdfs:label>
+		<rdfs:subClassOf rdf:resource="PE2_Hosting_Service"/>
+		<rdfs:comment xml:lang="en">This class comprises declared offers by some instance of E39 Actor to hold, protect and provide access to one or more digital objects at the request of an instance of E39 Actor. The identity of digital hosting is determined by the type of object that the host undertakes to keep and provide access to. The hosting is digital in the sense that the object being held and protected is of a digital nature. Digital hosting does not entail the running of machines and software. An instance of PE5 Digital Hosting Service begins from the moment of agreement between the contracting parties that the host will carry out these holding and protection activities in order to provide access, upon request, to some instance or instances of D1 Digital Object for the sake of the client. Digital hosting services continue so long as the hosting actor retains the ability to provide access to the hosted object(s) to the client. The instance of hosting service ends when the host is either no longer willing or able to provide access to the object or collection of objects that they undertook to hold and protect for the client.</rdfs:comment>
+	</rdfs:Class>
+
+	<rdfs:Class rdf:about="PE6_Software_Hosting_Service">
+		<rdfs:label xml:lang="en">Software Hosting Service</rdfs:label>
+		<rdfs:subClassOf rdf:resource="PE5_Digital_Hosting_Service"/>
+		<rdfs:comment xml:lang="en">This class comprises declared offers by some instance of E39 Actor to hold and protect one or more software objects at the request of an instance of E39 Actor. The identity of software hosting is determined by the type of object that the host undertakes to keep and provide access to. The hosting is an instance of PE6 Software Hosting Service, just in case the object or objects which are held and protected are software. Software hosting does not entail the running of machines and software. An instance of PE6 Software Hosting Service begins from the moment of agreement between the contracting parties that the host will carry out these holding and protection activities in order to provide access, upon request, to some instance or instances of D14 Software for the sake of the client. Digital hosting services continue so long as the hosting actor retains the ability to provide access to the hosted object(s) to the client. The instance of hosting service ends when the host is either no longer willing or able to provide access to the object or collection of objects that they undertook to hold and protect for the client.</rdfs:comment>
+	</rdfs:Class>
+
+	<rdfs:Class rdf:about="PE7_Data_Hosting_Service">
+		<rdfs:label xml:lang="en">Data Hosting Service</rdfs:label>
+		<rdfs:subClassOf rdf:resource="PE5_Digital_Hosting_Service"/>
+		<rdfs:comment xml:lang="en">This class comprises declared offers by some instance of E39 Actor to hold and protect one or more datasets at the request of an instance of E39 Actor. The identity of data hosting is determined by the type of object that the host undertakes to keep and provide access to. The hosting is an instance of PE7 Data Hosting Service, just in case the object or objects which are held and protected are dataset. Data hosting does not entail the running of machines and software. An instance of PE7 Data Hosting Service begins from the moment of agreement between the contracting parties that the host will carry out these holding and protection activities in order to provide access, upon request, to some instance or instances of PE18 Dataset for the sake of the client. Digital hosting services continue so long as the hosting actor retains the ability to provide access to the hosted object(s) to the client. The instance of hosting service ends when the host is either no longer willing or able to provide access to the object or collection of objects that they undertook to hold and protect for the client.</rdfs:comment>
+	</rdfs:Class>
+
+	<rdfs:Class rdf:about="PE8_E-Service">
+		<rdfs:label xml:lang="en">E-Service</rdfs:label>
+		<rdfs:subClassOf rdf:resource="PE1_Service"/>
+		<rdfs:comment xml:lang="en">This class comprises declared offers to provide computing facilities by some instance of an E39 Actor who provisions a hardware/software setup that is able to respond to the use requests of some E39 Actor through automated receipt, manipulation and sending of data. The identity of an instance of PE8 E-Service depends on the particular communication software it runs, the actor maintaining the service active, and the logical communication address for issuing requests to it. An instance of PE8 E-Service comes into existence on the declaration of its offer and the making available of the service through some access point. It ceases to exist just in case the instance of E39 Actor is no longer willing or able to maintain the e-service when, for example an organization ceases to operation entirely, cancels the particular service, or is no longer able to support the software/hardware entailed.</rdfs:comment>
+	</rdfs:Class>
+
+	<rdfs:Class rdf:about="PE10_Digital_Curating_Service">
+		<rdfs:label xml:lang="en">Digital Curating Service</rdfs:label>
+		<rdfs:subClassOf rdf:resource="PE3_Curating_Service"/>
+		<rdfs:comment xml:lang="en">This class comprises declared offers by some instance of E39 Actor of their willingness and ability to engage in a series of selection and organization activities on an instance of PE20 Volatile Digital Object according to a specified plan. The identity of the instance of PE10 Digital Curation Service is tied to the instance of PE20 Volatile Digital Object of which it is the curation. Instances of PE20 Volatile Digital Object are by their nature composites of different data sources. The curation activity on the volatile digital object in executing its plan ensures the unity of the one volatile digital object and provides it an identity. An instance of PE10 Digital Curating Service begins when the curator initiates the selection and organization of a volatile digital object under the declared curation plan. The curating service may take over the curation of an existing volatile digital object or begin the curation of an entirely new volatile digital object. As long as the curator maintains the will and ability to carry out these selecting and organizing activities according to the declared plan, the curation activity is considered on-going. Should the actor no longer be willing to engage in these activities or the volatile digital object be unavailable in a permanent manner, then the instance of PE10 Digital Curating Service is to be considered ended. While curated objects may need to be hosted, this service may or may not be undertaken by the same actor.</rdfs:comment>
+	</rdfs:Class>
+
+	<rdfs:Class rdf:about="PE11_Software_Curating_Service">
+		<rdfs:label xml:lang="en">Software Curating Service</rdfs:label>
+		<rdfs:subClassOf rdf:resource="PE10_Digital_Curating_Service"/>
+		<rdfs:comment xml:lang="en">This class comprises declared offers by some instance of E39 Actor of their willingness and ability to engage in a series of selection and organization activities on an instance of PE23 Volatile Software according to a specified plan. The identity of the instance of PE11 Software Curation Service is tied to the instance of PE23 Volatile Software of which it is the curation. Instances of PE23 Volatile Software are by their nature composites of different data sources. The curation activity on the volatile software in executing its plan ensures its unity and provides it an identity. An instance of PE11 Software Curating Service begins when the curator initiates the selection and organization of a volatile software object under the declared curation plan. As long as the curator maintains the will and ability to carry out these selecting and organizing activities according to the declared plan, the curation activity is considered on-going. Should the actor no longer be willing to engage in these activities or the volatile digital object be unavailable in a permanent manner, then the instance of PE11 Software Curating Service is to be considered ended.</rdfs:comment>
+	</rdfs:Class>
+
+	<rdfs:Class rdf:about="PE12_Data_Curating_Service">
+		<rdfs:label xml:lang="en">Data Curating Service</rdfs:label>
+		<rdfs:subClassOf rdf:resource="PE10_Digital_Curating_Service"/>
+		<rdfs:comment xml:lang="en">This class comprises declared offers by some instance of E39 Actor of their willingness and ability to engage in a series of selection and organization activities on an instance of PE24 Volatile Dataset according to a specified plan. The identity of the instance of PE12 Data Curating Service is tied to the instance of PE24 Volatile Dataset of which it is the curation. Instances of PE24 Volatile Dataset are by their nature composites of different data sources. The curation activity on the volatile dataset in executing its plan ensures its unity and provides it an identity. An instance of Data Curating Service begins when the curator initiates the selection and organization of a volatile dataset under the declared curation plan. As long as the curator maintains the will and ability to carry out these selecting and organizing activities according to the declared plan, the curation activity is considered on-going. Should the actor no longer be willing to engage in these activities or the volatile digital object be unavailable in a permanent manner, then the instance of Data Curating Service is to be considered ended.</rdfs:comment>
+	</rdfs:Class>
+
+	<rdfs:Class rdf:about="PE13_Software_Computing_E-Service">
+		<rdfs:label xml:lang="en">Software Computing E-Service</rdfs:label>
+		<rdfs:subClassOf rdf:resource="PE6_Software_Hosting_Service"/>
+		<rdfs:subClassOf rdf:resource="PE8_E-Service"/>
+		<rdfs:comment xml:lang="en">This class comprises instances of offers that are made up of both instances of PE6 Software Hosting and PE8 E-Service while additionally offering the ability and willingness to run a certain software for the requesting instance of E39 Actor. That is to say, the service provider takes on duties of hosting software, running the equipment to provide it, and delivering computing power to run it on request. The identity of this service is likewise composite depending on those factors relevant to instances of PE6 Software Hosting Service and PE8 E-Service, while additionally requiring that we have a clear identity of the software. The software release that the service runs may change without affecting the identity of the overall service, but to retain its identity this change would need to be documented in the access protocol, and to be archived in a log file. If an E39 Actor provides software computing e-services that run more than one software release at the same time, each of these should be documented as a separate instance of PE13 Software Computing E-Service. An instance of PE13 Software Computing E-Service comes into existence on the declaration of its offer and the making available of the service along with the software it offers to run through some access point.</rdfs:comment>
+	</rdfs:Class>
+
+	<rdfs:Class rdf:about="PE14_Software_Delivery_E-Service">
+		<rdfs:label xml:lang="en">Software Delivery E-Service</rdfs:label>
+		<rdfs:subClassOf rdf:resource="PE6_Software_Hosting_Service"/>
+		<rdfs:subClassOf rdf:resource="PE8_E-Service"/>
+		<rdfs:comment xml:lang="en">This class comprises instances of offers that are made up of both instances of PE6 Software Hosting and PE8 E-Service while additionally offering the ability and willingness to deliver a particular piece of software to the requesting instance of E39 Actor. That is to say, the service provider takes on duties of hosting software, running the equipment to provide it, and delivering software on demand to a client. The identity of this service is likewise composite depending on those factors relevant to instances of PE6 Software Hosting Service and PE8 E-Service, while additionally requiring that we have a clear identity of the software to be delivered. An instance of PE14 Software Delivery E-Service comes into existence on the declaration of its offer and the making available of the service along with the software it offers to deliver through some access point.</rdfs:comment>
+	</rdfs:Class>
+
+	<rdfs:Class rdf:about="PE15_Data_E-Service">
+		<rdfs:label xml:lang="en">Data E-Service</rdfs:label>
+		<rdfs:subClassOf rdf:resource="PE7_Data_Hosting_Service"/>
+		<rdfs:subClassOf rdf:resource="PE8_E-Service"/>
+		<rdfs:comment xml:lang="en">This class comprises instances of offers that are made up of both instances of PE7 Data Hosting and PE8 E-Service while additionally offering the ability and willingness to offer electronic access to one or more datasets to the requesting instance of E39 Actor. That is to say, the service provider takes on duties of both hosting dataset(s) while running the equipment to provide access to the same. The identity of this service is a composite of those factors relevant to instances of PE7 Data Hosting Service and PE8 E-Service. An instance of PE15 Data E-Service comes into existence on the declaration of its offer and the making available of the service along with the dataset it aims to provide access to through some access point.</rdfs:comment>
+	</rdfs:Class>
+
+	<rdfs:Class rdf:about="PE16_Curated_Software_E-Service">
+		<rdfs:label xml:lang="en">Curated Software E-Service</rdfs:label>
+		<rdfs:subClassOf rdf:resource="PE11_Software_Curating_Service"/>
+		<rdfs:subClassOf rdf:resource="PE14_Software_Delivery_E-Service"/>
+		<rdfs:subClassOf rdf:resource="PE13_Software_Computing_E-Service"/>
+		<rdfs:comment xml:lang="en">This class comprises instances of offers that are made up of both instances of PE11 Software Curating Service and PE14 S/W Delivery E-Service or PE13 Software Computing E-Service. Here then we speak of an offer both to curate some software(s), host it and running the equipment enabling its delivery to or running for clients. The identity of an instance of PE16 Curated Software E-Service depends thus on the actor providing the service, the software hosted and curated, as well as the particular processing software its E-service component runs, as well as the logical communication address for issuing requests to it. An instance of PE16 Curated Software E-Service comes into existence on the declaration of its offer and the making available of the service along with the software it curates and delivers/runs through some access point.</rdfs:comment>
+	</rdfs:Class>
+
+	<rdfs:Class rdf:about="PE17_Curated_Data_E-Service">
+		<rdfs:label xml:lang="en">Curated Data E-Service</rdfs:label>
+		<rdfs:subClassOf rdf:resource="PE12_Data_Curating_Service"/>
+		<rdfs:subClassOf rdf:resource="PE15_Data_E-Service"/>
+		<rdfs:comment xml:lang="en">This class comprises instances of offers that are made up of both instances of PE12 Data Curating Service and PE15 Data E-Service. Here then we speak of an offer to curate some volatile dataset, host it and run the equipment necessary in order for clients to be able to access it electronically on demand. The identity of an instance of PE17 Curated Data E-Service depends thus on the actor providing the service, the dataset hosted and curated, the particular processing software its E-service component runs, as well as the logical communication address for issuing requests to it. An instance of PE17 Curated Data E-Service comes into existence on the declaration of its offer and the making available of the service along with the data it curates and provides access to through some access point.</rdfs:comment>
+	</rdfs:Class>
+
+	<rdfs:Class rdf:about="PE18_Dataset">
+		<rdfs:label xml:lang="en">Dataset</rdfs:label>
+		<rdfs:subClassOf rdf:resource="http://www.ics.forth.gr/isl/CRMdig/D1_Digital_Object"/>
+		<rdfs:comment xml:lang="en">This class comprises identifiable immaterial items that can be represented as sets of bit sequences and whose content contains propositions about the objective world. The identity of an instance of PE18 is determined by its content in bit level encoding alongside its provenance. Any instance of a dataset may be composed of many distinct parts of other identifiable datasets. An aggregate of instances of PE18 dataset is treated as one instance and its parts can be documented as having a part of relation (P106). Datasets in practice are either volatile or persistent.</rdfs:comment>
+	</rdfs:Class>
+
+	<rdfs:Class rdf:about="PE19_Persistent_Digital_Object">
+		<rdfs:label xml:lang="en">Persistent Digital Object</rdfs:label>
+		<rdfs:subClassOf rdf:resource="http://www.ics.forth.gr/isl/CRMdig/D1_Digital_Object"/>
+		<rdfs:comment xml:lang="en">This class comprises instances of D1 Digital Object which are the result of a distinct creation moment in which the whole of the content of the digital object as a propositional set was established and encoded at a bit level, whether this creation moment is known or not. Persistent digital objects are thus identified by their content, bit level encoding and the moment of production as a whole unit of information. An instance of persistent digital object continues to exist so long as one copy of it remains on one carrier which has been maintained without change to its internal content, thus propagating the original condition of the instance.</rdfs:comment>
+	</rdfs:Class>
+
+	<rdfs:Class rdf:about="PE20_Volatile_Digital_Object">
+		<rdfs:label xml:lang="en">Volatile Digital Object</rdfs:label>
+		<rdfs:subClassOf rdf:resource="PE32_Curated_Thing"/>
+		<rdfs:subClassOf rdf:resource="http://www.ics.forth.gr/isl/CRMdig/D1_Digital_Object"/>
+		<rdfs:comment xml:lang="en">This class comprises instances of digital objects whose content is subject to continuous change without notice or necessary archiving of intermediate state but which can be considered as one with regards to its provenance in some curation plan that determines its information, goal and subject coverage. At any one point, an instance of PE20 Volatile Digital Object can be identified by an official snapshot of the actual data stream, an instance of PE19 Persistent Digital Object, taken by the responsible curating authority which has as ancestors any previous snapshots taken of the data stream. The curator assigns a persistent identifier to the official snapshot and is the only individual who can identify the true representative snapshot. Reference to the content of an instance of PE20 Volatile Digital Object is made by way of the official snapshot.</rdfs:comment>
+	</rdfs:Class>
+
+	<rdfs:Class rdf:about="PE21_Persistent_Software">
+		<rdfs:label xml:lang="en">Persistent Software</rdfs:label>
+		<rdfs:subClassOf rdf:resource="http://www.ics.forth.gr/isl/CRMdig/D14_Software"/>
+		<rdfs:subClassOf rdf:resource="PE19_Persistent_Digital_Object"/>
+		<rdfs:comment xml:lang="en">This class comprises instances of digital objects that can be executed on a computer to perform specific operations. In particular, an instance of PE21 Persistent Software is the necessary information to process datasets algorithmically and to transform or integrate datasets in a collaborative infrastructure. The identity of a software depends on its content on the bit-level of encoding. The validity of the results produced by the software's application depends categorically on its algorithmic correctness. A software release is defined as an instance of software. The software release begins to exist with its provision by the actor who is responsible for producing it. We also include in this category all data structures and formal ontologies that are used to configure the behavior of the software at an infrastructure component level.</rdfs:comment>
+	</rdfs:Class>
+
+	<rdfs:Class rdf:about="PE22_Persistent_Dataset">
+		<rdfs:label xml:lang="en">Persistent Dataset</rdfs:label>
+		<rdfs:subClassOf rdf:resource="PE18_Dataset"/>
+		<rdfs:subClassOf rdf:resource="PE19_Persistent_Digital_Object"/>
+		<rdfs:comment xml:lang="en">This class comprises datasets that contain collections of data, records or information kept as a persistent unit of information in the knowledge generation process from primary records up to any level of aggregation or integration. The identity of a dataset is given by its content on the bit-level of encoding and its provenance. Since large datasets have a very small chance to be reinvented with another meaning, it is often practical to base the identity of a dataset on the content only, and apply a respective disambiguation of provenance only in case of obviously accidental identity. Different versions of a dataset are regarded as different datasets. Their relation should be defined by metadata describing the derivation process, rather than by version numbers. In general, a dataset may be integrated from different sources of provenance, such as a corpus of inscriptions compiled from different publication or a snapshot of a complete digital library. The content of knowledge organization systems, such as gazetteers, author lists, thesauri and formal ontologies of terms at a particular point in time, fall under datasets.</rdfs:comment>
+	</rdfs:Class>
+
+	<rdfs:Class rdf:about="PE23_Volatile_Software">
+		<rdfs:label xml:lang="en">Volatile Software</rdfs:label>
+		<rdfs:subClassOf rdf:resource="http://www.ics.forth.gr/isl/CRMdig/D14_Software"/>
+		<rdfs:subClassOf rdf:resource="PE20_Volatile_Digital_Object"/>
+		<rdfs:comment xml:lang="en">This class comprises software that is in the process of active development. The volatile software class is comprised of instances of the working copy of some software in development. The software in development is the necessary information to perform specific operations. The identity of an instance of PE23 Volatile Software depends on the unity provided it by the instance of PE11 Software Curating Service responsible for it, that provides it its unity of purpose. The PE11 Software Curating Service is responsible for the creation of instances of PE21 Persistent Software which are the official release of this development stream and the ability to find and run its instructions at some time.</rdfs:comment>
+	</rdfs:Class>
+
+	<rdfs:Class rdf:about="PE24_Volatile_Dataset">
+		<rdfs:label xml:lang="en">Volatile Dataset</rdfs:label>
+		<rdfs:subClassOf rdf:resource="PE18_Dataset"/>
+		<rdfs:subClassOf rdf:resource="PE20_Volatile_Digital_Object"/>
+		<rdfs:comment xml:lang="en">This class comprises datasets that are changed without notice or archiving of intermediate states but maintained by an instance of PE12 Data Curating Service. The identity of a volatile dataset is enabled by the unity given to it by curation programme that operates on it, that bequeaths the volatile dataset common information goal and subject coverage. In order for an instance of PE24 Volatile Dataset to be referenceable it is necessary for the official curator to take snapshots, creating instances of PE22 Persistent Dataset which can be assigned an official identifier and referenced. Volatile datasets are typically whole databases or mash-ups with active data feeds.</rdfs:comment>
+	</rdfs:Class>
+
+	<rdfs:Class rdf:about="PE25_RI_Consortium">
+		<rdfs:label xml:lang="en">RI Consortium</rdfs:label>
+		<rdfs:subClassOf rdf:resource="PE34_Team"/>
+		<rdfs:comment xml:lang="en">This class comprises special groups of actors who come together for the purpose of supporting a research infrastructure project. An RI Consortium can be composed of all other types of actors including other RI Consortiums. An RI Consortium is identified by its commonality of purpose and not by its membership at any one time. The group comes into existence with the agreement to maintain some collective project. So long as the group continues to support the common RI project and is non-empty the consortium continues to exist.</rdfs:comment>
+	</rdfs:Class>
+
+	<rdfs:Class rdf:about="PE26_RI_Project">
+		<rdfs:label xml:lang="en">RI Project</rdfs:label>
+		<rdfs:subClassOf rdf:resource="PE35_Project"/>
+		<rdfs:comment xml:lang="en">This class comprises instances of collaborative enterprise undertaken over a period of time by an instance of PE25 RI Consortium with the intention of supporting research activities by providing a number of services to instances of E39 Actor. The project's existence depends on the continued maintenance by some consortium. It ends when there is no consortium left to maintain it.</rdfs:comment>
+	</rdfs:Class>
+
+	<rdfs:Class rdf:about="PE28_Curation_Plan">
+		<rdfs:label xml:lang="en">Curation Plan</rdfs:label>
+		<rdfs:subClassOf rdf:resource="http://www.cidoc-crm.org/cidoc-crm/E29_Design_or_Procedure"/>
+		<rdfs:comment xml:lang="en">This class comprises instances of plans that guide curation projects and which provide the information necessary to understand the intention and overall aim of an actor in carrying out some instances of PE3 Curating Service.</rdfs:comment>
+	</rdfs:Class>
+
+	<rdfs:Class rdf:about="PE29_Access_Point">
+		<rdfs:label xml:lang="en">Access Point</rdfs:label>
+		<rdfs:subClassOf rdf:resource="http://www.cidoc-crm.org/cidoc-crm/E51_Contact_Point"/>
+		<rdfs:comment xml:lang="en">This class comprises instances of web addresses and network addresses by which e-services can be accessed.</rdfs:comment>
+	</rdfs:Class>
+
+	<rdfs:Class rdf:about="PE32_Curated_Thing">
+		<rdfs:label xml:lang="en">Curated Thing</rdfs:label>
+		<rdfs:subClassOf rdf:resource="http://www.cidoc-crm.org/cidoc-crm/E70_Thing"/>
+		<rdfs:comment xml:lang="en">This class comprises aggregations of instances of either E18 Physical Thing or of PE20 Volatile Digital Object that are assembled and maintained by one or more instances of E39 Actor over time for a specific purpose and audience, and according to a particular collection development plan. Items may be added or removed from an instance of PE32 Curated Thing in pursuit of this plan. The instance of PE32 Curated Thing gets identity not through a physical togetherness of things, nor through a concatenation of information objects, but rather through the deliberate management of the curated thing according to a plan.</rdfs:comment>
+	</rdfs:Class>
+
+	<rdfs:Class rdf:about="http://www.cidoc-crm.org/cidoc-crm/E78_Curated_Holding">
+		<rdfs:subClassOf rdf:resource="PE32_Curated_Thing"/>
+	</rdfs:Class>
+
+	<rdfs:Class rdf:about="PE33_E-Access_Brokering_Service">
+		<rdfs:label xml:lang="en">E-Access Brokering Service</rdfs:label>
+		<rdfs:subClassOf rdf:resource="PE8_E-Service"/>
+		<rdfs:comment xml:lang="en">This class comprises declared offers by some instance of E39 Actor of their willingness and ability to provide electronic access brokering services for another instance of E39 Actor. E-Access brokering services offer mediation between the user of this instance of PE33 and some instance of PE8 E-Service, providing the means for the user to access the specified service. The actual E-Access brokering service functions as an automatic process, and is indicated by the link to an instance of PE8 E-Service which is the service to which it gives access. An instance of a PE33 Access Brokering Service begins to exist with the declaration of the ability and willingness of an instance of E39 Actor to broker access to some instance of PE8 E-Service. The instance of PE33 Access Brokering Service ends when either the declared willingness or ability to effectuate the mediation between the user and the target service permanently ends.</rdfs:comment>
+	</rdfs:Class>
+
+	<rdfs:Class rdf:about="PE34_Team">
+		<rdfs:label xml:lang="en">Team</rdfs:label>
+		<rdfs:subClassOf rdf:resource="http://www.cidoc-crm.org/cidoc-crm/E74_Group"/>
+		<rdfs:comment xml:lang="en">This class comprises groups of actors who come together for some defined project. The identity of the team is given by the collective will to achieve and support some project/aim. Membership in the group is determined by official association to the team for the purpose of contributing to the achievement of its aim. Membership need not be mediated by institutional association. An instance of PE34 Team is identified by its commonality of purpose and not by its membership at any one time. A PE34 Team instance comes into existence with the agreement to maintain its collective project. So long as the will to maintain the project is upheld by a minimal membership of the team (1), the team can be said to exist, although any or all of its members may change over time.</rdfs:comment>
+	</rdfs:Class>
+
+	<rdfs:Class rdf:about="PE35_Project">
+		<rdfs:label xml:lang="en">Project</rdfs:label>
+		<rdfs:subClassOf rdf:resource="http://www.cidoc-crm.org/cidoc-crm/E7_Activity"/>
+		<rdfs:comment xml:lang="en">This class comprises instances of collaborative enterprise undertaken over a period of time by an instance of PE34 Team with the intention of effectuating some defined programme entailing the support of a number of instances of E7 Activity. An instance of PE35 Project comes into being with the formation of an instance of PE34 Team whose aim it is to carry out and maintain the project. The project continues to exist so long as the team both exists and continues to exercise its agency towards the maintenance of this project. A project ends either when it has reached its declared end point, attained its goal or the team constituted to support it is dissolved with no successor specified.</rdfs:comment>
+	</rdfs:Class>
+
+	<rdfs:Class rdf:about="PE36_Competency_Type">
+		<rdfs:label xml:lang="en">Competency Type</rdfs:label>
+		<rdfs:subClassOf rdf:resource="http://www.cidoc-crm.org/cidoc-crm/E55_Type"/>
+		<rdfs:comment xml:lang="en">This class comprises concepts that are used to classify the processes or actions that a service is supposed to be capable of carrying out.</rdfs:comment>
+	</rdfs:Class>
+
+	<rdfs:Class rdf:about="PE37_Protocol_Type">
+		<rdfs:label xml:lang="en">Protocol Type</rdfs:label>
+		<rdfs:subClassOf rdf:resource="http://www.cidoc-crm.org/cidoc-crm/E55_Type"/>
+		<rdfs:comment xml:lang="en">This class comprises concepts that are used to classify the protocols that are used to access an instance of PE8 E-Service.</rdfs:comment>
+	</rdfs:Class>
+
+	<rdfs:Class rdf:about="PE38_Schema">
+		<rdfs:label xml:lang="en">Schema</rdfs:label>
+		<rdfs:subClassOf rdf:resource="http://www.ics.forth.gr/isl/CRMdig/D14_Software"/>
+		<rdfs:comment xml:lang="en">This class is used to document instances of data structures, including formal ontologies that are used to configure the behavior of software.</rdfs:comment>
+	</rdfs:Class>
+
+	<rdfs:Class rdf:about="PE39_Availability_Type">
+		<rdfs:label xml:lang="en">Availability Type</rdfs:label>
+		<rdfs:subClassOf rdf:resource="http://www.cidoc-crm.org/cidoc-crm/E55_Type"/>
+		<rdfs:comment xml:lang="en">This class comprises concepts that are used to indicate the availability of a service in terms of kinds of time interval.</rdfs:comment>
+	</rdfs:Class>
+
+	<rdfs:Class rdf:about="PE40_Programming_Language">
+		<rdfs:label xml:lang="en">Programing Language</rdfs:label>
+		<rdfs:subClassOf rdf:resource="http://www.cidoc-crm.org/cidoc-crm/E55_Type"/>
+		<rdfs:comment xml:lang="en">This class comprises instances of programming languages used for the creation of software.</rdfs:comment>
+	</rdfs:Class>
+
+	<rdfs:Class rdf:about="PE41_Award_Activity">
+		<rdfs:label xml:lang="en">Award Activity</rdfs:label>
+		<rdfs:subClassOf rdf:resource="http://www.cidoc-crm.org/cidoc-crm/E7_Activity"/>
+		<rdfs:comment xml:lang="en">Awarding is a type of intentional event. We further restrict its intention to the type that is planned and involves an awarder, awardee, some award and perhaps a motivating reason. We are here at the level of the gift.</rdfs:comment>
+	</rdfs:Class>
+
+	<rdfs:Class rdf:about="PE42_Funding_Activity">
+		<rdfs:label xml:lang="en">Funding Activity</rdfs:label>
+		<rdfs:subClassOf rdf:resource="PE41_Award_Activity"/>
+		<rdfs:comment xml:lang="en">Funding is a type of intentional event. We further restrict its intention to the type that is planned and involves a funder, fundee, some monetary amount and perhaps a motivating reason. We are here at the level of exchange. This kind of activity can be seen as a specialization of award activity, that restricts the circuit of reward.</rdfs:comment>
+	</rdfs:Class>
+
+	<rdfs:Class rdf:about="PE43_Encoding_Type">
+		<rdfs:label xml:lang="en">Encoding Type</rdfs:label>
+		<rdfs:subClassOf rdf:resource="http://www.cidoc-crm.org/cidoc-crm/E55_Type"/>
+		<rdfs:comment xml:lang="en">This class comprises concepts that are used to classify kinds of encoding used in the creation of digital objects.</rdfs:comment>
+	</rdfs:Class>
+
+	<rdfs:Class rdf:about="PE44_Audience_Type">
+		<rdfs:label xml:lang="en">Audience Type</rdfs:label>
+		<rdfs:subClassOf rdf:resource="http://www.cidoc-crm.org/cidoc-crm/E55_Type"/>
+		<rdfs:comment xml:lang="en">This class comprises concepts that are used to classify kinds of audience.</rdfs:comment>
+	</rdfs:Class>
+
+	<!-- =========================================================== -->
+	<!-- PROPERTIES                                                    -->
+	<!-- =========================================================== -->
+
+	<rdf:Property rdf:about="PP1_currently_offers">
+		<rdfs:label xml:lang="en">currently offers</rdfs:label>
+		<rdfs:domain rdf:resource="PE26_RI_Project"/>
+		<rdfs:range rdf:resource="PE1_Service"/>
+		<rdfs:subPropertyOf rdf:resource="http://www.cidoc-crm.org/cidoc-crm/P9_consists_of"/>
+		<rdfs:comment xml:lang="en">Allows a research infrastructure project to be linked to the services it presently offers.</rdfs:comment>
+	</rdf:Property>
+
+	<rdf:Property rdf:about="PP1i_is_currently_offered_by">
+		<rdfs:label xml:lang="en">is currently offered by</rdfs:label>
+		<rdfs:domain rdf:resource="PE1_Service"/>
+		<rdfs:range rdf:resource="PE26_RI_Project"/>
+		<rdfs:subPropertyOf rdf:resource="http://www.cidoc-crm.org/cidoc-crm/P9i_forms_part_of"/>
+	</rdf:Property>
+
+	<rdf:Property rdf:about="PP2_provided_by">
+		<rdfs:label xml:lang="en">provided by</rdfs:label>
+		<rdfs:domain rdf:resource="PE1_Service"/>
+		<rdfs:range rdf:resource="http://www.cidoc-crm.org/cidoc-crm/E39_Actor"/>
+		<rdfs:subPropertyOf rdf:resource="http://www.cidoc-crm.org/cidoc-crm/P14_carried_out_by"/>
+		<rdfs:comment xml:lang="en">Indicates the intention and willingness of an actor to carry out some service.</rdfs:comment>
+	</rdf:Property>
+
+	<rdf:Property rdf:about="PP2i_provides">
+		<rdfs:label xml:lang="en">provides</rdfs:label>
+		<rdfs:domain rdf:resource="http://www.cidoc-crm.org/cidoc-crm/E39_Actor"/>
+		<rdfs:range rdf:resource="PE1_Service"/>
+		<rdfs:subPropertyOf rdf:resource="http://www.cidoc-crm.org/cidoc-crm/P14i_performed"/>
+	</rdf:Property>
+
+	<rdf:Property rdf:about="PP4_hosts_object">
+		<rdfs:label xml:lang="en">hosts object</rdfs:label>
+		<rdfs:domain rdf:resource="PE2_Hosting_Service"/>
+		<rdfs:range rdf:resource="http://www.cidoc-crm.org/cidoc-crm/E70_Thing"/>
+		<rdfs:subPropertyOf rdf:resource="http://www.cidoc-crm.org/cidoc-crm/P16_used_specific_object"/>
+		<rdfs:comment xml:lang="en">Indicates the generic relation of provision of some hosting service of an object of any kind.</rdfs:comment>
+	</rdf:Property>
+
+	<rdf:Property rdf:about="PP4i_is_object_hosted_by">
+		<rdfs:label xml:lang="en">is object hosted by</rdfs:label>
+		<rdfs:domain rdf:resource="http://www.cidoc-crm.org/cidoc-crm/E70_Thing"/>
+		<rdfs:range rdf:resource="PE2_Hosting_Service"/>
+		<rdfs:subPropertyOf rdf:resource="http://www.cidoc-crm.org/cidoc-crm/P16i_was_used_for"/>
+	</rdf:Property>
+
+	<rdf:Property rdf:about="PP6_hosts_digital_object">
+		<rdfs:label xml:lang="en">hosts digital object</rdfs:label>
+		<rdfs:domain rdf:resource="PE5_Digital_Hosting_Service"/>
+		<rdfs:range rdf:resource="http://www.ics.forth.gr/isl/CRMdig/D1_Digital_Object"/>
+		<rdfs:subPropertyOf rdf:resource="PP4_hosts_object"/>
+		<rdfs:comment xml:lang="en">Indicates the relation of provision of a hosting service of a digital object of any kind.</rdfs:comment>
+	</rdf:Property>
+
+	<rdf:Property rdf:about="PP6i_is_digital_object_hosted_by">
+		<rdfs:label xml:lang="en">is digital object hosted by</rdfs:label>
+		<rdfs:domain rdf:resource="http://www.ics.forth.gr/isl/CRMdig/D1_Digital_Object"/>
+		<rdfs:range rdf:resource="PE5_Digital_Hosting_Service"/>
+		<rdfs:subPropertyOf rdf:resource="PP4i_is_object_hosted_by"/>
+	</rdf:Property>
+
+	<rdf:Property rdf:about="PP7_hosts_software_object">
+		<rdfs:label xml:lang="en">hosts software object</rdfs:label>
+		<rdfs:domain rdf:resource="PE6_Software_Hosting_Service"/>
+		<rdfs:range rdf:resource="http://www.ics.forth.gr/isl/CRMdig/D14_Software"/>
+		<rdfs:subPropertyOf rdf:resource="PP6_hosts_digital_object"/>
+		<rdfs:comment xml:lang="en">Indicates the relation of provision of some hosting service of a software object.</rdfs:comment>
+	</rdf:Property>
+
+	<rdf:Property rdf:about="PP7i_is_software_object_hosted_by">
+		<rdfs:label xml:lang="en">is software object hosted by</rdfs:label>
+		<rdfs:domain rdf:resource="http://www.ics.forth.gr/isl/CRMdig/D14_Software"/>
+		<rdfs:range rdf:resource="PE6_Software_Hosting_Service"/>
+		<rdfs:subPropertyOf rdf:resource="PP6i_is_digital_object_hosted_by"/>
+	</rdf:Property>
+
+	<rdf:Property rdf:about="PP8_hosts_dataset">
+		<rdfs:label xml:lang="en">hosts dataset</rdfs:label>
+		<rdfs:domain rdf:resource="PE7_Data_Hosting_Service"/>
+		<rdfs:range rdf:resource="PE18_Dataset"/>
+		<rdfs:subPropertyOf rdf:resource="PP6_hosts_digital_object"/>
+		<rdfs:comment xml:lang="en">Indicates the relation of provision of some hosting service of a dataset object.</rdfs:comment>
+	</rdf:Property>
+
+	<rdf:Property rdf:about="PP8i_is_dataset_hosted_by">
+		<rdfs:label xml:lang="en">is dataset hosted by</rdfs:label>
+		<rdfs:domain rdf:resource="PE18_Dataset"/>
+		<rdfs:range rdf:resource="PE7_Data_Hosting_Service"/>
+		<rdfs:subPropertyOf rdf:resource="PP6i_is_digital_object_hosted_by"/>
+	</rdf:Property>
+
+	<rdf:Property rdf:about="PP11_curates_volatile_digital_object">
+		<rdfs:label xml:lang="en">curates volatile digital object</rdfs:label>
+		<rdfs:domain rdf:resource="PE10_Digital_Curating_Service"/>
+		<rdfs:range rdf:resource="PE20_Volatile_Digital_Object"/>
+		<rdfs:subPropertyOf rdf:resource="PP32_curates"/>
+		<rdfs:comment xml:lang="en">This property associates an instance of digital curating service with the digital object of which it is the curation activity.</rdfs:comment>
+	</rdf:Property>
+
+	<rdf:Property rdf:about="PP11i_is_volatile_digital_object_curated_by">
+		<rdfs:label xml:lang="en">is volatile digital object curated by</rdfs:label>
+		<rdfs:domain rdf:resource="PE20_Volatile_Digital_Object"/>
+		<rdfs:range rdf:resource="PE10_Digital_Curating_Service"/>
+		<rdfs:subPropertyOf rdf:resource="PP32i_is_curated_by"/>
+	</rdf:Property>
+
+	<rdf:Property rdf:about="PP12_curates_volatile_software">
+		<rdfs:label xml:lang="en">curates volatile software</rdfs:label>
+		<rdfs:domain rdf:resource="PE11_Software_Curating_Service"/>
+		<rdfs:range rdf:resource="PE23_Volatile_Software"/>
+		<rdfs:subPropertyOf rdf:resource="PP11_curates_volatile_digital_object"/>
+		<rdfs:comment xml:lang="en">This property associates an instance of software curating service with the software of which it is the curation activity.</rdfs:comment>
+	</rdf:Property>
+
+	<rdf:Property rdf:about="PP12i_is_volatile_software_curated_by">
+		<rdfs:label xml:lang="en">is volatile software curated by</rdfs:label>
+		<rdfs:domain rdf:resource="PE23_Volatile_Software"/>
+		<rdfs:range rdf:resource="PE11_Software_Curating_Service"/>
+		<rdfs:subPropertyOf rdf:resource="PP11i_is_volatile_digital_object_curated_by"/>
+	</rdf:Property>
+
+	<rdf:Property rdf:about="PP13_curates_volatile_dataset">
+		<rdfs:label xml:lang="en">curates volatile dataset</rdfs:label>
+		<rdfs:domain rdf:resource="PE12_Data_Curating_Service"/>
+		<rdfs:range rdf:resource="PE24_Volatile_Dataset"/>
+		<rdfs:subPropertyOf rdf:resource="PP11_curates_volatile_digital_object"/>
+		<rdfs:comment xml:lang="en">This property associates an instance of data curating service with the volatile dataset of which it is the curation activity.</rdfs:comment>
+	</rdf:Property>
+
+	<rdf:Property rdf:about="PP13i_is_volatile_dataset_curated_by">
+		<rdfs:label xml:lang="en">is volatile dataset curated by</rdfs:label>
+		<rdfs:domain rdf:resource="PE24_Volatile_Dataset"/>
+		<rdfs:range rdf:resource="PE12_Data_Curating_Service"/>
+		<rdfs:subPropertyOf rdf:resource="PP11i_is_volatile_digital_object_curated_by"/>
+	</rdf:Property>
+
+	<rdf:Property rdf:about="PP14_runs_on_request">
+		<rdfs:label xml:lang="en">runs on request</rdfs:label>
+		<rdfs:domain rdf:resource="PE13_Software_Computing_E-Service"/>
+		<rdfs:range rdf:resource="http://www.ics.forth.gr/isl/CRMdig/D14_Software"/>
+		<rdfs:subPropertyOf rdf:resource="http://www.cidoc-crm.org/cidoc-crm/P16_used_specific_object"/>
+		<rdfs:comment xml:lang="en">This property associates an instance of software computing e-service with the software that it runs when requested.</rdfs:comment>
+	</rdf:Property>
+
+	<rdf:Property rdf:about="PP14i_is_run_by">
+		<rdfs:label xml:lang="en">is run by</rdfs:label>
+		<rdfs:domain rdf:resource="http://www.ics.forth.gr/isl/CRMdig/D14_Software"/>
+		<rdfs:range rdf:resource="PE13_Software_Computing_E-Service"/>
+		<rdfs:subPropertyOf rdf:resource="http://www.cidoc-crm.org/cidoc-crm/P16i_was_used_for"/>
+	</rdf:Property>
+
+	<rdf:Property rdf:about="PP15_delivers_on_request">
+		<rdfs:label xml:lang="en">delivers on request</rdfs:label>
+		<rdfs:domain rdf:resource="PE14_Software_Delivery_E-Service"/>
+		<rdfs:range rdf:resource="http://www.ics.forth.gr/isl/CRMdig/D14_Software"/>
+		<rdfs:subPropertyOf rdf:resource="http://www.cidoc-crm.org/cidoc-crm/P16_used_specific_object"/>
+		<rdfs:comment xml:lang="en">This property associates an instance of software delivery e-service with the software that it delivers when requested.</rdfs:comment>
+	</rdf:Property>
+
+	<rdf:Property rdf:about="PP15i_is_delivered_by">
+		<rdfs:label xml:lang="en">is delivered by</rdfs:label>
+		<rdfs:domain rdf:resource="http://www.ics.forth.gr/isl/CRMdig/D14_Software"/>
+		<rdfs:range rdf:resource="PE14_Software_Delivery_E-Service"/>
+		<rdfs:subPropertyOf rdf:resource="http://www.cidoc-crm.org/cidoc-crm/P16i_was_used_for"/>
+	</rdf:Property>
+
+	<rdf:Property rdf:about="PP16_has_persistent_digital_object_part">
+		<rdfs:label xml:lang="en">has persistent digital object part</rdfs:label>
+		<rdfs:domain rdf:resource="PE19_Persistent_Digital_Object"/>
+		<rdfs:range rdf:resource="PE19_Persistent_Digital_Object"/>
+		<rdfs:subPropertyOf rdf:resource="http://www.cidoc-crm.org/cidoc-crm/P106_is_composed_of"/>
+		<rdfs:comment xml:lang="en">This property associates an instance of PE19 Persistent Digital Object with a structural part of that instance which is, in turn, also an instance of PE19 Persistent Digital Object. An instance of PE19 Persistent Digital Object can only have parts which are themselves also instances of PE19. This is in juxtaposition to PE20 Volatile Digital Object which may have parts which are themselves either instances of PE20 Volatile Digital Object or PE19 Persistent Digital Object.</rdfs:comment>
+	</rdf:Property>
+
+	<rdf:Property rdf:about="PP16i_is_persistent_digital_object_part_of">
+		<rdfs:label xml:lang="en">is persistent digital object part of</rdfs:label>
+		<rdfs:domain rdf:resource="PE19_Persistent_Digital_Object"/>
+		<rdfs:range rdf:resource="PE19_Persistent_Digital_Object"/>
+		<rdfs:subPropertyOf rdf:resource="http://www.cidoc-crm.org/cidoc-crm/P106i_forms_part_of"/>
+	</rdf:Property>
+
+	<rdf:Property rdf:about="PP17_has_snapshot">
+		<rdfs:label xml:lang="en">has snapshot</rdfs:label>
+		<rdfs:domain rdf:resource="PE20_Volatile_Digital_Object"/>
+		<rdfs:range rdf:resource="PE19_Persistent_Digital_Object"/>
+		<rdfs:subPropertyOf rdf:resource="http://www.cidoc-crm.org/cidoc-crm/P130_shows_features_of"/>
+		<rdfs:comment xml:lang="en">This property associates an instance of PE20 Volatile Digital Object with an instance of PE19 Persistent Digital Object which at any one point stands as an official version of the overall data stream.</rdfs:comment>
+	</rdf:Property>
+
+	<rdf:Property rdf:about="PP17i_is_snapshot_of">
+		<rdfs:label xml:lang="en">is snapshot of</rdfs:label>
+		<rdfs:domain rdf:resource="PE19_Persistent_Digital_Object"/>
+		<rdfs:range rdf:resource="PE20_Volatile_Digital_Object"/>
+		<rdfs:subPropertyOf rdf:resource="http://www.cidoc-crm.org/cidoc-crm/P130i_features_are_also_found_on"/>
+	</rdf:Property>
+
+	<rdf:Property rdf:about="PP18_has_digital_object_part">
+		<rdfs:label xml:lang="en">has digital object part</rdfs:label>
+		<rdfs:domain rdf:resource="PE20_Volatile_Digital_Object"/>
+		<rdfs:range rdf:resource="http://www.ics.forth.gr/isl/CRMdig/D1_Digital_Object"/>
+		<rdfs:subPropertyOf rdf:resource="http://www.cidoc-crm.org/cidoc-crm/P106_is_composed_of"/>
+		<rdfs:comment xml:lang="en">This property associates an instance of PE20 Volatile Digital Object with a structural part of that instance. This structural part may be another instance of D1 Digital Object, be it also a PE20 Volatile Digital Object or in fact be an instance of PE19 Persistent Digital Object.</rdfs:comment>
+	</rdf:Property>
+
+	<rdf:Property rdf:about="PP18i_is_digital_object_part_of">
+		<rdfs:label xml:lang="en">is digital object part of</rdfs:label>
+		<rdfs:domain rdf:resource="http://www.ics.forth.gr/isl/CRMdig/D1_Digital_Object"/>
+		<rdfs:range rdf:resource="PE20_Volatile_Digital_Object"/>
+		<rdfs:subPropertyOf rdf:resource="http://www.cidoc-crm.org/cidoc-crm/P106i_forms_part_of"/>
+	</rdf:Property>
+
+	<rdf:Property rdf:about="PP19_has_persistent_software_part">
+		<rdfs:label xml:lang="en">has persistent software part</rdfs:label>
+		<rdfs:domain rdf:resource="PE21_Persistent_Software"/>
+		<rdfs:range rdf:resource="PE21_Persistent_Software"/>
+		<rdfs:subPropertyOf rdf:resource="PP16_has_persistent_digital_object_part"/>
+		<rdfs:comment xml:lang="en">This property associates an instance of PE21 Persistent Software with a structural part of that instance which is, in turn, also an instance of PE21 Persistent Software.</rdfs:comment>
+	</rdf:Property>
+
+	<rdf:Property rdf:about="PP19i_is_persistent_software_part_of">
+		<rdfs:label xml:lang="en">is persistent software part of</rdfs:label>
+		<rdfs:domain rdf:resource="PE21_Persistent_Software"/>
+		<rdfs:range rdf:resource="PE21_Persistent_Software"/>
+		<rdfs:subPropertyOf rdf:resource="PP16i_is_persistent_digital_object_part_of"/>
+	</rdf:Property>
+
+	<rdf:Property rdf:about="PP20_has_persistent_dataset_part">
+		<rdfs:label xml:lang="en">has persistent dataset part</rdfs:label>
+		<rdfs:domain rdf:resource="PE22_Persistent_Dataset"/>
+		<rdfs:range rdf:resource="PE22_Persistent_Dataset"/>
+		<rdfs:subPropertyOf rdf:resource="PP16_has_persistent_digital_object_part"/>
+		<rdfs:comment xml:lang="en">This property associates an instance of PE22 Persistent Dataset with a structural part of that instance which is, in turn, also an instance of PE22 Persistent Dataset.</rdfs:comment>
+	</rdf:Property>
+
+	<rdf:Property rdf:about="PP20i_is_persistent_dataset_part_of">
+		<rdfs:label xml:lang="en">is persistent dataset part of</rdfs:label>
+		<rdfs:domain rdf:resource="PE22_Persistent_Dataset"/>
+		<rdfs:range rdf:resource="PE22_Persistent_Dataset"/>
+		<rdfs:subPropertyOf rdf:resource="PP16i_is_persistent_digital_object_part_of"/>
+	</rdf:Property>
+
+	<rdf:Property rdf:about="PP21_has_software_part">
+		<rdfs:label xml:lang="en">has software part</rdfs:label>
+		<rdfs:domain rdf:resource="PE23_Volatile_Software"/>
+		<rdfs:range rdf:resource="http://www.ics.forth.gr/isl/CRMdig/D14_Software"/>
+		<rdfs:subPropertyOf rdf:resource="PP18_has_digital_object_part"/>
+		<rdfs:comment xml:lang="en">This property associates an instance of PE23 Volatile Software with a structural part of that instance. This structural part will be an instance of D14 Software and can be either of its subclasses, PE21 Persistent Software or PE23 Volatile Software.</rdfs:comment>
+	</rdf:Property>
+
+	<rdf:Property rdf:about="PP21i_is_software_part_of">
+		<rdfs:label xml:lang="en">is software part of</rdfs:label>
+		<rdfs:domain rdf:resource="http://www.ics.forth.gr/isl/CRMdig/D14_Software"/>
+		<rdfs:range rdf:resource="PE23_Volatile_Software"/>
+		<rdfs:subPropertyOf rdf:resource="PP18i_is_digital_object_part_of"/>
+	</rdf:Property>
+
+	<rdf:Property rdf:about="PP22_has_release">
+		<rdfs:label xml:lang="en">has release</rdfs:label>
+		<rdfs:domain rdf:resource="PE23_Volatile_Software"/>
+		<rdfs:range rdf:resource="PE21_Persistent_Software"/>
+		<rdfs:subPropertyOf rdf:resource="PP17_has_snapshot"/>
+		<rdfs:comment xml:lang="en">This property associates an instance of PE23 Volatile Software with an instance of PE21 Persistent Software which at any one point stands as an official version of that software development stream.</rdfs:comment>
+	</rdf:Property>
+
+	<rdf:Property rdf:about="PP22i_is_release_of">
+		<rdfs:label xml:lang="en">is release of</rdfs:label>
+		<rdfs:domain rdf:resource="PE21_Persistent_Software"/>
+		<rdfs:range rdf:resource="PE23_Volatile_Software"/>
+		<rdfs:subPropertyOf rdf:resource="PP17i_is_snapshot_of"/>
+	</rdf:Property>
+
+	<rdf:Property rdf:about="PP23_has_dataset_part">
+		<rdfs:label xml:lang="en">has dataset part</rdfs:label>
+		<rdfs:domain rdf:resource="PE24_Volatile_Dataset"/>
+		<rdfs:range rdf:resource="PE18_Dataset"/>
+		<rdfs:subPropertyOf rdf:resource="PP18_has_digital_object_part"/>
+		<rdfs:comment xml:lang="en">This property associates an instance of PE24 Volatile Dataset with a structural part of that instance. This structural part will be an instance of PE18 Dataset and can be either of its subclasses, PE22 Persistent Dataset or PE24 Volatile Dataset.</rdfs:comment>
+	</rdf:Property>
+
+	<rdf:Property rdf:about="PP23i_is_dataset_part_of">
+		<rdfs:label xml:lang="en">is dataset part of</rdfs:label>
+		<rdfs:domain rdf:resource="PE18_Dataset"/>
+		<rdfs:range rdf:resource="PE24_Volatile_Dataset"/>
+		<rdfs:subPropertyOf rdf:resource="PP18i_is_digital_object_part_of"/>
+	</rdf:Property>
+
+	<rdf:Property rdf:about="PP24_has_dataset_snapshot">
+		<rdfs:label xml:lang="en">has dataset snapshot</rdfs:label>
+		<rdfs:domain rdf:resource="PE24_Volatile_Dataset"/>
+		<rdfs:range rdf:resource="PE22_Persistent_Dataset"/>
+		<rdfs:subPropertyOf rdf:resource="PP17_has_snapshot"/>
+		<rdfs:comment xml:lang="en">This property associates an instance of PE24 Volatile Dataset with an instance of PE22 Persistent Dataset which at any one point stands as an official version of that dataset.</rdfs:comment>
+	</rdf:Property>
+
+	<rdf:Property rdf:about="PP24i_is_dataset_snapshot_of">
+		<rdfs:label xml:lang="en">is dataset snapshot of</rdfs:label>
+		<rdfs:domain rdf:resource="PE22_Persistent_Dataset"/>
+		<rdfs:range rdf:resource="PE24_Volatile_Dataset"/>
+		<rdfs:subPropertyOf rdf:resource="PP17i_is_snapshot_of"/>
+	</rdf:Property>
+
+	<rdf:Property rdf:about="PP25_has_maintaining_RI">
+		<rdfs:label xml:lang="en">has maintaining RI</rdfs:label>
+		<rdfs:domain rdf:resource="PE26_RI_Project"/>
+		<rdfs:range rdf:resource="PE25_RI_Consortium"/>
+		<rdfs:subPropertyOf rdf:resource="PP44_has_maintaining_team"/>
+		<rdfs:comment xml:lang="en">This property indicates the relation that exists between an instance of PE25 RI Consortium and some instance of PE26 RI Project, where the instance of PE25 is the responsible group of actors who maintain and support the instance of PE26.</rdfs:comment>
+	</rdf:Property>
+
+	<rdf:Property rdf:about="PP25i_is_maintaining_RI_of">
+		<rdfs:label xml:lang="en">is maintaining RI of</rdfs:label>
+		<rdfs:domain rdf:resource="PE25_RI_Consortium"/>
+		<rdfs:range rdf:resource="PE26_RI_Project"/>
+		<rdfs:subPropertyOf rdf:resource="PP44i_is_maintaining_team_of"/>
+	</rdf:Property>
+
+	<rdf:Property rdf:about="PP28_has_designated_access_point">
+		<rdfs:label xml:lang="en">has designated access point</rdfs:label>
+		<rdfs:domain rdf:resource="PE8_E-Service"/>
+		<rdfs:range rdf:resource="PE29_Access_Point"/>
+		<rdfs:subPropertyOf rdf:resource="http://www.cidoc-crm.org/cidoc-crm/P1_is_identified_by"/>
+		<rdfs:comment xml:lang="en">Links an instance of a PE8 E-Service to the web address at which the e-service can be accessed.</rdfs:comment>
+	</rdf:Property>
+
+	<rdf:Property rdf:about="PP28i_is_designated_access_point_of">
+		<rdfs:label xml:lang="en">is designated access point of</rdfs:label>
+		<rdfs:domain rdf:resource="PE29_Access_Point"/>
+		<rdfs:range rdf:resource="PE8_E-Service"/>
+		<rdfs:subPropertyOf rdf:resource="http://www.cidoc-crm.org/cidoc-crm/P1i_identifies"/>
+	</rdf:Property>
+
+	<rdf:Property rdf:about="PP29_uses_access_protocol">
+		<rdfs:label xml:lang="en">uses access protocol</rdfs:label>
+		<rdfs:domain rdf:resource="PE8_E-Service"/>
+		<rdfs:range rdf:resource="http://www.ics.forth.gr/isl/CRMdig/D14_Software"/>
+		<rdfs:subPropertyOf rdf:resource="http://www.cidoc-crm.org/cidoc-crm/P16_used_specific_object"/>
+		<rdfs:comment xml:lang="en">Links an instance of PE8 E-Service with the instance of D14 Software which encodes the access protocol by which the e-service is to be accessed.</rdfs:comment>
+	</rdf:Property>
+
+	<rdf:Property rdf:about="PP29i_is_access_protocol_used_by">
+		<rdfs:label xml:lang="en">is access protocol used by</rdfs:label>
+		<rdfs:domain rdf:resource="http://www.ics.forth.gr/isl/CRMdig/D14_Software"/>
+		<rdfs:range rdf:resource="PE8_E-Service"/>
+		<rdfs:subPropertyOf rdf:resource="http://www.cidoc-crm.org/cidoc-crm/P16i_was_used_for"/>
+	</rdf:Property>
+
+	<rdf:Property rdf:about="PP31_uses_curation_plan">
+		<rdfs:label xml:lang="en">uses curation plan</rdfs:label>
+		<rdfs:domain rdf:resource="PE3_Curating_Service"/>
+		<rdfs:range rdf:resource="PE28_Curation_Plan"/>
+		<rdfs:subPropertyOf rdf:resource="http://www.cidoc-crm.org/cidoc-crm/P33_used_specific_technique"/>
+		<rdfs:comment xml:lang="en">Links an instance of PE3 Curation Service with the plan that organizes this activity.</rdfs:comment>
+	</rdf:Property>
+
+	<rdf:Property rdf:about="PP31i_is_curation_plan_used_by">
+		<rdfs:label xml:lang="en">is curation plan used by</rdfs:label>
+		<rdfs:domain rdf:resource="PE28_Curation_Plan"/>
+		<rdfs:range rdf:resource="PE3_Curating_Service"/>
+		<rdfs:subPropertyOf rdf:resource="http://www.cidoc-crm.org/cidoc-crm/P33i_was_used_by"/>
+	</rdf:Property>
+
+	<rdf:Property rdf:about="PP32_curates">
+		<rdfs:label xml:lang="en">curates</rdfs:label>
+		<rdfs:domain rdf:resource="PE3_Curating_Service"/>
+		<rdfs:range rdf:resource="PE32_Curated_Thing"/>
+		<rdfs:comment xml:lang="en">Links an instance of PE3 Curation Service with the object or objects for which it provides curation services.</rdfs:comment>
+	</rdf:Property>
+
+	<rdf:Property rdf:about="PP32i_is_curated_by">
+		<rdfs:label xml:lang="en">is curated by</rdfs:label>
+		<rdfs:domain rdf:resource="PE32_Curated_Thing"/>
+		<rdfs:range rdf:resource="PE3_Curating_Service"/>
+	</rdf:Property>
+
+	<!-- the next two declarations affect the CIDOC CRM P147 curated (was curated by) 
+which is declared as subproperty of PP32 curates (is curated by) -->
+	<rdf:Property rdf:about="http://www.cidoc-crm.org/cidoc-crm/P147_curated">
+		<rdfs:subPropertyOf rdf:resource="PP32_curates"/>
+	</rdf:Property>
+
+	<rdf:Property rdf:about="http://www.cidoc-crm.org/cidoc-crm/P147i_was_curated_by">
+		<rdfs:subPropertyOf rdf:resource="PP32i_is_curated_by"/>
+	</rdf:Property>
+
+	<rdf:Property rdf:about="PP39_is_metadata_for">
+		<rdfs:label xml:lang="en">is metadata for</rdfs:label>
+		<rdfs:domain rdf:resource="PE22_Persistent_Dataset"/>
+		<rdfs:range rdf:resource="http://www.ics.forth.gr/isl/CRMdig/D1_Digital_Object"/>
+		<rdfs:subPropertyOf rdf:resource="http://www.cidoc-crm.org/cidoc-crm/P129_is_about"/>
+		<rdfs:comment xml:lang="en">Relates an instance of PE22 Persistent Dataset to some other instance of D1 Digital Object for which it plays the role of metadata. This relation establishes that the function of the information contained in the domain instance of PE22 is to describe the information contained in the range instance of D1.</rdfs:comment>
+	</rdf:Property>
+
+	<rdf:Property rdf:about="PP39i_has_metadata">
+		<rdfs:label xml:lang="en">has metadata</rdfs:label>
+		<rdfs:domain rdf:resource="http://www.ics.forth.gr/isl/CRMdig/D1_Digital_Object"/>
+		<rdfs:range rdf:resource="PE22_Persistent_Dataset"/>
+		<rdfs:subPropertyOf rdf:resource="http://www.cidoc-crm.org/cidoc-crm/P129i_is_subject_of"/>
+	</rdf:Property>
+
+	<rdf:Property rdf:about="PP40_created_successor_of">
+		<rdfs:label xml:lang="en">created successor of</rdfs:label>
+		<rdfs:domain rdf:resource="http://www.cidoc-crm.org/cidoc-crm/E65_Creation"/>
+		<rdfs:range rdf:resource="PE22_Persistent_Dataset"/>
+		<rdfs:subPropertyOf rdf:resource="http://www.cidoc-crm.org/cidoc-crm/P94_has_created"/>
+		<rdfs:comment xml:lang="en">Relates an instance of E65 Creation to an instance of PE22 Persistent Dataset that is acting as a metadata set. The latter PE22 Persistent Dataset is referred to in the act of creation, specifically as the object of some correction. It is thus deprecated in the act of creation of some new instance of PE22 Persistent Dataset. The new instance can be considered the successor of this deprecated dataset. The most recent successor, all things being equal, represents the present state of knowledge.</rdfs:comment>
+	</rdf:Property>
+
+	<rdf:Property rdf:about="PP40i_is_deprecated_by">
+		<rdfs:label xml:lang="en">is deprecated by</rdfs:label>
+		<rdfs:domain rdf:resource="PE22_Persistent_Dataset"/>
+		<rdfs:range rdf:resource="http://www.cidoc-crm.org/cidoc-crm/E65_Creation"/>
+		<rdfs:subPropertyOf rdf:resource="http://www.cidoc-crm.org/cidoc-crm/P94i_was_created_by"/>
+	</rdf:Property>
+
+	<!-- Note: PP41 range URI corrected (removed spurious double 'h' from original) -->
+	<rdf:Property rdf:about="PP41_is_index_of">
+		<rdfs:label xml:lang="en">is index of</rdfs:label>
+		<rdfs:domain rdf:resource="PE24_Volatile_Dataset"/>
+		<rdfs:range rdf:resource="http://www.ics.forth.gr/isl/CRMdig/D1_Digital_Object"/>
+		<rdfs:comment xml:lang="en">Relates an instance of PE24 Volatile Dataset to an instance of D1 Digital Object in the capacity of being an index for the latter.</rdfs:comment>
+	</rdf:Property>
+
+	<rdf:Property rdf:about="PP41i_is_indexed_by">
+		<rdfs:label xml:lang="en">is indexed by</rdfs:label>
+		<rdfs:domain rdf:resource="http://www.ics.forth.gr/isl/CRMdig/D1_Digital_Object"/>
+		<rdfs:range rdf:resource="PE24_Volatile_Dataset"/>
+	</rdf:Property>
+
+	<rdf:Property rdf:about="PP42_has_declarative_time">
+		<rdfs:label xml:lang="en">has declarative time</rdfs:label>
+		<rdfs:domain rdf:resource="PE1_Service"/>
+		<rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#date"/>
+		<rdfs:comment xml:lang="en">Relates an instance of PE1 Service to a time span during which the service provider declares the service is, will be, or has been in effect.</rdfs:comment>
+	</rdf:Property>
+
+	<rdf:Property rdf:about="PP43_supported_project_activity">
+		<rdfs:label xml:lang="en">supports project activity</rdfs:label>
+		<rdfs:domain rdf:resource="PE35_Project"/>
+		<rdfs:range rdf:resource="http://www.cidoc-crm.org/cidoc-crm/E7_Activity"/>
+		<rdfs:subPropertyOf rdf:resource="http://www.cidoc-crm.org/cidoc-crm/P9_consists_of"/>
+		<rdfs:comment xml:lang="en">Relates an instance of PE35 Project to an instance of E7 Activity which it supports as part of its overall program.</rdfs:comment>
+	</rdf:Property>
+
+	<rdf:Property rdf:about="PP43i_is_project_activity_supported_by">
+		<rdfs:label xml:lang="en">is project activity supported by</rdfs:label>
+		<rdfs:domain rdf:resource="http://www.cidoc-crm.org/cidoc-crm/E7_Activity"/>
+		<rdfs:range rdf:resource="PE35_Project"/>
+		<rdfs:subPropertyOf rdf:resource="http://www.cidoc-crm.org/cidoc-crm/P9i_forms_part_of"/>
+	</rdf:Property>
+
+	<rdf:Property rdf:about="PP44_has_maintaining_team">
+		<rdfs:label xml:lang="en">has maintaining team</rdfs:label>
+		<rdfs:domain rdf:resource="PE35_Project"/>
+		<rdfs:range rdf:resource="PE34_Team"/>
+		<rdfs:subPropertyOf rdf:resource="http://www.cidoc-crm.org/cidoc-crm/P17_was_motivated_by"/>
+		<rdfs:comment xml:lang="en">Relates an instance of PE35 Project to an instance of PE34 Team which is the supporting agency that facilitates it.</rdfs:comment>
+	</rdf:Property>
+
+	<rdf:Property rdf:about="PP44i_is_maintaining_team_of">
+		<rdfs:label xml:lang="en">is maintaining team of</rdfs:label>
+		<rdfs:domain rdf:resource="PE34_Team"/>
+		<rdfs:range rdf:resource="PE35_Project"/>
+		<rdfs:subPropertyOf rdf:resource="http://www.cidoc-crm.org/cidoc-crm/P17i_motivated"/>
+	</rdf:Property>
+
+	<rdf:Property rdf:about="PP45_has_competency">
+		<rdfs:label xml:lang="en">has competency</rdfs:label>
+		<rdfs:domain rdf:resource="PE1_Service"/>
+		<rdfs:range rdf:resource="PE36_Competency_Type"/>
+		<rdfs:subPropertyOf rdf:resource="http://www.cidoc-crm.org/cidoc-crm/P21_had_general_purpose"/>
+		<rdfs:comment xml:lang="en">Relates an instance of PE1 Service to an instance of PE36 Competency Type which it is competent to perform.</rdfs:comment>
+	</rdf:Property>
+
+	<rdf:Property rdf:about="PP45i_is_competency_of">
+		<rdfs:label xml:lang="en">is competency of</rdfs:label>
+		<rdfs:domain rdf:resource="PE36_Competency_Type"/>
+		<rdfs:range rdf:resource="PE1_Service"/>
+		<rdfs:subPropertyOf rdf:resource="http://www.cidoc-crm.org/cidoc-crm/P21i_was_purpose_of"/>
+	</rdf:Property>
+
+	<rdf:Property rdf:about="PP46_brokers_access_to">
+		<rdfs:label xml:lang="en">brokers access to</rdfs:label>
+		<rdfs:domain rdf:resource="PE33_E-Access_Brokering_Service"/>
+		<rdfs:range rdf:resource="PE8_E-Service"/>
+		<rdfs:comment xml:lang="en">Relates an instance of PE33 E-Access Brokering Service to an instance of PE8 E-Service which is a service to which it brokers access.</rdfs:comment>
+	</rdf:Property>
+
+	<rdf:Property rdf:about="PP46i_has_access_brokered_by">
+		<rdfs:label xml:lang="en">has access brokered by</rdfs:label>
+		<rdfs:domain rdf:resource="PE8_E-Service"/>
+		<rdfs:range rdf:resource="PE33_E-Access_Brokering_Service"/>
+	</rdf:Property>
+
+	<rdf:Property rdf:about="PP47_has_protocol_type">
+		<rdfs:label xml:lang="en">has protocol type</rdfs:label>
+		<rdfs:domain rdf:resource="PE8_E-Service"/>
+		<rdfs:range rdf:resource="PE37_Protocol_Type"/>
+		<rdfs:subPropertyOf rdf:resource="http://www.cidoc-crm.org/cidoc-crm/P125_used_object_of_type"/>
+		<rdfs:comment xml:lang="en">Relates an instance of PE8 E-Service to instances of PE37 Protocol Type that classify the protocols used to access the service.</rdfs:comment>
+	</rdf:Property>
+
+	<rdf:Property rdf:about="PP47i_is_protocol_type_of">
+		<rdfs:label xml:lang="en">is protocol type of</rdfs:label>
+		<rdfs:domain rdf:resource="PE37_Protocol_Type"/>
+		<rdfs:range rdf:resource="PE8_E-Service"/>
+		<rdfs:subPropertyOf rdf:resource="http://www.cidoc-crm.org/cidoc-crm/P125i_was_type_of_object_used_in"/>
+	</rdf:Property>
+
+	<rdf:Property rdf:about="PP48_uses_protocol_parameter">
+		<rdfs:label xml:lang="en">uses protocol parameter</rdfs:label>
+		<rdfs:domain rdf:resource="PE8_E-Service"/>
+		<rdfs:range rdf:resource="PE38_Schema"/>
+		<rdfs:subPropertyOf rdf:resource="http://www.cidoc-crm.org/cidoc-crm/P16_used_specific_object"/>
+		<rdfs:comment xml:lang="en">Relates an instance of PE8 E-Service to instances of PE38 Schema that this service requires in order to run.</rdfs:comment>
+	</rdf:Property>
+
+	<rdf:Property rdf:about="PP48i_is_protocol_parameter_of">
+		<rdfs:label xml:lang="en">is protocol parameter of</rdfs:label>
+		<rdfs:domain rdf:resource="PE38_Schema"/>
+		<rdfs:range rdf:resource="PE8_E-Service"/>
+		<rdfs:subPropertyOf rdf:resource="http://www.cidoc-crm.org/cidoc-crm/P16i_was_used_for"/>
+	</rdf:Property>
+
+	<rdf:Property rdf:about="PP49_provides_access_point">
+		<rdfs:label xml:lang="en">provides access point</rdfs:label>
+		<rdfs:domain rdf:resource="PE8_E-Service"/>
+		<rdfs:range rdf:resource="PE29_Access_Point"/>
+		<rdfs:comment xml:lang="en">Relates an instance of PE8 E-Service to an instance of PE29 Access Point which the service provides for an instance of D1 Digital Object.</rdfs:comment>
+	</rdf:Property>
+
+	<rdf:Property rdf:about="PP49i_is_access_point_provided_by">
+		<rdfs:label xml:lang="en">is access point provided by</rdfs:label>
+		<rdfs:domain rdf:resource="PE29_Access_Point"/>
+		<rdfs:range rdf:resource="PE8_E-Service"/>
+	</rdf:Property>
+
+	<rdf:Property rdf:about="PP50_accessible_at">
+		<rdfs:label xml:lang="en">accessible at</rdfs:label>
+		<rdfs:domain rdf:resource="http://www.ics.forth.gr/isl/CRMdig/D1_Digital_Object"/>
+		<rdfs:range rdf:resource="PE29_Access_Point"/>
+		<rdfs:comment xml:lang="en">Relates an instance of D1 Digital Object to an instance of PE29 Access Point which has been provided to it by some PE8 E-Service.</rdfs:comment>
+	</rdf:Property>
+
+	<rdf:Property rdf:about="PP50i_provides_access_to">
+		<rdfs:label xml:lang="en">provides access to</rdfs:label>
+		<rdfs:domain rdf:resource="PE29_Access_Point"/>
+		<rdfs:range rdf:resource="http://www.ics.forth.gr/isl/CRMdig/D1_Digital_Object"/>
+	</rdf:Property>
+
+	<rdf:Property rdf:about="PP51_has_availability">
+		<rdfs:label xml:lang="en">has availability</rdfs:label>
+		<rdfs:domain rdf:resource="PE1_Service"/>
+		<rdfs:range rdf:resource="PE39_Availability_Type"/>
+		<rdfs:subPropertyOf rdf:resource="http://www.cidoc-crm.org/cidoc-crm/P2_has_type"/>
+		<rdfs:comment xml:lang="en">Relates an instance of PE1 Service to an instance of PE39 Availability Type.</rdfs:comment>
+	</rdf:Property>
+
+	<rdf:Property rdf:about="PP51i_is_availability_of">
+		<rdfs:label xml:lang="en">is availability of</rdfs:label>
+		<rdfs:domain rdf:resource="PE39_Availability_Type"/>
+		<rdfs:range rdf:resource="PE1_Service"/>
+		<rdfs:subPropertyOf rdf:resource="http://www.cidoc-crm.org/cidoc-crm/P2i_is_type_of"/>
+	</rdf:Property>
+
+	<rdf:Property rdf:about="PP52_is_programmed_with">
+		<rdfs:label xml:lang="en">is programmed with</rdfs:label>
+		<rdfs:domain rdf:resource="http://www.ics.forth.gr/isl/CRMdig/D14_Software"/>
+		<rdfs:range rdf:resource="PE40_Programming_Language"/>
+		<rdfs:comment xml:lang="en">Relates an instance of D14 Software to an instance of PE40 Programming Language with which it was programmed. This property is a shortcut for the fully developed path: D14 L11i -&gt; D7 -&gt; P32 -&gt; E55.</rdfs:comment>
+	</rdf:Property>
+
+	<rdf:Property rdf:about="PP52i_is_used_to_programme">
+		<rdfs:label xml:lang="en">is used to programme</rdfs:label>
+		<rdfs:domain rdf:resource="PE40_Programming_Language"/>
+		<rdfs:range rdf:resource="http://www.ics.forth.gr/isl/CRMdig/D14_Software"/>
+	</rdf:Property>
+
+	<rdf:Property rdf:about="PP53_had_awarder">
+		<rdfs:label xml:lang="en">had awarder</rdfs:label>
+		<rdfs:domain rdf:resource="PE41_Award_Activity"/>
+		<rdfs:range rdf:resource="http://www.cidoc-crm.org/cidoc-crm/E39_Actor"/>
+		<rdfs:subPropertyOf rdf:resource="http://www.cidoc-crm.org/cidoc-crm/P14_carried_out_by"/>
+		<rdfs:comment xml:lang="en">Links the instance of award activity to the agent responsible for bestowing the award.</rdfs:comment>
+	</rdf:Property>
+
+	<rdf:Property rdf:about="PP53i_was_awarder_of">
+		<rdfs:label xml:lang="en">was awarder of</rdfs:label>
+		<rdfs:domain rdf:resource="http://www.cidoc-crm.org/cidoc-crm/E39_Actor"/>
+		<rdfs:range rdf:resource="PE41_Award_Activity"/>
+		<rdfs:subPropertyOf rdf:resource="http://www.cidoc-crm.org/cidoc-crm/P14i_performed"/>
+	</rdf:Property>
+
+	<rdf:Property rdf:about="PP54_had_awardee">
+		<rdfs:label xml:lang="en">had awardee</rdfs:label>
+		<rdfs:domain rdf:resource="PE41_Award_Activity"/>
+		<rdfs:range rdf:resource="http://www.cidoc-crm.org/cidoc-crm/E39_Actor"/>
+		<rdfs:subPropertyOf rdf:resource="http://www.cidoc-crm.org/cidoc-crm/P14_carried_out_by"/>
+		<rdfs:comment xml:lang="en">Links the instance of award activity to the agent bestowed the award.</rdfs:comment>
+	</rdf:Property>
+
+	<rdf:Property rdf:about="PP54i_was_awardee_of">
+		<rdfs:label xml:lang="en">was awardee of</rdfs:label>
+		<rdfs:domain rdf:resource="http://www.cidoc-crm.org/cidoc-crm/E39_Actor"/>
+		<rdfs:range rdf:resource="PE41_Award_Activity"/>
+		<rdfs:subPropertyOf rdf:resource="http://www.cidoc-crm.org/cidoc-crm/P14i_performed"/>
+	</rdf:Property>
+
+	<rdf:Property rdf:about="PP55_awarded">
+		<rdfs:label xml:lang="en">awarded</rdfs:label>
+		<rdfs:domain rdf:resource="PE41_Award_Activity"/>
+		<rdfs:range rdf:resource="http://www.cidoc-crm.org/cidoc-crm/E70_Thing"/>
+		<rdfs:subPropertyOf rdf:resource="http://www.cidoc-crm.org/cidoc-crm/P16_used_specific_object"/>
+		<rdfs:comment xml:lang="en">Links the instance of award activity to the object, be it physical or conceptual, that was awarded.</rdfs:comment>
+	</rdf:Property>
+
+	<rdf:Property rdf:about="PP55i_was_thing_awarded_by">
+		<rdfs:label xml:lang="en">was thing awarded by</rdfs:label>
+		<rdfs:domain rdf:resource="http://www.cidoc-crm.org/cidoc-crm/E70_Thing"/>
+		<rdfs:range rdf:resource="PE41_Award_Activity"/>
+		<rdfs:subPropertyOf rdf:resource="http://www.cidoc-crm.org/cidoc-crm/P16i_was_used_for"/>
+	</rdf:Property>
+
+	<rdf:Property rdf:about="PP56_awarded_for">
+		<rdfs:label xml:lang="en">awarded for</rdfs:label>
+		<rdfs:domain rdf:resource="PE41_Award_Activity"/>
+		<rdfs:range rdf:resource="http://www.cidoc-crm.org/cidoc-crm/E1_CRM_Entity"/>
+		<rdfs:subPropertyOf rdf:resource="http://www.cidoc-crm.org/cidoc-crm/P17_was_motivated_by"/>
+		<rdfs:comment xml:lang="en">Links the instance of award activity to the entity that was the reason for the granting of the award.</rdfs:comment>
+	</rdf:Property>
+
+	<rdf:Property rdf:about="PP56i_was_award_of">
+		<rdfs:label xml:lang="en">was award of</rdfs:label>
+		<rdfs:domain rdf:resource="http://www.cidoc-crm.org/cidoc-crm/E1_CRM_Entity"/>
+		<rdfs:range rdf:resource="PE41_Award_Activity"/>
+		<rdfs:subPropertyOf rdf:resource="http://www.cidoc-crm.org/cidoc-crm/P17i_motivated"/>
+	</rdf:Property>
+
+	<rdf:Property rdf:about="PP57_provided_funding_amount">
+		<rdfs:label xml:lang="en">provided funding amount</rdfs:label>
+		<rdfs:domain rdf:resource="PE42_Funding_Activity"/>
+		<rdfs:range rdf:resource="http://www.cidoc-crm.org/cidoc-crm/E97_Monetary_Amount"/>
+		<rdfs:comment xml:lang="en">Links the instance of funding activity to the monetary amount awarded. This property is a shortcut of the more fully developed path from PE42 Funding Activity through PP55 awarded, E70 Thing, P43 has dimension, to E97 Monetary Amount.</rdfs:comment>
+	</rdf:Property>
+
+	<rdf:Property rdf:about="PP57i_was_funding_provided_by">
+		<rdfs:label xml:lang="en">was funding provided by</rdfs:label>
+		<rdfs:domain rdf:resource="http://www.cidoc-crm.org/cidoc-crm/E97_Monetary_Amount"/>
+		<rdfs:range rdf:resource="PE42_Funding_Activity"/>
+	</rdf:Property>
+
+	<rdf:Property rdf:about="PP58_is_encoded_with">
+		<rdfs:label xml:lang="en">is encoded with</rdfs:label>
+		<rdfs:domain rdf:resource="http://www.ics.forth.gr/isl/CRMdig/D1_Digital_Object"/>
+		<rdfs:range rdf:resource="PE43_Encoding_Type"/>
+		<rdfs:subPropertyOf rdf:resource="http://www.cidoc-crm.org/cidoc-crm/P2_has_type"/>
+		<rdfs:comment xml:lang="en">Links an instance of digital object to the type of encoding that was used in its production and can now be used in determining how to access it. This is a shortcut of the long path L11i -&gt; D7 -&gt; P33 -&gt; E29 -&gt; P2 -&gt; E55.</rdfs:comment>
+	</rdf:Property>
+
+	<rdf:Property rdf:about="PP58i_is_encoding_of">
+		<rdfs:label xml:lang="en">is encoding of</rdfs:label>
+		<rdfs:domain rdf:resource="PE43_Encoding_Type"/>
+		<rdfs:range rdf:resource="http://www.ics.forth.gr/isl/CRMdig/D1_Digital_Object"/>
+		<rdfs:subPropertyOf rdf:resource="http://www.cidoc-crm.org/cidoc-crm/P2i_is_type_of"/>
+	</rdf:Property>
+
+	<rdf:Property rdf:about="PP59_had_intended_audience">
+		<rdfs:label xml:lang="en">had intended audience</rdfs:label>
+		<rdfs:domain rdf:resource="http://www.cidoc-crm.org/cidoc-crm/E7_Activity"/>
+		<rdfs:range rdf:resource="PE44_Audience_Type"/>
+		<rdfs:subPropertyOf rdf:resource="http://www.cidoc-crm.org/cidoc-crm/P21_had_general_purpose"/>
+		<rdfs:comment xml:lang="en">Links an instance of E7 Activity to the audience type that it was intended to be directed at.</rdfs:comment>
+	</rdf:Property>
+
+	<rdf:Property rdf:about="PP59i_was_intended_audience_of">
+		<rdfs:label xml:lang="en">was intended audience of</rdfs:label>
+		<rdfs:domain rdf:resource="PE44_Audience_Type"/>
+		<rdfs:range rdf:resource="http://www.cidoc-crm.org/cidoc-crm/E7_Activity"/>
+		<rdfs:subPropertyOf rdf:resource="http://www.cidoc-crm.org/cidoc-crm/P21i_was_purpose_of"/>
+	</rdf:Property>
+
+	<rdf:Property rdf:about="PP60_had_intended_geographic_scope">
+		<rdfs:label xml:lang="en">had intended geographic scope</rdfs:label>
+		<rdfs:domain rdf:resource="http://www.cidoc-crm.org/cidoc-crm/E7_Activity"/>
+		<rdfs:range rdf:resource="http://www.cidoc-crm.org/cidoc-crm/E53_Place"/>
+		<rdfs:comment xml:lang="en">Links an instance of E7 Activity to the geographic range over which it was intended to have effect by the actor.</rdfs:comment>
+	</rdf:Property>
+
+	<rdf:Property rdf:about="PP60i_was_intended_geographic_scope_of">
+		<rdfs:label xml:lang="en">was intended geographic scope of</rdfs:label>
+		<rdfs:domain rdf:resource="http://www.cidoc-crm.org/cidoc-crm/E53_Place"/>
+		<rdfs:range rdf:resource="http://www.cidoc-crm.org/cidoc-crm/E7_Activity"/>
+	</rdf:Property>
+
+	<!-- Added by Pletka team, based on specification by George Bruseker -->
+	<rdf:Property rdf:about="PP61_used_service">
+		<rdfs:label xml:lang="en">used service</rdfs:label>
+		<rdfs:comment xml:lang="en">This property links an instance of service to another instance of service indicating that the first service makes use of the second service in the context of the execution and delivery of its own service.</rdfs:comment>
+		<rdfs:domain rdf:resource="PE1_Service"/>
+		<rdfs:range rdf:resource="PE1_Service"/>
+	</rdf:Property>
+
+	<rdf:Property rdf:about="PP61i_service_used_by">
+		<rdfs:label xml:lang="en">service used by</rdfs:label>
+		<rdfs:domain rdf:resource="PE1_Service"/>
+		<rdfs:range rdf:resource="PE1_Service"/>
+	</rdf:Property>
+
+</rdf:RDF>
