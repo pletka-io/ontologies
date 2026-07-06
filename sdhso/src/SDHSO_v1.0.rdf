@@ -1,0 +1,1204 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:skos="http://www.w3.org/2004/02/skos/core#" xmlns:owl="http://www.w3.org/2002/07/owl#" xmlns:xsd="http://www.w3.org/2001/XMLSchema#" xmlns:swrl="http://www.w3.org/2003/11/swrl#" xmlns:swrlb="http://www.w3.org/2003/11/swrlb#" xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#" xml:base="https://sdhss.org/ontology/social-life/1.0/">
+  <!--
+						This extension of the Semantic Data for Humanities and Social Sciences (SDHSS) ontology integrates the core concepts (understood as the high-level and conceptual classes and properties) for the social life of individuals and groups in human societies.  This namespace, therefore, extends the domain of the CIDOC CRM and the SDHSS ontology by adding concepts that are not only material but that bear reality within the mental representations of individuals and groups.  The core concepts are further developed in other, more specialised, extensions, such as in SDHSS Extension - Human and Social Life, Specific Aspects.
+						Exported from OntoME: SDHSS Social Life Core (v1.0)
+						Official URI : https://sdhss.org/ontology/social-life/1.0/
+						-->
+  <rdfs:Class rdf:about="https://sdhss.org/ontology/social-life/1.0/C1_Social_Perception_of_an_Actor">
+    <skos:notation rdf:datatype="http://www.w3.org/2001/XMLSchema#string">C1</skos:notation>
+    <rdfs:comment xml:lang="en" rdf:datatype="http://www.w3.org/2001/XMLSchema#string">The phenomenon situated in time and the social space of being perceived, i.e. classified by a group, the whole society or a portion of it, as having a social, professional or political quality in the generic sense of a social type — but not a specific, legally defined function.
+The present class is therefore disjoint with the sdh-so:C13 Social Role Embodiment class (a subclass of the sdh-so:C27 Legal Connotation class) as it models legal roles and functions of persons or groups.</rdfs:comment>
+    <rdfs:label xml:lang="en">Social Perception of an Actor</rdfs:label>
+    <rdfs:subClassOf rdf:resource="https://sdhss.org/ontology/core/1.0/C30"/>
+  </rdfs:Class>
+  <rdfs:Class rdf:about="https://sdhss.org/ontology/social-life/1.0/C2_Actors_Social_Quality">
+    <skos:notation rdf:datatype="http://www.w3.org/2001/XMLSchema#string">C2</skos:notation>
+    <rdfs:comment xml:lang="en" rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Professional, political, religious or whatever generic social quality of an actor, be it a person or a group, as it is perceived from the point of view of the representations of a human community. A social quality is a socially constructed concept (in the sense of the connotation of an entity with a crm:E55 Type) and it is used to socially classify individuals in the perspective of the community. 
+This class is not to be confused with the sdh-so:C12 Actor's Social Role class which models legally defined social roles and functions of actors and should be exclusively used for this kind of concepts. Social roles are formalisations of social qualities in relation to specific groups and custom or legal contexts.</rdfs:comment>
+    <rdfs:label xml:lang="en">Actor's Social Quality</rdfs:label>
+    <rdfs:subClassOf rdf:resource="https://sdhss.org/ontology/core/1.0/C6"/>
+  </rdfs:Class>
+  <rdfs:Class rdf:about="https://sdhss.org/ontology/social-life/1.0/C3_Social_Relationship">
+    <skos:notation rdf:datatype="http://www.w3.org/2001/XMLSchema#string">C3</skos:notation>
+    <rdfs:comment xml:lang="en" rdf:datatype="http://www.w3.org/2001/XMLSchema#string">This class comprises phenomenons of a social relation between people, groups or countries as it is perceived in the context of shared intention. In other words, this class does not model a physical interaction of actors in space and time (for persons this interaction is modelled with the C18 Persons' Interaction class) but the perception of a phenomenon like friendship, marriage, apprenticeship, etc. that happens in the minds and the social space.
+Each relationship generally involves only two instances of one or more classes. If more then two instances are involved (e.g. multilateral political relationships) the unity of time and social space must be given. If different persons or groups are socially interreladed at different times, or perceived as such in different social contexts, several instances of this class must be produced and provided with appropriate types.
+If the relationship is symmetrical, the sdh-so:P15 involves partner property has to be used in order to associate the partners of the relationship. If the relationship is asymmetrical, the different roles actors can have in the relationship would be described through the intentional Actor's Role in a Social Relationship (a sub-class of crm:E89 Propositional Object).
+Deprecated
+If the relationship is oriented from a source to a target (the partners having a different position in the relationship), the properties sdh-so:P17 has relationship source and sdh-so:P18 has relationship target will be used. This generic treatment allows to express a direction of the relationship. The meaning of the direction will be explicitly defined in the controlled vocabulary of relationship types.
+Given their different meanings, it is absolutely necessary to avoid mixing the two types of relationships: either use the sdh-so:P15 property or the sdh-so:P17 / sdh-so:P18 – they are disjoint.</rdfs:comment>
+    <rdfs:label xml:lang="en">Social Relationship</rdfs:label>
+    <rdfs:subClassOf rdf:resource="https://sdhss.org/ontology/core/1.0/C7"/>
+  </rdfs:Class>
+  <rdfs:Class rdf:about="https://sdhss.org/ontology/core/1.0/C4">
+    <skos:notation rdf:datatype="http://www.w3.org/2001/XMLSchema#string">C4</skos:notation>
+    <rdfs:comment xml:lang="en" rdf:datatype="http://www.w3.org/2001/XMLSchema#string">This class comprises qualities of the mind of a single person, or the minds of intentional collectives, and captures the presence in their mind of propositions about entities of any kind. It is comprehensive of all intentional phenomena, be they static, in the sense of states of mind, or dynamic, in the sense of changes of mind or opinions evolving in time, i.e. new propositions replacing the former ones about the same objects. It is an abstract, uninstantiated class, providing its subclasses and descendants with the fundamental intension and relevant properties.
+Intentionality is defined in philosophy as the power of minds to be directed at objects, i.e. entities, states of affairs, goals, or values (Stanford Encyclopedia of Philosophy). The intended entity is the object of the intention, its content is a proposition, or a fragment of it, or a complex set of propositions about this object. It is important to note that "intentionality" is not to be confused with "intention" as the purpose people have in mind when they act. The notion of intentionality applies primarily to the representations and individual or social connotations of things, not to the theory of human action.
+The sdh:C4 Intention class, as a descendant of the crm:E2 Temporal Entity class, models the fact that propositions about objects, and the objects they concern, are present to human minds or intentional entities, be these taken individually or collectively, during a given time span. The intention therefore appears to be a time-related quality of a mind or minds be this realized in a more stable way, as in intentional states, or engaged in an evolutionary, dynamic process, e.g. discussing a topic or changing one's mind, which we define as an intentional event.
+Given that they are intimately linked, the intended object is associated to the crm:E89 Propositional Object representing the content of the intention using the crm:P129 is about property and therefore no direct property associating the intention with the object is declared at this foundational level. This allows to identify the intentional content or representations present in the mind of different intentional entities, at different times, independently of the actual quality of each mind. 
+As a subclass of sdh:C1 Entity Quality, the Intention class inherits the properties expressing the influence of a crm:E5 Event on the quality. E. g. a physical event like a volcanic eruption can generate mental endorsement of the proposition that assesses the seriousness of the situation and invites to flee.</rdfs:comment>
+    <rdfs:label xml:lang="en">Intention</rdfs:label>
+  </rdfs:Class>
+  <rdfs:Class rdf:about="https://sdhss.org/ontology/social-life/1.0/C4_Social_Relationship_Type">
+    <skos:notation rdf:datatype="http://www.w3.org/2001/XMLSchema#string">C4</skos:notation>
+    <rdfs:comment xml:lang="en" rdf:datatype="http://www.w3.org/2001/XMLSchema#string">This class comprises concepts denoted by terms from thesauri and controlled vocabularies used to characterize and classify instances of the histC6 Relationship class.
+If the relationship is oriented from a source to a target (the partners having a different position in the relationship), the properties histP49 has relationship source and histP50 has relationship target will be used. This generic treatment allows to express a direction of the relationship. The meaning of the direction will be explicitly defined in the definition of the terms in the controlled vocabulary of social relationship types.</rdfs:comment>
+    <rdfs:label xml:lang="en">Social Relationship Type</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://www.cidoc-crm.org/cidoc-crm/E55_Type"/>
+  </rdfs:Class>
+  <rdfs:Class rdf:about="https://sdhss.org/ontology/social-life/1.0/C5_Membership">
+    <skos:notation rdf:datatype="http://www.w3.org/2001/XMLSchema#string">C5</skos:notation>
+    <rdfs:comment xml:lang="en" rdf:datatype="http://www.w3.org/2001/XMLSchema#string">This class models the fact that a person or an organization belongs to a group during a given time span</rdfs:comment>
+    <rdfs:label xml:lang="en">Membership</rdfs:label>
+    <rdfs:subClassOf rdf:resource="https://sdhss.org/ontology/core/1.0/C8"/>
+  </rdfs:Class>
+  <rdfs:Class rdf:about="https://sdhss.org/ontology/core/1.0/C5">
+    <skos:notation rdf:datatype="http://www.w3.org/2001/XMLSchema#string">C5</skos:notation>
+    <rdfs:comment xml:lang="en" rdf:datatype="http://www.w3.org/2001/XMLSchema#string">This class comprises concepts denoted by terms from thesauri and controlled vocabularies used to characterize and classify instances of F5 Item.</rdfs:comment>
+    <rdfs:label xml:lang="en">Item Type</rdfs:label>
+  </rdfs:Class>
+  <rdfs:Class rdf:about="https://sdhss.org/ontology/social-life/1.0/C6_Membership_Type">
+    <skos:notation rdf:datatype="http://www.w3.org/2001/XMLSchema#string">C6</skos:notation>
+    <rdfs:comment xml:lang="en" rdf:datatype="http://www.w3.org/2001/XMLSchema#string">This class comprises concepts denoted by terms from thesauri and controlled vocabularies used to characterize and classify instances of C5 Membership.</rdfs:comment>
+    <rdfs:label xml:lang="en">Membership Type</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://www.cidoc-crm.org/cidoc-crm/E55_Type"/>
+  </rdfs:Class>
+  <rdfs:Class rdf:about="https://sdhss.org/ontology/core/1.0/C6">
+    <skos:notation rdf:datatype="http://www.w3.org/2001/XMLSchema#string">C6</skos:notation>
+    <rdfs:comment xml:lang="en" rdf:datatype="http://www.w3.org/2001/XMLSchema#string">This class comprises concepts used to connotate, i.e. characterize and classify entities, that are defined in and relative to specific social representations.
+ 
+These concepts are conceptualized in specific human groups and considered as valid in their connotation, i.e. characterization or classification of entities, in the physical, intellectual, social and spatio-temporal world.
+ 
+This is an abstract class and should not be used in data production.</rdfs:comment>
+    <rdfs:label xml:lang="en">Social Quality</rdfs:label>
+  </rdfs:Class>
+  <rdfs:Class rdf:about="https://sdhss.org/ontology/social-life/1.0/C7_Occupation">
+    <skos:notation rdf:datatype="http://www.w3.org/2001/XMLSchema#string">C7</skos:notation>
+    <rdfs:comment xml:lang="en" rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A job, profession or other activity</rdfs:comment>
+    <rdfs:label xml:lang="en">Occupation</rdfs:label>
+    <rdfs:subClassOf rdf:resource="https://sdhss.org/ontology/social-life/1.0/C2_Actors_Social_Quality"/>
+  </rdfs:Class>
+  <rdfs:Class rdf:about="https://sdhss.org/ontology/core/1.0/C7">
+    <skos:notation rdf:datatype="http://www.w3.org/2001/XMLSchema#string">C7</skos:notation>
+    <rdfs:comment xml:lang="en" rdf:datatype="http://www.w3.org/2001/XMLSchema#string">This class comprises opinions, beliefs, certainties, doubts etc. of a person or collective of persons about representations concerning one or more objects. The representations, present in the minds in the form of propositional objects, are considered as being stable during a given time-span. Intentional states are modelled as a time-indexed quality inherent to a person, or persons belonging to an intentional collective, having as content a propositional object defining the content of the state of mind about an object. The concerned object of the intentional state can be associated to the propositional content using the crm:P129 is about (is subject of) property, while the type or mode of intentional state, e.g. belief, hope, fear, etc. can be expressed with the sdh:P44 has intentional type (is intentional type of) property.
+Individual or collective states of mind are an expression of intentionality, defined in philosophy as "the power of minds and mental states to be about, to represent, or to stand for things, properties and states of affairs. To say of an individual’s mental states that they have intentionality is to say that they are mental representations or that they have contents" (Jacob, Pierre, "Intentionality", The Stanford Encyclopedia of Philosophy  (Winter 2019 Edition), ed. Edward N. Zalta).</rdfs:comment>
+    <rdfs:label xml:lang="en">Intentional State</rdfs:label>
+  </rdfs:Class>
+  <rdfs:Class rdf:about="https://sdhss.org/ontology/social-life/1.0/C8_Occupation_Temporal_entity">
+    <skos:notation rdf:datatype="http://www.w3.org/2001/XMLSchema#string">C8</skos:notation>
+    <rdfs:comment xml:lang="en" rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Professional or other activity carried out by a person, more or less intensively, over a more or less long period of time. This class does not model a specific activity but a phase during which many specific instances of the same activity are carried out. Each part of having this occupation, e.g. being a merchant or a professor, is having an occupation, therefore this phenomenon is modelled as a phase. During this phase there may be times when the activity is not carried out.</rdfs:comment>
+    <rdfs:label xml:lang="en">Occupation (Temporal entity)</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://www.cidoc-crm.org/cidoc-crm/E5_Event"/>
+  </rdfs:Class>
+  <rdfs:Class rdf:about="https://sdhss.org/ontology/core/1.0/C8">
+    <skos:notation rdf:datatype="http://www.w3.org/2001/XMLSchema#string">C8</skos:notation>
+    <rdfs:comment xml:lang="en" rdf:datatype="http://www.w3.org/2001/XMLSchema#string">This class comprises representations that consider a thing as being part or belonging to another one. Unlike the sdh:C22 Composition class, which considers physical compositions, this class models intentional compositional relationships as conceived in individual or collective minds.
+Although it can concern different kinds of entities, the intentional composition is often used in relation to the sdh:C40 Intentional Collection class. However, no explicit association to this class because there can be several situations of intentional composition that do not concern collections, e.g. a verse being part of a poem or song, etc.</rdfs:comment>
+    <rdfs:label xml:lang="en">Intentional Composition</rdfs:label>
+  </rdfs:Class>
+  <rdfs:Class rdf:about="https://sdhss.org/ontology/social-life/1.0/C9_Relationship">
+    <skos:notation rdf:datatype="http://www.w3.org/2001/XMLSchema#string">C9</skos:notation>
+    <rdfs:comment xml:lang="en" rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Any loving and/or sexual friendship between two people. This class comprises all kinds of relationships intended in the more basic, emotional and physical aspect, regardless of their social or legal form, and indicates the time span of their duration (start/end date). Same-sex unions are also to be encoded with this class.</rdfs:comment>
+    <rdfs:label xml:lang="en">Relationship</rdfs:label>
+    <rdfs:subClassOf rdf:resource="https://sdhss.org/ontology/social-life/1.0/C18_Persons_Interaction"/>
+  </rdfs:Class>
+  <rdfs:Class rdf:about="https://sdhss.org/ontology/core/1.0/C10">
+    <skos:notation rdf:datatype="http://www.w3.org/2001/XMLSchema#string">C10</skos:notation>
+    <rdfs:comment xml:lang="en" rdf:datatype="http://www.w3.org/2001/XMLSchema#string">This classes comprises changes of mind of persons or human collectives, or other dynamic phenomena taking place in the mind, such as reading or having a conversation, which are likely to bring about a change in intention.
+Intentional events, insofar as they happen in the minds of one or more persons, do not directly have a projection in geographical space. But as they are always related to sets of human actions (one or more) that provide the setting for the given intentional events (sdh:P43 is setting for) they share with these physical events the geographical location. E.g. the reading of a book as a mental operation, or a conversation with one or more persons has the correspondent physical events (having the book in the hand, sitting in a coffee house) as its setting.</rdfs:comment>
+    <rdfs:label xml:lang="en">Intentional Event</rdfs:label>
+  </rdfs:Class>
+  <rdfs:Class rdf:about="https://sdhss.org/ontology/social-life/1.0/C10_Type_of_Persons_Interaction">
+    <skos:notation rdf:datatype="http://www.w3.org/2001/XMLSchema#string">C10</skos:notation>
+    <rdfs:comment xml:lang="en" rdf:datatype="http://www.w3.org/2001/XMLSchema#string">This class comprises concepts denoted by terms from thesauri and controlled vocabularies used to characterize and classify instances of the classs sdh:C18 Persons' Interaction.</rdfs:comment>
+    <rdfs:label xml:lang="en">Type of Persons' Interaction</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://www.cidoc-crm.org/cidoc-crm/E55_Type"/>
+  </rdfs:Class>
+  <rdfs:Class rdf:about="https://sdhss.org/ontology/social-life/1.0/C11_Gender">
+    <skos:notation rdf:datatype="http://www.w3.org/2001/XMLSchema#string">C11</skos:notation>
+    <rdfs:comment xml:lang="en" rdf:datatype="http://www.w3.org/2001/XMLSchema#string">"Gender is the state of being male or female in relation to the social and cultural roles that are considered appropriate for men and women" (Collins).</rdfs:comment>
+    <rdfs:label xml:lang="en">Gender</rdfs:label>
+    <rdfs:subClassOf rdf:resource="https://sdhss.org/ontology/social-life/1.0/C2_Actors_Social_Quality"/>
+  </rdfs:Class>
+  <rdfs:Class rdf:about="https://sdhss.org/ontology/social-life/1.0/C12_Actors_Social_Role">
+    <skos:notation rdf:datatype="http://www.w3.org/2001/XMLSchema#string">C12</skos:notation>
+    <rdfs:comment xml:lang="en" rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A social role is a qualification of an actor, individual or collective, that provides it with social power, i.e. some rights and duties related to the role, like a king, the president of an Academy, the Government of a country, etc.
+A social role exists in the context of one or more specific costums or laws and is generally related to an institutionalized context. As a subclass of the sdh-so:C26 Legal Quality class it inherits the property sdh-so:P69 is defined in the context of that associates it to a sdh-so:C25 Political or Administrative Entity instance.</rdfs:comment>
+    <rdfs:label xml:lang="en">Actor's Social Role</rdfs:label>
+    <rdfs:subClassOf rdf:resource="https://sdhss.org/ontology/social-life/1.0/C26_Legal_Quality"/>
+    <rdfs:subClassOf rdf:resource="https://sdhss.org/ontology/social-life/1.0/C2_Actors_Social_Quality"/>
+  </rdfs:Class>
+  <rdfs:Class rdf:about="https://sdhss.org/ontology/core/1.0/C13">
+    <skos:notation rdf:datatype="http://www.w3.org/2001/XMLSchema#string">C13</skos:notation>
+    <rdfs:comment xml:lang="en" rdf:datatype="http://www.w3.org/2001/XMLSchema#string">This class comprises parts of the Earth's surface that can be represented by photographs, paintings or maps, and that have some coherent characteristics related to their natural features (e.g., a mountain) or to the human activities that have shaped them (e.g., a harbour). These features make them identifiable and unique. The relevant portion of the surface of the Earth can be covered by buildings, water (river, sea, ...) which are part of the identifying features. The more specific identity of instances of this class is provided by a controlled vocabulary of geographical place types.</rdfs:comment>
+    <rdfs:label xml:lang="en">Geographical Place</rdfs:label>
+  </rdfs:Class>
+  <rdfs:Class rdf:about="https://sdhss.org/ontology/social-life/1.0/C13_Social_Role_Embodiment">
+    <skos:notation rdf:datatype="http://www.w3.org/2001/XMLSchema#string">C13</skos:notation>
+    <rdfs:comment xml:lang="en" rdf:datatype="http://www.w3.org/2001/XMLSchema#string">The fact of having a more or less formally defined social role or function in a group at a given moment or during a given time-span. The social role is modelled as an embodiment by a (Human) Actor of a Social Actor. It provides the (Human) Actor with prerogatives and rights that are exercised with respect to other persons and groups. It is therefore modelled as a social connotation, i.e. a social qualification of an Actor.</rdfs:comment>
+    <rdfs:label xml:lang="en">Social Role Embodiment</rdfs:label>
+    <rdfs:subClassOf rdf:resource="https://sdhss.org/ontology/social-life/1.0/C27_Legal_Fact"/>
+  </rdfs:Class>
+  <rdfs:Class rdf:about="https://sdhss.org/ontology/social-life/1.0/C14_Holding_of_a_Right_or_Obligation">
+    <skos:notation rdf:datatype="http://www.w3.org/2001/XMLSchema#string">C14</skos:notation>
+    <rdfs:comment xml:lang="en" rdf:datatype="http://www.w3.org/2001/XMLSchema#string">This class models prerogatives, obligations, rights, powers, etc. of subjects of law (human or legal actors) regarding specific persistent items during a given time-span. While sdh-so:C17 Custom or Law expresses general principles, a sdh-so:C14 Holding of a Right or Obligation applies them to particular instances. Right or obligations can nevertheless exist independently from a general law and be solely based on social representations, e.g. this field being considered as belonging to me in my village.
+It is important to note that this class models the same phenomenon, in the form of a time-bound intentional quality, as the one inteded by the crm:E30 Right class. The present class models it as an expression of collective intentionality in time while the crm:E30 Right class captures the propositional content of the phenomenon. If desired, the class crm:E30 Right can be explicitly associated with the present class by using the inherited sdh:P34 has content property which associates a sdh:C4 Intention with its propositional content. In the present case the propositional content of the intention is the collectively accepted right.
+ </rdfs:comment>
+    <rdfs:label xml:lang="en">Holding of a Right or Obligation</rdfs:label>
+    <rdfs:subClassOf rdf:resource="https://sdhss.org/ontology/social-life/1.0/C27_Legal_Fact"/>
+  </rdfs:Class>
+  <rdfs:Class rdf:about="https://sdhss.org/ontology/social-life/1.0/C15_Participation">
+    <skos:notation rdf:datatype="http://www.w3.org/2001/XMLSchema#string">C15</skos:notation>
+    <rdfs:comment xml:lang="en" rdf:datatype="http://www.w3.org/2001/XMLSchema#string">This class comprises periods of a more or less active participation of an actor (generally a person but sometimes a group) in an event, be this a battle, voyage, conference, etc. If the participation involves the exercise of a function or holding of an office or rank this can be associated using the sdh-so:P12 is participation in the quality of property. One or more functions can be associated to the same Participation if their time span is identical. It is otherwise preferable to split consecutive holdings of an office in the same event producing several instances of the present class.
+The time-span of this class is equal to or included in the time-span of the related event.
+The crm:P11 had participant is a shortcut of the full path: crm:E5 Event→ sdh-so:P11 has participation (as inverse of sdh-so:P11 is participation in) → sdh-so:C15 Participation → sdh-so:P10 is participation of  → crm:E39 Actor .</rdfs:comment>
+    <rdfs:label xml:lang="en">Participation</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://www.cidoc-crm.org/cidoc-crm/E5_Event"/>
+  </rdfs:Class>
+  <rdfs:Class rdf:about="https://sdhss.org/ontology/social-life/1.0/C16_Participant_Description">
+    <skos:notation rdf:datatype="http://www.w3.org/2001/XMLSchema#string">C16</skos:notation>
+    <rdfs:comment xml:lang="en" rdf:datatype="http://www.w3.org/2001/XMLSchema#string">This class comprises descriptions of participants in events that are not yet identified as well-known persons or groups. It can also be used to express the propositional content of a document mentioning the participation of several distinct participants. The wording is not essential, the intentional content is, therefore this class is a subclass of propositional object.</rdfs:comment>
+    <rdfs:label xml:lang="en">Participant Description</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://www.cidoc-crm.org/cidoc-crm/E89_Propositional_Object"/>
+  </rdfs:Class>
+  <rdfs:Class rdf:about="https://sdhss.org/ontology/social-life/1.0/C17_Custom_or_Law">
+    <skos:notation rdf:datatype="http://www.w3.org/2001/XMLSchema#string">C17</skos:notation>
+    <rdfs:comment xml:lang="en" rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Formalized set of rules, valid for a group and its members, defining rights and obligations of the concerned actors, and rights over or obligations concerning specific things.
+A law is generally created by the enactment of legislatures, while common law and custom derive from usage or practice of the people: by common adoption and acquiescence, and by long and unvarying habit, their rules have become compulsory, and acquired the force of a law.</rdfs:comment>
+    <rdfs:label xml:lang="en">Custom or Law</rdfs:label>
+    <rdfs:subClassOf rdf:resource="https://sdhss.org/ontology/core/1.0/C36"/>
+  </rdfs:Class>
+  <rdfs:Class rdf:about="https://sdhss.org/ontology/core/1.0/C17">
+    <skos:notation rdf:datatype="http://www.w3.org/2001/XMLSchema#string">C17</skos:notation>
+    <rdfs:comment xml:lang="en" rdf:datatype="http://www.w3.org/2001/XMLSchema#string">This class comprises instances of man-made things such as freestanding buildings, components of buildings, and complexes of buildings, but also all man-made parts of infrastructure (roads, lamp post, dams, etc.)</rdfs:comment>
+    <rdfs:label xml:lang="en">Construction</rdfs:label>
+  </rdfs:Class>
+  <rdfs:Class rdf:about="https://sdhss.org/ontology/social-life/1.0/C18_Persons_Interaction">
+    <skos:notation rdf:datatype="http://www.w3.org/2001/XMLSchema#string">C18</skos:notation>
+    <rdfs:comment xml:lang="en" rdf:datatype="http://www.w3.org/2001/XMLSchema#string">This class models the interaction of persons in time and physical (generally geographical) space. It is disjoint with the C3 Social Relationship class which models the interaction in time and the social space, i.e. the space of a collective state of mind and shared social representations.
+The interaction is not restricted to a quantity of persons (a meeting can be modelled with this class) but there must be a unity in time and space for all the participants if the involved persons are more than two. If a person joins the interaction at a later moment than the beginning, the C15 Participation class can be used.</rdfs:comment>
+    <rdfs:label xml:lang="en">Persons' Interaction</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://www.cidoc-crm.org/cidoc-crm/E5_Event"/>
+  </rdfs:Class>
+  <rdfs:Class rdf:about="https://sdhss.org/ontology/social-life/1.0/C19_Legal_Integration">
+    <skos:notation rdf:datatype="http://www.w3.org/2001/XMLSchema#string">C19</skos:notation>
+    <rdfs:comment xml:lang="en" rdf:datatype="http://www.w3.org/2001/XMLSchema#string">This class models the fact that entities (generally conceptual objects but sometimes specific actors, things or events) are integrated into customs or laws during a given period of time. They are therefore to be considered as legal entities, i.e. entities that are part of legal systems or traditions and customs, and are considered in this context as virtually being in force. Thus, legal entities become such through integration (by definition or connotation) into legal systems, i.e. a specific form of social representations with wider acceptance and validity.
+The existence of the legal individual generally begins with a constitutive social event (a sdh-so:C16 Legal Conceptual Object Creation for conceptual objects) and ends either with a social event that terminates its existence or with the disappearance of all the people (internal or external to the social collective) who actively considered it as existing and being in force.
+Knowing that a legal individual existed does not make it legally existing now: the phenomenon modelled is the virtually being in force, according to active social representations, not the later knowledge of its existence in earlier times.
+ </rdfs:comment>
+    <rdfs:label xml:lang="en">Legal Integration</rdfs:label>
+    <rdfs:subClassOf rdf:resource="https://sdhss.org/ontology/core/1.0/C8"/>
+  </rdfs:Class>
+  <rdfs:Class rdf:about="https://sdhss.org/ontology/social-life/1.0/C20_Being_in_Force">
+    <skos:notation rdf:datatype="http://www.w3.org/2001/XMLSchema#string">C20</skos:notation>
+    <rdfs:comment xml:lang="en" rdf:datatype="http://www.w3.org/2001/XMLSchema#string">This class models the validity of a custom, law, right or obligation, i.e. the being in force of a general or specific right according to collective intentionalty in the context of specific social representations.</rdfs:comment>
+    <rdfs:label xml:lang="en">Being in Force</rdfs:label>
+    <rdfs:subClassOf rdf:resource="https://sdhss.org/ontology/core/1.0/C37"/>
+  </rdfs:Class>
+  <rdfs:Class rdf:about="https://sdhss.org/ontology/social-life/1.0/C21_Custom_or_Law_Type">
+    <skos:notation rdf:datatype="http://www.w3.org/2001/XMLSchema#string">C21</skos:notation>
+    <rdfs:comment xml:lang="en" rdf:datatype="http://www.w3.org/2001/XMLSchema#string">
+This class comprises concepts denoted by terms from thesauri and controlled vocabularies used to classify and provide a more specific identity to instances of the Custom or Law class.
+</rdfs:comment>
+    <rdfs:label xml:lang="en">Custom or Law Type</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://www.cidoc-crm.org/cidoc-crm/E55_Type"/>
+  </rdfs:Class>
+  <rdfs:Class rdf:about="https://sdhss.org/ontology/social-life/1.0/C22_Legal_Quality_Type">
+    <skos:notation rdf:datatype="http://www.w3.org/2001/XMLSchema#string">C22</skos:notation>
+    <rdfs:comment xml:lang="en" rdf:datatype="http://www.w3.org/2001/XMLSchema#string">This class comprises concepts used to classify instances of the Legal Quality class. It should not be confused with the legal quality itself expressed by the C26 Legal quality class, e.g. the legal quality instance is 'French nationality' and the legal quality type is 'Nationality'.</rdfs:comment>
+    <rdfs:label xml:lang="en">Legal Quality Type</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://www.cidoc-crm.org/cidoc-crm/E55_Type"/>
+  </rdfs:Class>
+  <rdfs:Class rdf:about="https://sdhss.org/ontology/social-life/1.0/C23_Religious_Identity">
+    <skos:notation rdf:datatype="http://www.w3.org/2001/XMLSchema#string">C23</skos:notation>
+    <rdfs:comment xml:lang="en" rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Religious identity of a person in the sense of perception by surrounding society, participation in religious events (e.g. going to church) and contribution to define one' self-concept in the sense of public preference for a specific religion or religious denomination. The official membership in a religious group or Church is not modeled with this class, only the religious social quality of a person.</rdfs:comment>
+    <rdfs:label xml:lang="en">Religious Identity</rdfs:label>
+    <rdfs:subClassOf rdf:resource="https://sdhss.org/ontology/social-life/1.0/C1_Social_Perception_of_an_Actor"/>
+  </rdfs:Class>
+  <rdfs:Class rdf:about="https://sdhss.org/ontology/social-life/1.0/C24_Religion_or_Religious_Denomination">
+    <skos:notation rdf:datatype="http://www.w3.org/2001/XMLSchema#string">C24</skos:notation>
+    <rdfs:comment xml:lang="en" rdf:datatype="http://www.w3.org/2001/XMLSchema#string">This class models religious identity in the sense of social sciences, as a type classifying individuals belonging to social-cultural systems of designated behaviors and practices, morals, worldviews, texts, sanctified places, prophecies, ethics, or organizations, that relates humanity to supernatural, transcendental, or spiritual elements (religion) or is a subgroup within a religion that operates under a common name, tradition, and identity (religious denomination).
+The instances of this class should be entered as characteristics of people (Catholic, Muslim, etc.) and not as religions (Catholicism, Islam, etc.).</rdfs:comment>
+    <rdfs:label xml:lang="en">Religion or Religious Denomination</rdfs:label>
+    <rdfs:subClassOf rdf:resource="https://sdhss.org/ontology/social-life/1.0/C2_Actors_Social_Quality"/>
+  </rdfs:Class>
+  <rdfs:Class rdf:about="https://sdhss.org/ontology/social-life/1.0/C25_Political_or_Administrative_Entity">
+    <skos:notation rdf:datatype="http://www.w3.org/2001/XMLSchema#string">C25</skos:notation>
+    <rdfs:comment xml:lang="en" rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A political or administrative entity is a body of customs and laws, actor roles and other rules defined in the context of a social space and generally, but not necessarily, related to a specific territory (a geographical place).This class models entities that exist as intentional individuals and are based on oral tradition or written laws such as the Swiss Confederation, the Department of Rhône or the Commune de Fribourg. They only exist in collective representations and, on the opposite of instances of the sdh-so:C12 Actor's Social Role class, cannot be embodied by actors, individual or collective, because they have no virtual capacity to act in contrast to governments, prefects or local councils. The Swiss Confederation cannot act while the Swiss Federal Council or the Parliament can insofar as they are embodied by corresponding groups in the context of a legislature.</rdfs:comment>
+    <rdfs:label xml:lang="en">Political or Administrative Entity</rdfs:label>
+    <rdfs:subClassOf rdf:resource="https://sdhss.org/ontology/core/1.0/C40"/>
+  </rdfs:Class>
+  <rdfs:Class rdf:about="https://sdhss.org/ontology/core/1.0/C26">
+    <skos:notation rdf:datatype="http://www.w3.org/2001/XMLSchema#string">C26</skos:notation>
+    <rdfs:comment xml:lang="en" rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Social representations are defined in the social sciences as systems of values, beliefs, knowledge, etc. that serve to establish social order, guide people in their actions, enable them to communicate with each other, and structure groups and communities. They are modelled in this context as a collection of propositional objects, types and information objects that represent the content of the social representations of a given human group.</rdfs:comment>
+    <rdfs:label xml:lang="en">Representations</rdfs:label>
+  </rdfs:Class>
+  <rdfs:Class rdf:about="https://sdhss.org/ontology/social-life/1.0/C26_Legal_Quality">
+    <skos:notation rdf:datatype="http://www.w3.org/2001/XMLSchema#string">C26</skos:notation>
+    <rdfs:comment xml:lang="en" rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A quality of an entity as defined in customary or by written law.</rdfs:comment>
+    <rdfs:label xml:lang="en">Legal Quality</rdfs:label>
+    <rdfs:subClassOf rdf:resource="https://sdhss.org/ontology/core/1.0/C6"/>
+  </rdfs:Class>
+  <rdfs:Class rdf:about="https://sdhss.org/ontology/social-life/1.0/C27_Legal_Fact">
+    <skos:notation rdf:datatype="http://www.w3.org/2001/XMLSchema#string">C27</skos:notation>
+    <rdfs:comment xml:lang="en" rdf:datatype="http://www.w3.org/2001/XMLSchema#string">This class models the fact that a persistent item, during a given time-span, is perceived by human groups, a society or portions of it as having a legal quality.
+The identity of the instances of this class and its subclasses is provided by the actual existence of the legal fact. This is intendend in the sense of an effective social connotation implying actual rights and obligations. The crm:E52 Time-Span of this class therefore corresponds to the actual existence of the legal fact, not a later knowledge of its existence. To capture the latter information use an instance of sdh:C7 Intentional State, the intentional content being the knowledge of the earlier existence of the legal quality.</rdfs:comment>
+    <rdfs:label xml:lang="en">Legal Fact</rdfs:label>
+    <rdfs:subClassOf rdf:resource="https://sdhss.org/ontology/core/1.0/C30"/>
+  </rdfs:Class>
+  <rdfs:Class rdf:about="https://sdhss.org/ontology/social-life/1.0/C28_Legal_Location_of_an_Actor">
+    <skos:notation rdf:datatype="http://www.w3.org/2001/XMLSchema#string">C28</skos:notation>
+    <rdfs:comment xml:lang="en" rdf:datatype="http://www.w3.org/2001/XMLSchema#string">This class models the official residence or address of an actor, be this a person or a group</rdfs:comment>
+    <rdfs:label xml:lang="en">Legal Location of an Actor</rdfs:label>
+    <rdfs:subClassOf rdf:resource="https://sdhss.org/ontology/social-life/1.0/C27_Legal_Fact"/>
+  </rdfs:Class>
+  <rdfs:Class rdf:about="https://sdhss.org/ontology/social-life/1.0/C29_Legal_Quality_Acquisition">
+    <skos:notation rdf:datatype="http://www.w3.org/2001/XMLSchema#string">C29</skos:notation>
+    <rdfs:comment xml:lang="en" rdf:datatype="http://www.w3.org/2001/XMLSchema#string">This class models the acquisition of a legal quality, e.g. a noble or academic title, a residence permit, a political office (notion of embodiment of the office as result of the acquisition), etc.</rdfs:comment>
+    <rdfs:label xml:lang="en">Legal Quality Acquisition</rdfs:label>
+    <rdfs:subClassOf rdf:resource="https://sdhss.org/ontology/core/1.0/C46"/>
+  </rdfs:Class>
+  <rdfs:Class rdf:about="https://sdhss.org/ontology/social-life/1.0/C30_Actors_Legal_Quality_Acquisition_Type">
+    <skos:notation rdf:datatype="http://www.w3.org/2001/XMLSchema#string">C30</skos:notation>
+    <rdfs:comment xml:lang="en" rdf:datatype="http://www.w3.org/2001/XMLSchema#string">This class comprises concepts denoted by terms from thesauri and controlled vocabularies used to classify and provide a more specific identity to instances of the Actor's Legal Quality Acquisition class, e.g. nomination, election, etc. 
+If the modes of attribution of the legal quality are more complex, it is preferable to create specific subclasses in namespaces dedicated to subdomains in order to have the necessary specifications and properties.</rdfs:comment>
+    <rdfs:label xml:lang="en">Actor's Legal Quality Acquisition Type</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://www.cidoc-crm.org/cidoc-crm/E55_Type"/>
+  </rdfs:Class>
+  <rdfs:Class rdf:about="https://sdhss.org/ontology/core/1.0/C30">
+    <skos:notation rdf:datatype="http://www.w3.org/2001/XMLSchema#string">C30</skos:notation>
+    <rdfs:comment xml:lang="en" rdf:datatype="http://www.w3.org/2001/XMLSchema#string">This class models the integration of an entity into the individual representations of a person, or the social representations of a human collective, with a context specific connotation, classification, social quality or characterization, during a given time-span. A person or intentional collective considers that the adopted connotation, i.e. intentional quality or type, applies to the concerned entity. The integrated entity can be an actor, a physical or conceptual object, a text, an event, etc. E.g. a celebrated battle is integrated as the founding event of a country's independence into the representations of its indigenous inhabitants, or a portion of them.
+The personal or collective view, classification or interpretation of the entity, i.e. its individual or social connotation conceived as a (shared) qualification of it, becomes part of the representations it is integrated into. The propositional explanation, when explicit expressed, is associated to the connotation with the inherited sdh:P34 has content property while the sdh:P40 has context (is context of) property situates the concerned connotation within the wider context of the (social) representations it belongs to. As for the connotated object, it is associated to the connotation with the sdh:P39 is connotation of property and the connotating quality with the sdh:P21 is qualified by property.</rdfs:comment>
+    <rdfs:label xml:lang="en">Connotation</rdfs:label>
+  </rdfs:Class>
+  <rdfs:Class rdf:about="https://sdhss.org/ontology/social-life/1.0/C31_Holding_of_a_Right_Type">
+    <skos:notation rdf:datatype="http://www.w3.org/2001/XMLSchema#string">C31</skos:notation>
+    <rdfs:comment xml:lang="en" rdf:datatype="http://www.w3.org/2001/XMLSchema#string">This class comprises concepts denoted by terms from thesauri and controlled vocabularies used to classify and provide a more specific identity to instances of the Holding of a Right class.</rdfs:comment>
+    <rdfs:label xml:lang="en">Holding of a Right Type</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://www.cidoc-crm.org/cidoc-crm/E55_Type"/>
+  </rdfs:Class>
+  <rdfs:Class rdf:about="https://sdhss.org/ontology/social-life/1.0/C32_Social_Role_Type">
+    <skos:notation rdf:datatype="http://www.w3.org/2001/XMLSchema#string">C32</skos:notation>
+    <rdfs:comment xml:lang="en" rdf:datatype="http://www.w3.org/2001/XMLSchema#string">This class comprises concepts used to classify instances of the Social Role class grouping them according the different domains of social life</rdfs:comment>
+    <rdfs:label xml:lang="en">Social Role Type</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://www.cidoc-crm.org/cidoc-crm/E55_Type"/>
+  </rdfs:Class>
+  <rdfs:Class rdf:about="https://sdhss.org/ontology/social-life/1.0/C33_Legal_Location_Type">
+    <skos:notation rdf:datatype="http://www.w3.org/2001/XMLSchema#string">C33</skos:notation>
+    <rdfs:comment xml:lang="en" rdf:datatype="http://www.w3.org/2001/XMLSchema#string">This class comprises concepts denoted by terms from thesauri and controlled vocabularies used to characterize and classify instances of sdh-so:C28 Legal Location of an Actor.</rdfs:comment>
+    <rdfs:label xml:lang="en">Legal Location Type</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://www.cidoc-crm.org/cidoc-crm/E55_Type"/>
+  </rdfs:Class>
+  <rdfs:Class rdf:about="https://sdhss.org/ontology/social-life/1.0/C34_Activity_Domain">
+    <skos:notation rdf:datatype="http://www.w3.org/2001/XMLSchema#string">C34</skos:notation>
+    <rdfs:comment xml:lang="en" rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A collection of occupations or other kinds of activities</rdfs:comment>
+    <rdfs:label xml:lang="en">Activity Domain</rdfs:label>
+    <rdfs:subClassOf rdf:resource="https://sdhss.org/ontology/core/1.0/C40"/>
+  </rdfs:Class>
+  <rdfs:Class rdf:about="https://sdhss.org/ontology/social-life/1.0/C35_Actors_Quality_in_Relation_to_an_Event">
+    <skos:notation rdf:datatype="http://www.w3.org/2001/XMLSchema#string">C35</skos:notation>
+    <rdfs:comment xml:lang="en" rdf:datatype="http://www.w3.org/2001/XMLSchema#string">This class expresses the association of an actor with a spatio-temporal or intentional event in which it is not necessarily present, but to which it is known to be associated with a specific role (e.g. the sponsor of a concert, the official organiser of a conference, the commissioner of a murder). This intentional phenomenon, present in the minds of the observers in the form of a propositional object, gives the actor a specific social quality in relation to the event.
+It is important to note that if the actor is actually participating in the event with a specifc role, the sdh:C15 Participation class should be used to capture this information. In this case, the present class can be used to capture one or more social qualities associated with the actor in his participation to the event, e.g. being present as the ambassador of a king.
+Furthermore, if other events are known that are at the origin of the actor's quality, like the event of providing funding for the event that mekes on to be a sponsor, or the meeting in which the murder was commissioned that makes one to be the principal in a murder, these should be produced as distinct instances of the crm:E5 Event class or specific subclasses.</rdfs:comment>
+    <rdfs:label xml:lang="en">Actor's Quality in Relation to an Event</rdfs:label>
+    <rdfs:subClassOf rdf:resource="https://sdhss.org/ontology/core/1.0/C30"/>
+  </rdfs:Class>
+  <rdfs:Class rdf:about="https://sdhss.org/ontology/social-life/1.0/C36_Participation_Type">
+    <skos:notation rdf:datatype="http://www.w3.org/2001/XMLSchema#string">C36</skos:notation>
+    <rdfs:comment xml:lang="en" rdf:datatype="http://www.w3.org/2001/XMLSchema#string">This class comprises concepts denoted by terms from thesauri and controlled vocabularies used to characterize and classify instances of the sdh-so:C15 Participation class.
+A participation type is often defined in relation to event types, and can be associated to the relevant ones using the sdh:P69 is defined in relation to property</rdfs:comment>
+    <rdfs:label xml:lang="en">Participation Type</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://www.cidoc-crm.org/cidoc-crm/E55_Type"/>
+  </rdfs:Class>
+  <rdfs:Class rdf:about="https://sdhss.org/ontology/core/1.0/C36">
+    <skos:notation rdf:datatype="http://www.w3.org/2001/XMLSchema#string">C36</skos:notation>
+    <rdfs:comment xml:lang="en" rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A project consisting of a sequence of operations or action to carry out in order to achieve a goal.</rdfs:comment>
+    <rdfs:label xml:lang="en">Plan</rdfs:label>
+  </rdfs:Class>
+  <rdfs:Class rdf:about="https://sdhss.org/ontology/core/1.0/C37">
+    <skos:notation rdf:datatype="http://www.w3.org/2001/XMLSchema#string">C37</skos:notation>
+    <rdfs:comment xml:lang="en" rdf:datatype="http://www.w3.org/2001/XMLSchema#string">This class models the fact that a person or a group, i. e. a collective of persons, has or shares a plan. In a group, the plan enables it to act collectively, and therefore one or more plans can be considered essential to the existence of a "unifying relationship" in a group (cf. the definition of crm:E74 Group).</rdfs:comment>
+    <rdfs:label xml:lang="en">Having a Plan</rdfs:label>
+  </rdfs:Class>
+  <rdfs:Class rdf:about="https://sdhss.org/ontology/social-life/1.0/C37_Economic_Transaction">
+    <skos:notation rdf:datatype="http://www.w3.org/2001/XMLSchema#string">C37</skos:notation>
+    <rdfs:comment xml:lang="en" rdf:datatype="http://www.w3.org/2001/XMLSchema#string">This class comprises economic interactions involving the exchange of goods, services, money and assets between economic agents. The objects of economic interaction include all types of tangible and intangible items such as services, insurance, capital transfers. They may be unilateral and not involve a claim for repayment, such as gifts.</rdfs:comment>
+    <rdfs:label xml:lang="en">Economic Transaction</rdfs:label>
+    <rdfs:subClassOf rdf:resource="https://sdhss.org/ontology/core/1.0/C46"/>
+  </rdfs:Class>
+  <rdfs:Class rdf:about="https://sdhss.org/ontology/social-life/1.0/C38_Presence_of_a_Thing">
+    <skos:notation rdf:datatype="http://www.w3.org/2001/XMLSchema#string">C38</skos:notation>
+    <rdfs:comment xml:lang="en" rdf:datatype="http://www.w3.org/2001/XMLSchema#string">This class expresses the phenomenon of the presence and role of one or more 'things', i.e. non-acting persistent items, in an event in which the thing or things are physically or intentionally, but passively present. A dedicated type describes the role of the associated entity while it is also possible to provide qualities that characterise the intentional or social role associated with the thing in the context of the event.
+One or more humans can be associated to an event as involved things but they are then the object and not the subject of the involvement, like in the case of slave trade. If humans act in the context of the event, the sdh-so:C15 Participation class must be used.
+The crm::P12 occurred in the presence of property is a shortcut of the complete path ...
+ 
+The crm:P11 had participant is a shortcut of the full path: crm:E5 Event→ sdh-so:P11 has participation (as inverse of sdh-so:P11 is participation in) → sdh-so:C15 Participation → sdh-so:P10 is participation of  → crm:E39 Actor .
+ </rdfs:comment>
+    <rdfs:label xml:lang="en">Presence of a Thing</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://www.cidoc-crm.org/cidoc-crm/E5_Event"/>
+  </rdfs:Class>
+  <rdfs:Class rdf:about="https://sdhss.org/ontology/social-life/1.0/C39_Participation_Relation">
+    <skos:notation rdf:datatype="http://www.w3.org/2001/XMLSchema#string">C39</skos:notation>
+    <rdfs:comment xml:lang="en" rdf:datatype="http://www.w3.org/2001/XMLSchema#string">This class expresses the intentional (or in other words in the social mind) relation that can exist between different participants in an event. This relation is not a spatio-temporal phenomenon that can be observed, unlike the participation itself, but a social state of mind of the participants or/and the observers.The type of relation can be documented with an instance of CX Participation Relation Type, based on a controlled vocabulary, while the quality of each participation in the relation can be expressed by instances of CX Role in Participation Relation linking the instances of CX Participation and the instance of CX Participation Relation.</rdfs:comment>
+    <rdfs:label xml:lang="en">Participation Relation</rdfs:label>
+    <rdfs:subClassOf rdf:resource="https://sdhss.org/ontology/core/1.0/C7"/>
+  </rdfs:Class>
+  <rdfs:Class rdf:about="https://sdhss.org/ontology/core/1.0/C40">
+    <skos:notation rdf:datatype="http://www.w3.org/2001/XMLSchema#string">C40</skos:notation>
+    <rdfs:comment xml:lang="en" rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A collection of entities as conceived or imagined as existing by a person, a group or an intentional collective.The belonging to a collection results from a classification of the concerned objects by a concept. "The concept(s) that classify all the members of a collection are said to cover a collection" (Gangemi Aldo, « Norms and plans as unification criteria for social collectives. », Auton. Agents Multi Agent Syst. 17 (1), 2008, pp. 70‑112, https://doi.org/10.1007/s10458-008-9038-9. )
+The membership of an object to an intentional collection (an abstract individual) which results from the classification can be expressed using the sdh:C8 Intentional Composition class or its subclasses.</rdfs:comment>
+    <rdfs:label xml:lang="en">Intentional Set</rdfs:label>
+  </rdfs:Class>
+  <rdfs:Class rdf:about="https://sdhss.org/ontology/social-life/1.0/C40_Participation_Relation_Type">
+    <skos:notation rdf:datatype="http://www.w3.org/2001/XMLSchema#string">C40</skos:notation>
+    <rdfs:comment xml:lang="en" rdf:datatype="http://www.w3.org/2001/XMLSchema#string">This class describes the type of participation relation of participants of an event. It does not describe the role of each participant, but the general type of relation.</rdfs:comment>
+    <rdfs:label xml:lang="en">Participation Relation Type</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://www.cidoc-crm.org/cidoc-crm/E55_Type"/>
+  </rdfs:Class>
+  <rdfs:Class rdf:about="https://sdhss.org/ontology/social-life/1.0/C41_Role_in_Participation_Relation">
+    <skos:notation rdf:datatype="http://www.w3.org/2001/XMLSchema#string">C41</skos:notation>
+    <rdfs:comment xml:lang="en" rdf:datatype="http://www.w3.org/2001/XMLSchema#string">This class expresses the intentional role of a participant in relation to another participant. This means that this class describes the social characteristics of an actor, but in the specific context of a participation that bears some relation with another participation of an actor. For example, an actor participating in a conference could be the assistant of another actor who participates in this conference as the main speaker. This is different from the more general role an actor could have while participating (and therefore not connected to another specific participant).This class is not a temporal phenomenon such as the class sdh:C1 Entity Quality or its subclasses, but a propositional object related to the temporal phenomenon of the Participation Relation, an intentional state.</rdfs:comment>
+    <rdfs:label xml:lang="en">Role in Participation Relation</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://www.cidoc-crm.org/cidoc-crm/E89_Propositional_Object"/>
+  </rdfs:Class>
+  <rdfs:Class rdf:about="https://sdhss.org/ontology/social-life/1.0/C42_Political_or_Administrative_Entity_Type">
+    <skos:notation rdf:datatype="http://www.w3.org/2001/XMLSchema#string">C42</skos:notation>
+    <rdfs:comment xml:lang="en" rdf:datatype="http://www.w3.org/2001/XMLSchema#string">This class describes the type of political or administrative entity, based on a controled vocabulary.</rdfs:comment>
+    <rdfs:label xml:lang="en">Political or Administrative Entity Type</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://www.cidoc-crm.org/cidoc-crm/E55_Type"/>
+  </rdfs:Class>
+  <rdfs:Class rdf:about="https://sdhss.org/ontology/social-life/1.0/C43_Actors_Role_in_a_Social_Relationship">
+    <skos:notation rdf:datatype="http://www.w3.org/2001/XMLSchema#string">C43</skos:notation>
+    <rdfs:comment xml:lang="en" rdf:datatype="http://www.w3.org/2001/XMLSchema#string">This class expresses the intentional role of an Actor within a Social Relationship. This class is not a temporal phenomenon such as the class sdh:C1 Entity Quality or its subclasses, but a propositional object related to the temporal and intentional phenomenon of the Social Relationship.</rdfs:comment>
+    <rdfs:label xml:lang="en">Actor's Role in a Social Relationship</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://www.cidoc-crm.org/cidoc-crm/E89_Propositional_Object"/>
+  </rdfs:Class>
+  <rdfs:Class rdf:about="https://sdhss.org/ontology/social-life/1.0/C44_Presence_of_a_Thing_Type">
+    <skos:notation rdf:datatype="http://www.w3.org/2001/XMLSchema#string">C44</skos:notation>
+    <rdfs:comment xml:lang="en" rdf:datatype="http://www.w3.org/2001/XMLSchema#string">This class comprises concepts denoted by terms from thesauri and controlled vocabularies used to characterize and classify instances of the sdh-so:C38 Presence of a Thing class.
+A presence type is often defined in relation to event types, and can be associated to the relevant ones using the sdh:P69 is defined in relation to property</rdfs:comment>
+    <rdfs:label xml:lang="en">Presence of a Thing Type</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://www.cidoc-crm.org/cidoc-crm/E55_Type"/>
+  </rdfs:Class>
+  <rdfs:Class rdf:about="https://sdhss.org/ontology/social-life/1.0/C45_Economic_Transaction_Type">
+    <skos:notation rdf:datatype="http://www.w3.org/2001/XMLSchema#string">C45</skos:notation>
+    <rdfs:comment xml:lang="en" rdf:datatype="http://www.w3.org/2001/XMLSchema#string">This class comprises concepts denoted by terms from thesauri and controlled vocabularies used to characterize and classify instances of the sdh:C37 Economic Transaction class, e.g. money gift, selling, borrowing, etc.</rdfs:comment>
+    <rdfs:label xml:lang="en">Economic Transaction Type</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://www.cidoc-crm.org/cidoc-crm/E55_Type"/>
+  </rdfs:Class>
+  <rdfs:Class rdf:about="https://sdhss.org/ontology/social-life/1.0/C46_Legal_Agreement">
+    <skos:notation rdf:datatype="http://www.w3.org/2001/XMLSchema#string">C46</skos:notation>
+    <rdfs:comment xml:lang="en" rdf:datatype="http://www.w3.org/2001/XMLSchema#string">This class comprises legal interactions between two or more actors establishing a new legal situation. The objects of legal interaction include all types of agreement, convention, contract, treaty.
+The legal agreement could be entered into within a defined legal framework, whether customary or written or by agreement between the parties (private agreement) which has the force of law.
+The participations of the various parties and participants in the legal agreement are described by the use of as many sdh-so:C15 Participation as necessary.</rdfs:comment>
+    <rdfs:label xml:lang="en">Legal Agreement</rdfs:label>
+    <rdfs:subClassOf rdf:resource="https://sdhss.org/ontology/core/1.0/C46"/>
+  </rdfs:Class>
+  <rdfs:Class rdf:about="https://sdhss.org/ontology/core/1.0/C46">
+    <skos:notation rdf:datatype="http://www.w3.org/2001/XMLSchema#string">C46</skos:notation>
+    <rdfs:comment xml:lang="en" rdf:datatype="http://www.w3.org/2001/XMLSchema#string">This class comprises expressions of intentionality through speech acts, writings, actions or activities. Representations about objects (the substance of intention) are expressed by intentional entities to other intentional entities in order to communicate their interpretations of reality, express wishes, give orders, bringing social objects into existence, etc.</rdfs:comment>
+    <rdfs:label xml:lang="en">Intentional Expression</rdfs:label>
+  </rdfs:Class>
+  <rdfs:Class rdf:about="https://sdhss.org/ontology/social-life/1.0/C47_Legal_Agreement_Type">
+    <skos:notation rdf:datatype="http://www.w3.org/2001/XMLSchema#string">C47</skos:notation>
+    <rdfs:comment xml:lang="en" rdf:datatype="http://www.w3.org/2001/XMLSchema#string">This class comprises concepts denoted by terms from thesauri and controlled vocabularies used to classify and provide a more specific identity to instances of the sdh-so:C46 Legal Agreement class.</rdfs:comment>
+    <rdfs:label xml:lang="en">Legal Agreement Type</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://www.cidoc-crm.org/cidoc-crm/E55_Type"/>
+  </rdfs:Class>
+  <rdfs:Class rdf:about="http://www.cidoc-crm.org/cidoc-crm/E1_CRM_Entity">
+    <skos:notation rdf:datatype="http://www.w3.org/2001/XMLSchema#string">E1</skos:notation>
+    <rdfs:comment xml:lang="en" rdf:datatype="http://www.w3.org/2001/XMLSchema#string">This class comprises all things in the universe of discourse of the CIDOC Conceptual Reference Model.
+
+It is an abstract concept providing for three general properties:
+Identification by name or appellation, and in particular by a preferred identifier
+Classification by type, allowing further refinement of the specific subclass an instance belongs to
+Attachment of free text for the expression of anything not captured by formal properties
+
+With the exception of E59 Primitive Value, all other classes within the CRM are directly or indirectly specialisations of E1 CRM Entity.</rdfs:comment>
+    <rdfs:label xml:lang="en">CRM Entity</rdfs:label>
+  </rdfs:Class>
+  <rdfs:Class rdf:about="http://www.cidoc-crm.org/cidoc-crm/E5_Event">
+    <skos:notation rdf:datatype="http://www.w3.org/2001/XMLSchema#string">E5</skos:notation>
+    <rdfs:comment xml:lang="en" rdf:datatype="http://www.w3.org/2001/XMLSchema#string">This class comprises changes of states in cultural, social or physical systems, regardless of scale, brought about by a series or group of coherent physical, cultural, technological or legal phenomena. Such changes of state will affect instances of E77 Persistent Item or its subclasses.
+The distinction between an E5 Event and an E4 Period is partly a question of the scale of observation. Viewed at a coarse level of detail, an E5 Event is an ‘instantaneous’ change of state. At a fine level, the E5 Event can be analysed into its component phenomena within a space and time frame, and as such can be seen as an E4 Period. The reverse is not necessarily the case: not all instances of E4 Period give rise to a noteworthy change of state.</rdfs:comment>
+    <rdfs:label xml:lang="en">Event</rdfs:label>
+  </rdfs:Class>
+  <rdfs:Class rdf:about="http://www.cidoc-crm.org/cidoc-crm/E7_Activity">
+    <skos:notation rdf:datatype="http://www.w3.org/2001/XMLSchema#string">E7</skos:notation>
+    <rdfs:comment xml:lang="en" rdf:datatype="http://www.w3.org/2001/XMLSchema#string">This class comprises actions intentionally carried out by instances of E39 Actor that result in changes of state in the cultural, social, or physical systems documented.
+This notion includes complex, composite and long-lasting actions such as the building of a settlement or a war, as well as simple, short-lived actions such as the opening of a door.</rdfs:comment>
+    <rdfs:label xml:lang="en">Activity</rdfs:label>
+  </rdfs:Class>
+  <rdfs:Class rdf:about="http://www.cidoc-crm.org/cidoc-crm/E8_Acquisition">
+    <skos:notation rdf:datatype="http://www.w3.org/2001/XMLSchema#string">E8</skos:notation>
+    <rdfs:comment xml:lang="en" rdf:datatype="http://www.w3.org/2001/XMLSchema#string">This class comprises transfers of legal ownership from one or more instances of E39 Actor to one or more other instances of E39 Actor.
+The class also applies to the establishment or loss of ownership of instances of E18 Physical Thing. It does not, however, imply changes of any other kinds of right. The recording of the donor and/or recipient is optional. It is possible that in an instance of E8 Acquisition there is either no donor or no recipient. Depending on the circumstances, it may describe:
+
+the beginning of ownership
+the end of ownership
+the transfer of ownership
+the acquisition from an unknown source
+the loss of title due to destruction of the item
+
+It may also describe events where a collector appropriates legal title, for example by annexation or field collection. The interpretation of the museum notion of "accession" differs between institutions. The CRM therefore models legal ownership (E8 Acquisition) and physical custody (E10 Transfer of Custody) separately. Institutions will then model their specific notions of accession and deaccession as combinations of these.</rdfs:comment>
+    <rdfs:label xml:lang="en">Acquisition</rdfs:label>
+    <rdfs:subClassOf rdf:resource="https://sdhss.org/ontology/social-life/1.0/C37_Economic_Transaction"/>
+  </rdfs:Class>
+  <rdfs:Class rdf:about="http://www.cidoc-crm.org/cidoc-crm/E21_Person">
+    <skos:notation rdf:datatype="http://www.w3.org/2001/XMLSchema#string">E21</skos:notation>
+    <rdfs:comment xml:lang="en" rdf:datatype="http://www.w3.org/2001/XMLSchema#string">This class comprises real persons who live or are assumed to have lived.
+Legendary figures that may have existed, such as Ulysses and King Arthur, fall into this class if the documentation refers to them as historical figures. In cases where doubt exists as to whether several persons are in fact identical, multiple instances can be created and linked to indicate their relationship. The CRM does not propose a specific form to support reasoning about possible identity.</rdfs:comment>
+    <rdfs:label xml:lang="en">Person</rdfs:label>
+  </rdfs:Class>
+  <rdfs:Class rdf:about="http://www.cidoc-crm.org/cidoc-crm/E28_Conceptual_Object">
+    <skos:notation rdf:datatype="http://www.w3.org/2001/XMLSchema#string">E28</skos:notation>
+    <rdfs:comment xml:lang="en" rdf:datatype="http://www.w3.org/2001/XMLSchema#string">This class comprises non-material products of our minds and other human produced data that have become objects of a discourse about their identity, circumstances of creation or historical implication. The production of such information may have been supported by the use of technical devices such as cameras or computers.
+Characteristically, instances of this class are created, invented or thought by someone, and then may be documented or communicated between persons. Instances of E28 Conceptual Object have the ability to exist on more than one particular carrier at the same time, such as paper, electronic signals, marks, audio media, paintings, photos, human memories, etc.
+They cannot be destroyed. They exist as long as they can be found on at least one carrier or in at least one human memory. Their existence ends when the last carrier and the last memory are lost.</rdfs:comment>
+    <rdfs:label xml:lang="en">Conceptual Object</rdfs:label>
+  </rdfs:Class>
+  <rdfs:Class rdf:about="http://www.cidoc-crm.org/cidoc-crm/E39_Actor">
+    <skos:notation rdf:datatype="http://www.w3.org/2001/XMLSchema#string">E39</skos:notation>
+    <rdfs:comment xml:lang="en" rdf:datatype="http://www.w3.org/2001/XMLSchema#string">This class comprises people, either individually or in groups, who have the potential to perform intentional actions of kinds for which someone may be held responsible.
+The CRM does not attempt to model the inadvertent actions of such actors. Individual people should be documented as instances of E21 Person, whereas groups should be documented as instances of either E74 Group or its subclass E40 Legal Body.</rdfs:comment>
+    <rdfs:label xml:lang="en">Actor</rdfs:label>
+  </rdfs:Class>
+  <rdfs:Class rdf:about="http://www.cidoc-crm.org/cidoc-crm/E41_Appellation">
+    <skos:notation rdf:datatype="http://www.w3.org/2001/XMLSchema#string">E41</skos:notation>
+    <rdfs:comment xml:lang="en" rdf:datatype="http://www.w3.org/2001/XMLSchema#string">This class comprises signs, either meaningful or not, or arrangements of signs following a specific syntax, that are used or can be used to refer to and identify a specific instance of some class or category within a certain context.
+Instances of E41 Appellation do not identify things by their meaning, even if they happen to have one, but instead by convention, tradition, or agreement. Instances of E41 Appellation are cultural constructs; as such, they have a context, a history, and a use in time and space by some group of users. A given instance of E41 Appellation can have alternative forms, i.e., other instances of E41 Appellation that are always regarded as equivalent independent from the thing it denotes.
+Specific subclasses of E41 Appellation should be used when instances of E41 Appellation of a characteristic form are used for particular objects. Instances of E49 Time Appellation, for example, which take the form of instances of E50 Date, can be easily recognised.
+E41 Appellation should not be confused with the act of naming something. Cf. E15 Identifier Assignment</rdfs:comment>
+    <rdfs:label xml:lang="en">Appellation</rdfs:label>
+  </rdfs:Class>
+  <rdfs:Class rdf:about="http://www.cidoc-crm.org/cidoc-crm/E55_Type">
+    <skos:notation rdf:datatype="http://www.w3.org/2001/XMLSchema#string">E55</skos:notation>
+    <rdfs:comment xml:lang="en" rdf:datatype="http://www.w3.org/2001/XMLSchema#string">This class comprises concepts denoted by terms from thesauri and controlled vocabularies used to characterize and classify instances of CRM classes. Instances of E55 Type represent concepts in contrast to instances of E41 Appellation which are used to name instances of CRM classes.
+E55 Type is the CRM’s interface to domain specific ontologies and thesauri. These can be represented in the CRM as subclasses of E55 Type, forming hierarchies of terms, i.e. instances of E55 Type linked via P127 has broader term (has narrower term). Such hierarchies may be extended with additional properties.</rdfs:comment>
+    <rdfs:label xml:lang="en">Type</rdfs:label>
+  </rdfs:Class>
+  <rdfs:Class rdf:about="http://www.cidoc-crm.org/cidoc-crm/E65_Creation">
+    <skos:notation rdf:datatype="http://www.w3.org/2001/XMLSchema#string">E65</skos:notation>
+    <rdfs:comment xml:lang="en" rdf:datatype="http://www.w3.org/2001/XMLSchema#string">This class comprises events that result in the creation of conceptual items or immaterial products, such as legends, poems, texts,
+            music, images, movies, laws, types etc. </rdfs:comment>
+    <rdfs:label xml:lang="en">Creation</rdfs:label>
+  </rdfs:Class>
+  <rdfs:Class rdf:about="http://www.cidoc-crm.org/cidoc-crm/E67_Birth">
+    <skos:notation rdf:datatype="http://www.w3.org/2001/XMLSchema#string">E67</skos:notation>
+    <rdfs:comment xml:lang="en" rdf:datatype="http://www.w3.org/2001/XMLSchema#string">This class comprises the births of human beings. E67 Birth is a biological event focussing on the context of people coming into life. (E63 Beginning of Existence comprises the coming into life of any living beings).
+Twins, triplets etc. are brought into life by the same E67 Birth event. The introduction of the E67 Birth event as a documentation element allows the description of a range of family relationships in a simple model. Suitable extensions may describe more details and the complexity of motherhood with the intervention of modern medicine. In this model, the biological father is not seen as a necessary participant in the E67 Birth event.</rdfs:comment>
+    <rdfs:label xml:lang="en">Birth</rdfs:label>
+  </rdfs:Class>
+  <rdfs:Class rdf:about="http://www.cidoc-crm.org/cidoc-crm/E70_Thing">
+    <skos:notation rdf:datatype="http://www.w3.org/2001/XMLSchema#string">E70</skos:notation>
+    <rdfs:comment xml:lang="en" rdf:datatype="http://www.w3.org/2001/XMLSchema#string">This general class comprises discrete, identifiable, instances of E77 Persistent Item that are documented as single units, that either consist of matter or depend on being carried by matter and are characterized by relative stability.
+They may be intellectual products or physical things. They may for instance have a solid physical form, an electronic encoding, or they may be a logical concept or structure.</rdfs:comment>
+    <rdfs:label xml:lang="en">Thing</rdfs:label>
+  </rdfs:Class>
+  <rdfs:Class rdf:about="http://www.cidoc-crm.org/cidoc-crm/E74_Group">
+    <skos:notation rdf:datatype="http://www.w3.org/2001/XMLSchema#string">E74</skos:notation>
+    <rdfs:comment xml:lang="en" rdf:datatype="http://www.w3.org/2001/XMLSchema#string">This class comprises any gatherings or organizations of E39 Actors that act collectively or in a similar way due to any form of unifying relationship. In the wider sense this class also comprises official positions which used to be regarded in certain contexts as one actor, independent of the current holder of the office, such as the president of a country. In such cases, it may happen that the Group never had more than one member. A joint pseudonym (i.e., a name that seems indicative of an individual but that is actually used as a persona by two or more people) is a particular case of E74 Group.
+A gathering of people becomes an E74 Group when it exhibits organizational characteristics usually typified by a set of ideas or beliefs held in common, or actions performed together. These might be communication, creating some common artifact, a common purpose such as study, worship, business, sports, etc. Nationality can be modeled as membership in an E74 Group (cf. HumanML markup). Married couples and other concepts of family are regarded as particular examples of E74 Group.</rdfs:comment>
+    <rdfs:label xml:lang="en">Group</rdfs:label>
+  </rdfs:Class>
+  <rdfs:Class rdf:about="http://www.cidoc-crm.org/cidoc-crm/E77_Persistent_Item">
+    <skos:notation rdf:datatype="http://www.w3.org/2001/XMLSchema#string">E77</skos:notation>
+    <rdfs:comment xml:lang="en" rdf:datatype="http://www.w3.org/2001/XMLSchema#string">This class comprises items that have a persistent identity, sometimes known as “endurants” in philosophy.
+They can be repeatedly recognized within the duration of their existence by identity criteria rather than by continuity or observation. Persistent Items can be either physical entities, such as people, animals or things, or conceptual entities such as ideas, concepts, products of the imagination or common names.
+The criteria that determine the identity of an item are often difficult to establish -; the decision depends largely on the judgement of the observer. For example, a building is regarded as no longer existing if it is dismantled and the materials reused in a different configuration. On the other hand, human beings go through radical and profound changes during their life-span, affecting both material composition and form, yet preserve their identity by other criteria. Similarly, inanimate objects may be subject to exchange of parts and matter. The class E77 Persistent Item does not take any position about the nature of the applicable identity criteria and if actual knowledge about identity of an instance of this class exists. There may be cases, where the identity of an E77 Persistent Item is not decidable by a certain state of knowledge.The main classes of objects that fall outside the scope the E77 Persistent Item class are temporal objects such as periods, events and acts, and descriptive properties.</rdfs:comment>
+    <rdfs:label xml:lang="en">Persistent Item</rdfs:label>
+  </rdfs:Class>
+  <rdfs:Class rdf:about="http://www.cidoc-crm.org/cidoc-crm/E89_Propositional_Object">
+    <skos:notation rdf:datatype="http://www.w3.org/2001/XMLSchema#string">E89</skos:notation>
+    <rdfs:comment xml:lang="en" rdf:datatype="http://www.w3.org/2001/XMLSchema#string">This class comprises immaterial items, including but not limited to stories, plots, procedural prescriptions, algorithms, laws of physics or images that are, or represent in some sense, sets of propositions about real or imaginary things and that are documented as single units or serve as topics of discourse.
+This class also comprises items that are “about” something in the sense of a subject. In the wider sense, this class includes expressions of psychological value such as non-figural art and musical themes. However, conceptual items such as types and classes are not instances of E89 Propositional Object. This should not be confused with the definition of a type, which is indeed an instance of E89 Propositional Object.</rdfs:comment>
+    <rdfs:label xml:lang="en">Propositional Object</rdfs:label>
+  </rdfs:Class>
+  <rdfs:Class rdf:about="http://iflastandards.info/ns/lrm/lrmoo/F5_Item">
+    <skos:notation rdf:datatype="http://www.w3.org/2001/XMLSchema#string">F5</skos:notation>
+    <rdfs:comment xml:lang="en" rdf:datatype="http://www.w3.org/2001/XMLSchema#string">This class comprises physical objects (printed books, scores, CDs, DVDs, CD-ROMS, etc.) that carry a F24 Publication Expression and
+			were produced by an industrial process involving an F3 Manifestation Product Type. </rdfs:comment>
+    <rdfs:label xml:lang="en">Item</rdfs:label>
+  </rdfs:Class>
+  <rdf:Property rdf:about="http://www.cidoc-crm.org/cidoc-crm/P1_is_identified_by">
+    <rdfs:range rdf:resource="http://www.cidoc-crm.org/cidoc-crm/E41_Appellation"/>
+    <rdfs:comment xml:lang="en">This property describes the naming or identification of any real world item by a name or any other identifier.
+This property is intended for identifiers in general use, which form part of the world the model intends to describe, and not merely for internal database identifiers which are specific to a technical system, unless these latter also have a more general use outside the technical context. This property includes in particular identification by mathematical expressions such as coordinate systems used for the identification of instances of E53 Place. The property does not reveal anything about when, where and by whom this identifier was used. A more detailed representation can be made using the fully developed (i.e. indirect) path through E15 Identifier Assignment.</rdfs:comment>
+    <rdfs:label xml:lang="en">is identified by</rdfs:label>
+    <skos:notation rdf:datatype="http://www.w3.org/2001/XMLSchema#string">P1</skos:notation>
+    <rdfs:domain rdf:resource="http://www.cidoc-crm.org/cidoc-crm/E1_CRM_Entity"/>
+  </rdf:Property>
+  <rdf:Property rdf:about="https://sdhss.org/ontology/social-life/1.0/P1_was_a_membership_of">
+    <rdfs:range rdf:resource="http://www.cidoc-crm.org/cidoc-crm/E39_Actor"/>
+    <rdfs:comment xml:lang="en">This property associates to the Temporal Entity the Actor (individual or group) that is member of a group</rdfs:comment>
+    <rdfs:label xml:lang="en">was a membership of</rdfs:label>
+    <skos:notation rdf:datatype="http://www.w3.org/2001/XMLSchema#string">P1</skos:notation>
+    <rdfs:domain rdf:resource="https://sdhss.org/ontology/social-life/1.0/C5_Membership"/>
+    <rdfs:subPropertyOf rdf:resource="https://sdhss.org/ontology/core/1.0/P2"/>
+  </rdf:Property>
+  <rdf:Property rdf:about="https://sdhss.org/ontology/social-life/1.0/P2_was_membership_in">
+    <rdfs:range rdf:resource="http://www.cidoc-crm.org/cidoc-crm/E74_Group"/>
+    <rdfs:comment xml:lang="en">This property associates the group concerned by the membership</rdfs:comment>
+    <rdfs:label xml:lang="en">was membership in</rdfs:label>
+    <skos:notation rdf:datatype="http://www.w3.org/2001/XMLSchema#string">P2</skos:notation>
+    <rdfs:domain rdf:resource="https://sdhss.org/ontology/social-life/1.0/C5_Membership"/>
+    <rdfs:subPropertyOf rdf:resource="http://www.cidoc-crm.org/cidoc-crm/P1_is_identified_by"/>
+  </rdf:Property>
+  <rdf:Property rdf:about="https://sdhss.org/ontology/core/1.0/P2">
+    <rdfs:range rdf:resource="https://sdhss.org/ontology/core/1.0/C5"/>
+    <rdfs:comment xml:lang="en">Associates an Item (F5) with the type which defines its identity</rdfs:comment>
+    <rdfs:label xml:lang="en">has item type</rdfs:label>
+    <skos:notation rdf:datatype="http://www.w3.org/2001/XMLSchema#string">P2</skos:notation>
+    <rdfs:domain rdf:resource="http://iflastandards.info/ns/lrm/lrmoo/F5_Item"/>
+  </rdf:Property>
+  <rdf:Property rdf:about="http://www.cidoc-crm.org/cidoc-crm/P2_has_type">
+    <rdfs:range rdf:resource="http://www.cidoc-crm.org/cidoc-crm/E55_Type"/>
+    <rdfs:comment xml:lang="en">This property allows sub typing of CRM entities - a form of specialisation – through the use of a terminological hierarchy, or thesaurus.
+The CRM is intended to focus on the high-level entities and relationships needed to describe data structures. Consequently, it does not specialise entities any further than is required for this immediate purpose. However, entities in the isA hierarchy of the CRM may by specialised into any number of sub entities, which can be defined in the E55 Type hierarchy. E51 Contact Point, for example, may be specialised into “e-mail address”, “telephone number”, “post office box”, “URL” etc. none of which figures explicitly in the CRM hierarchy. Sub typing obviously requires consistency between the meaning of the terms assigned and the more general intent of the CRM entity in question.</rdfs:comment>
+    <rdfs:label xml:lang="en">has type</rdfs:label>
+    <skos:notation rdf:datatype="http://www.w3.org/2001/XMLSchema#string">P2</skos:notation>
+    <rdfs:domain rdf:resource="http://www.cidoc-crm.org/cidoc-crm/E1_CRM_Entity"/>
+  </rdf:Property>
+  <rdf:Property rdf:about="https://sdhss.org/ontology/core/1.0/P2">
+    <rdfs:range rdf:resource="http://www.cidoc-crm.org/cidoc-crm/E1_CRM_Entity"/>
+    <rdfs:comment xml:lang="en">This is an abstract property – do not use it in profiles !
+As a high level meta-property the present property expresses the fact that the range class is an identity defining component of the domain class This means that the identity of the domain class instance depends on the associated range class instance and no alternative instances are allowed for this property against the general rule of CIDOC CRM.
+E.g. in the case of a Birth – E67 there can be no discussion about the person which is P98 brought into life by a specific instance of a birth. A specific instance of a birth is always related to just one person (or a limited range of persons in the case of twins, triplets, etc.). A discussion (and therefore production of alternative property instances) can take place concerning the P97 from father  property or the birth place, but never about the P98 brought into life property. This is necessary to allow data consistency in an information system and avoid considering e.g. the same birth instance as the birth of five different people which makes discussion impossible about the mother, father or birth place of one specific person.
+This property has no direct instances but is used to specify the role of the instanciated subproperties as identifying properties for the domain temporal entity.</rdfs:comment>
+    <rdfs:label xml:lang="en">domain class has identity defining component</rdfs:label>
+    <skos:notation rdf:datatype="http://www.w3.org/2001/XMLSchema#string">P2</skos:notation>
+    <rdfs:domain rdf:resource="http://www.cidoc-crm.org/cidoc-crm/E1_CRM_Entity"/>
+  </rdf:Property>
+  <rdf:Property rdf:about="https://sdhss.org/ontology/social-life/1.0/P3_has_membership_type">
+    <rdfs:range rdf:resource="https://sdhss.org/ontology/social-life/1.0/C6_Membership_Type"/>
+    <rdfs:comment xml:lang="en">Associates a membership with the type which defines its identity, making clear the kind of membership that is intended (legal, informal, simple association or full membership, etc.).
+The type of membership should not be confused with the different roles that a person can take on during membership. These can be registered using the sdh-so:P63 has quality during membership property or the  sdh-so:C13 Social Role Embodiment class.</rdfs:comment>
+    <rdfs:label xml:lang="en">has membership type</rdfs:label>
+    <skos:notation rdf:datatype="http://www.w3.org/2001/XMLSchema#string">P3</skos:notation>
+    <rdfs:domain rdf:resource="https://sdhss.org/ontology/social-life/1.0/C5_Membership"/>
+    <rdfs:subPropertyOf rdf:resource="http://www.cidoc-crm.org/cidoc-crm/P2_has_type"/>
+  </rdf:Property>
+  <rdf:Property rdf:about="https://sdhss.org/ontology/social-life/1.0/P4_is_occupation_of">
+    <rdfs:range rdf:resource="http://www.cidoc-crm.org/cidoc-crm/E21_Person"/>
+    <rdfs:comment xml:lang="en">This property associates the person having the given occupation</rdfs:comment>
+    <rdfs:label xml:lang="en">is occupation of</rdfs:label>
+    <skos:notation rdf:datatype="http://www.w3.org/2001/XMLSchema#string">P4</skos:notation>
+    <rdfs:domain rdf:resource="https://sdhss.org/ontology/social-life/1.0/C8_Occupation_Temporal_entity"/>
+    <rdfs:subPropertyOf rdf:resource="https://sdhss.org/ontology/core/1.0/P2"/>
+  </rdf:Property>
+  <rdf:Property rdf:about="https://sdhss.org/ontology/social-life/1.0/P5_is_about">
+    <rdfs:range rdf:resource="https://sdhss.org/ontology/social-life/1.0/C7_Occupation"/>
+    <rdfs:comment xml:lang="en">Is the type of the time-related occupation of a person</rdfs:comment>
+    <rdfs:label xml:lang="en">is about</rdfs:label>
+    <skos:notation rdf:datatype="http://www.w3.org/2001/XMLSchema#string">P5</skos:notation>
+    <rdfs:domain rdf:resource="https://sdhss.org/ontology/social-life/1.0/C8_Occupation_Temporal_entity"/>
+    <rdfs:subPropertyOf rdf:resource="https://sdhss.org/ontology/core/1.0/P2"/>
+  </rdf:Property>
+  <rdf:Property rdf:about="https://sdhss.org/ontology/social-life/1.0/P6_takes_place_at">
+    <rdfs:range rdf:resource="https://sdhss.org/ontology/core/1.0/C13"/>
+    <rdfs:comment xml:lang="en">Associates the geographical place where the whole activity takes place. If the place changes during the activity this property should not be used and different instances of sdh-so:C15 Epistemic Location of a Physical Thing should be produced, one per location and time span.</rdfs:comment>
+    <rdfs:label xml:lang="en">takes place at</rdfs:label>
+    <skos:notation rdf:datatype="http://www.w3.org/2001/XMLSchema#string">P6</skos:notation>
+    <rdfs:domain rdf:resource="https://sdhss.org/ontology/social-life/1.0/C8_Occupation_Temporal_entity"/>
+  </rdf:Property>
+  <rdf:Property rdf:about="https://sdhss.org/ontology/social-life/1.0/P7_on_behalf_of">
+    <rdfs:range rdf:resource="http://www.cidoc-crm.org/cidoc-crm/E39_Actor"/>
+    <rdfs:comment xml:lang="en">The organization within which the occupation is carried out, the person entrusting the occupation, etc. Use properties of properties to clarify, if necessary, the role of the organization or person entrusting the occupation.</rdfs:comment>
+    <rdfs:label xml:lang="en">on behalf of</rdfs:label>
+    <skos:notation rdf:datatype="http://www.w3.org/2001/XMLSchema#string">P7</skos:notation>
+    <rdfs:domain rdf:resource="https://sdhss.org/ontology/social-life/1.0/C8_Occupation_Temporal_entity"/>
+  </rdf:Property>
+  <rdf:Property rdf:about="https://sdhss.org/ontology/social-life/1.0/P8_is_subjection_of">
+    <rdfs:range rdf:resource="http://www.cidoc-crm.org/cidoc-crm/E77_Persistent_Item"/>
+    <rdfs:comment xml:lang="en">This property associates the persistent item to the right subjection it is concerned by</rdfs:comment>
+    <rdfs:label xml:lang="en">is subjection of</rdfs:label>
+    <skos:notation rdf:datatype="http://www.w3.org/2001/XMLSchema#string">P8</skos:notation>
+    <rdfs:domain rdf:resource="https://sdhss.org/ontology/social-life/1.0/C14_Holding_of_a_Right_or_Obligation"/>
+  </rdf:Property>
+  <rdf:Property rdf:about="https://sdhss.org/ontology/social-life/1.0/P9_is_right_of">
+    <rdfs:range rdf:resource="http://www.cidoc-crm.org/cidoc-crm/E39_Actor"/>
+    <rdfs:comment xml:lang="en">This property associates the actor or actors having the right over a given persistent item. If more then one actor is associated, this means they exercise their right on the same persistent item collectively and during the same period of time.</rdfs:comment>
+    <rdfs:label xml:lang="en">is right of</rdfs:label>
+    <skos:notation rdf:datatype="http://www.w3.org/2001/XMLSchema#string">P9</skos:notation>
+    <rdfs:domain rdf:resource="https://sdhss.org/ontology/social-life/1.0/C14_Holding_of_a_Right_or_Obligation"/>
+  </rdf:Property>
+  <rdf:Property rdf:about="https://sdhss.org/ontology/social-life/1.0/P10_is_participation_of">
+    <rdfs:range rdf:resource="http://www.cidoc-crm.org/cidoc-crm/E39_Actor"/>
+    <rdfs:comment xml:lang="en">This property associates the actor (person or group) participating in the event. Only one actor can be added per class instance.</rdfs:comment>
+    <rdfs:label xml:lang="en">is participation of</rdfs:label>
+    <skos:notation rdf:datatype="http://www.w3.org/2001/XMLSchema#string">P10</skos:notation>
+    <rdfs:domain rdf:resource="https://sdhss.org/ontology/social-life/1.0/C15_Participation"/>
+    <rdfs:subPropertyOf rdf:resource="http://www.cidoc-crm.org/cidoc-crm/P14_carried_out_by"/>
+  </rdf:Property>
+  <rdf:Property rdf:about="https://sdhss.org/ontology/social-life/1.0/P11_is_participation_in">
+    <rdfs:range rdf:resource="http://www.cidoc-crm.org/cidoc-crm/E5_Event"/>
+    <rdfs:comment xml:lang="en">This property identifies the event to which the participation is related.</rdfs:comment>
+    <rdfs:label xml:lang="en">is participation in</rdfs:label>
+    <skos:notation rdf:datatype="http://www.w3.org/2001/XMLSchema#string">P11</skos:notation>
+    <rdfs:domain rdf:resource="https://sdhss.org/ontology/social-life/1.0/C15_Participation"/>
+  </rdf:Property>
+  <rdf:Property rdf:about="https://sdhss.org/ontology/social-life/1.0/P12_is_participation_in_the_quality_of">
+    <rdfs:range rdf:resource="https://sdhss.org/ontology/social-life/1.0/C2_Actors_Social_Quality"/>
+    <rdfs:comment xml:lang="en">The function exercised or office/rank hold by the actor participating in the event. E.g. someone participating in an international conference not as a private person but as an ambassador of a state. More then one instance of this property per event and the same actor are possible but in this case the time span must be the same for all of them. Otherwise different instances of the class Participation should be created.</rdfs:comment>
+    <rdfs:label xml:lang="en">is participation in the quality of</rdfs:label>
+    <skos:notation rdf:datatype="http://www.w3.org/2001/XMLSchema#string">P12</skos:notation>
+    <rdfs:domain rdf:resource="https://sdhss.org/ontology/social-life/1.0/C15_Participation"/>
+  </rdf:Property>
+  <rdf:Property rdf:about="https://sdhss.org/ontology/social-life/1.0/P13_pertains_to">
+    <rdfs:range rdf:resource="http://www.cidoc-crm.org/cidoc-crm/E39_Actor"/>
+    <rdfs:comment xml:lang="en">This property associates the actor (person or group) concerned by the social quality</rdfs:comment>
+    <rdfs:label xml:lang="en">pertains to</rdfs:label>
+    <skos:notation rdf:datatype="http://www.w3.org/2001/XMLSchema#string">P13</skos:notation>
+    <rdfs:domain rdf:resource="https://sdhss.org/ontology/social-life/1.0/C1_Social_Perception_of_an_Actor"/>
+    <rdfs:subPropertyOf rdf:resource="https://sdhss.org/ontology/core/1.0/P2"/>
+    <rdfs:subPropertyOf rdf:resource="https://sdhss.org/ontology/core/1.0/P39"/>
+  </rdf:Property>
+  <rdf:Property rdf:about="http://www.cidoc-crm.org/cidoc-crm/P14_carried_out_by">
+    <rdfs:range rdf:resource="http://www.cidoc-crm.org/cidoc-crm/E39_Actor"/>
+    <rdfs:comment xml:lang="en">This property describes the active participation of an E39 Actor in an E7 Activity.
+It implies causal or legal responsibility. The P14.1 in the role of property of the property allows the nature of an Actor’s participation to be specified.</rdfs:comment>
+    <rdfs:label xml:lang="en">carried out by</rdfs:label>
+    <skos:notation rdf:datatype="http://www.w3.org/2001/XMLSchema#string">P14</skos:notation>
+    <rdfs:domain rdf:resource="http://www.cidoc-crm.org/cidoc-crm/E7_Activity"/>
+  </rdf:Property>
+  <rdf:Property rdf:about="https://sdhss.org/ontology/social-life/1.0/P14_has_social_quality">
+    <rdfs:range rdf:resource="https://sdhss.org/ontology/social-life/1.0/C2_Actors_Social_Quality"/>
+    <rdfs:comment xml:lang="en">Associates the considered social quality. The maximal cardinality is one for social qualities because each of them has to be associated to the actor separately. This is because no only each quality sould be considered individually, but the time span of each of them is usually different. Therefore it cannot be expressed in just one temporal entity instance</rdfs:comment>
+    <rdfs:label xml:lang="en">has social quality</rdfs:label>
+    <skos:notation rdf:datatype="http://www.w3.org/2001/XMLSchema#string">P14</skos:notation>
+    <rdfs:domain rdf:resource="https://sdhss.org/ontology/social-life/1.0/C1_Social_Perception_of_an_Actor"/>
+  </rdf:Property>
+  <rdf:Property rdf:about="https://sdhss.org/ontology/social-life/1.0/P15_involves_partner">
+    <rdfs:range rdf:resource="http://www.cidoc-crm.org/cidoc-crm/E39_Actor"/>
+    <rdfs:comment xml:lang="en">Associates to the relationship the persons or groups involved in it.
+Each relationship generally involves only two instances of one or more classes. Informal relationships like commercial relations or friendship should be restricted to two persistent items per instance. Therefore, the range quantifiers sould be: 2,2.
+Relationships involving more than two partners could be used to express multi-lateral agreements, treaties, etc. although it is preferable to treat structured relationships between several entities as membership in a group. This is mandatory if the duration of the relationship is not the same for all partners.</rdfs:comment>
+    <rdfs:label xml:lang="en">involves partner</rdfs:label>
+    <skos:notation rdf:datatype="http://www.w3.org/2001/XMLSchema#string">P15</skos:notation>
+    <rdfs:domain rdf:resource="https://sdhss.org/ontology/social-life/1.0/C3_Social_Relationship"/>
+  </rdf:Property>
+  <rdf:Property rdf:about="https://sdhss.org/ontology/social-life/1.0/P16_has_relationship_type">
+    <rdfs:range rdf:resource="https://sdhss.org/ontology/social-life/1.0/C4_Social_Relationship_Type"/>
+    <rdfs:comment xml:lang="en">Associates a social relationship with the type which defines its identity</rdfs:comment>
+    <rdfs:label xml:lang="en">has relationship type</rdfs:label>
+    <skos:notation rdf:datatype="http://www.w3.org/2001/XMLSchema#string">P16</skos:notation>
+    <rdfs:domain rdf:resource="https://sdhss.org/ontology/social-life/1.0/C3_Social_Relationship"/>
+    <rdfs:subPropertyOf rdf:resource="http://www.cidoc-crm.org/cidoc-crm/P2_has_type"/>
+  </rdf:Property>
+  <rdf:Property rdf:about="https://sdhss.org/ontology/social-life/1.0/P17_has_relationship_source">
+    <rdfs:range rdf:resource="http://www.cidoc-crm.org/cidoc-crm/E39_Actor"/>
+    <rdfs:comment xml:lang="en">This property associates to the relationhips the actor being at its source, i.e. the starting vertex in a directed relationship</rdfs:comment>
+    <rdfs:label xml:lang="en">has relationship source</rdfs:label>
+    <skos:notation rdf:datatype="http://www.w3.org/2001/XMLSchema#string">P17</skos:notation>
+    <rdfs:domain rdf:resource="https://sdhss.org/ontology/social-life/1.0/C3_Social_Relationship"/>
+  </rdf:Property>
+  <rdf:Property rdf:about="https://sdhss.org/ontology/social-life/1.0/P18_has_relationship_target">
+    <rdfs:range rdf:resource="http://www.cidoc-crm.org/cidoc-crm/E39_Actor"/>
+    <rdfs:comment xml:lang="en">This property associates to the relationhips the actor being its target, i.e. the vertex at the end of a directed relationship</rdfs:comment>
+    <rdfs:label xml:lang="en">has relationship target</rdfs:label>
+    <skos:notation rdf:datatype="http://www.w3.org/2001/XMLSchema#string">P18</skos:notation>
+    <rdfs:domain rdf:resource="https://sdhss.org/ontology/social-life/1.0/C3_Social_Relationship"/>
+  </rdf:Property>
+  <rdf:Property rdf:about="https://sdhss.org/ontology/social-life/1.0/P19_is_defined_in_relation_to">
+    <rdfs:range rdf:resource="http://www.cidoc-crm.org/cidoc-crm/E74_Group"/>
+    <rdfs:comment xml:lang="en">A social role is often defined in relation to a group in order to characterise its members or entities involved in the life of the group or the plans that constitute it.</rdfs:comment>
+    <rdfs:label xml:lang="en">is defined in relation to</rdfs:label>
+    <skos:notation rdf:datatype="http://www.w3.org/2001/XMLSchema#string">P19</skos:notation>
+    <rdfs:domain rdf:resource="https://sdhss.org/ontology/social-life/1.0/C12_Actors_Social_Role"/>
+  </rdf:Property>
+  <rdf:Property rdf:about="https://sdhss.org/ontology/social-life/1.0/P20_had_partner">
+    <rdfs:range rdf:resource="http://www.cidoc-crm.org/cidoc-crm/E21_Person"/>
+    <rdfs:comment xml:lang="en">This property associates the two (always two) instances of E21 Person participating to the C9 Union.</rdfs:comment>
+    <rdfs:label xml:lang="en">had partner</rdfs:label>
+    <skos:notation rdf:datatype="http://www.w3.org/2001/XMLSchema#string">P20</skos:notation>
+    <rdfs:domain rdf:resource="https://sdhss.org/ontology/social-life/1.0/C9_Relationship"/>
+  </rdf:Property>
+  <rdf:Property rdf:about="https://sdhss.org/ontology/social-life/1.0/P21_has_type_of_interaction">
+    <rdfs:range rdf:resource="https://sdhss.org/ontology/social-life/1.0/C10_Type_of_Persons_Interaction"/>
+    <rdfs:comment xml:lang="en">This property associates a sdh:C18 Persons'' Interaction with the sdh:C10 Type of Interaction which defines its identity.</rdfs:comment>
+    <rdfs:label xml:lang="en">has type of interaction</rdfs:label>
+    <skos:notation rdf:datatype="http://www.w3.org/2001/XMLSchema#string">P21</skos:notation>
+    <rdfs:domain rdf:resource="https://sdhss.org/ontology/social-life/1.0/C18_Persons_Interaction"/>
+    <rdfs:subPropertyOf rdf:resource="http://www.cidoc-crm.org/cidoc-crm/P2_has_type"/>
+  </rdf:Property>
+  <rdf:Property rdf:about="https://sdhss.org/ontology/social-life/1.0/P22_stemmed_from">
+    <rdfs:range rdf:resource="https://sdhss.org/ontology/social-life/1.0/C9_Relationship"/>
+    <rdfs:comment xml:lang="en">This property models the biological origin of a birth from the physical union of the parents. This is the common scenario. For more specific situations, like adoption or artificial procreation, a more suitable model should be applied.</rdfs:comment>
+    <rdfs:label xml:lang="en">stemmed from</rdfs:label>
+    <skos:notation rdf:datatype="http://www.w3.org/2001/XMLSchema#string">P22</skos:notation>
+    <rdfs:domain rdf:resource="http://www.cidoc-crm.org/cidoc-crm/E67_Birth"/>
+  </rdf:Property>
+  <rdf:Property rdf:about="https://sdhss.org/ontology/social-life/1.0/P23_has_gender">
+    <rdfs:range rdf:resource="https://sdhss.org/ontology/social-life/1.0/C11_Gender"/>
+    <rdfs:comment xml:lang="en">This property associates a person with their gender. This is a shortcut for the longer path through sdh-so:C1 Social Perception an Actor expressing the evolving perception of the gender of an individual over time (as subclass of sdh:C30 Connotation). The quantifier on the gender side is open to allow the documentation of different genders, even if it is without temporality.</rdfs:comment>
+    <rdfs:label xml:lang="en">has gender</rdfs:label>
+    <skos:notation rdf:datatype="http://www.w3.org/2001/XMLSchema#string">P23</skos:notation>
+    <rdfs:domain rdf:resource="http://www.cidoc-crm.org/cidoc-crm/E21_Person"/>
+  </rdf:Property>
+  <rdf:Property rdf:about="https://sdhss.org/ontology/social-life/1.0/P24_has_its_origins_in">
+    <rdfs:range rdf:resource="https://sdhss.org/ontology/core/1.0/C13"/>
+    <rdfs:comment xml:lang="en">This property associates a person to the geographical region or place he/she comes from, in the sense of unspecified origin. If this place or region is the place where the person was born, it would be preferable to use a E67 Birth event</rdfs:comment>
+    <rdfs:label xml:lang="en">has its origins in</rdfs:label>
+    <skos:notation rdf:datatype="http://www.w3.org/2001/XMLSchema#string">P24</skos:notation>
+    <rdfs:domain rdf:resource="http://www.cidoc-crm.org/cidoc-crm/E21_Person"/>
+  </rdf:Property>
+  <rdf:Property rdf:about="https://sdhss.org/ontology/social-life/1.0/P25_is_participant_in">
+    <rdfs:range rdf:resource="http://www.cidoc-crm.org/cidoc-crm/E5_Event"/>
+    <rdfs:comment xml:lang="en">This property associates the participant description to the event in which the person or persons, or group, participated</rdfs:comment>
+    <rdfs:label xml:lang="en">is participant in</rdfs:label>
+    <skos:notation rdf:datatype="http://www.w3.org/2001/XMLSchema#string">P25</skos:notation>
+    <rdfs:domain rdf:resource="https://sdhss.org/ontology/social-life/1.0/C16_Participant_Description"/>
+    <rdfs:subPropertyOf rdf:resource="http://www.cidoc-crm.org/cidoc-crm/P94_has_created"/>
+  </rdf:Property>
+  <rdf:Property rdf:about="https://sdhss.org/ontology/social-life/1.0/P26_is_embodiment_by">
+    <rdfs:range rdf:resource="http://www.cidoc-crm.org/cidoc-crm/E39_Actor"/>
+    <rdfs:comment xml:lang="en">This property associates a person or group to the embodiment of social actor, i.e. the fact of acting in the quality and virtue of being the human actor who realises a social actor, an abstract individual possessing more or less clearly defined rights and duties.</rdfs:comment>
+    <rdfs:label xml:lang="en">is embodiment by</rdfs:label>
+    <skos:notation rdf:datatype="http://www.w3.org/2001/XMLSchema#string">P26</skos:notation>
+    <rdfs:domain rdf:resource="https://sdhss.org/ontology/social-life/1.0/C13_Social_Role_Embodiment"/>
+    <rdfs:subPropertyOf rdf:resource="https://sdhss.org/ontology/core/1.0/P2"/>
+    <rdfs:subPropertyOf rdf:resource="https://sdhss.org/ontology/social-life/1.0/P52_is_legal_fact_of"/>
+  </rdf:Property>
+  <rdf:Property rdf:about="https://sdhss.org/ontology/social-life/1.0/P27_is_integration_of">
+    <rdfs:range rdf:resource="http://www.cidoc-crm.org/cidoc-crm/E1_CRM_Entity"/>
+    <rdfs:comment xml:lang="en">This property associates an entity with a characterization that integrates it into a tradition, custom or law.</rdfs:comment>
+    <rdfs:label xml:lang="en">is integration of</rdfs:label>
+    <skos:notation rdf:datatype="http://www.w3.org/2001/XMLSchema#string">P27</skos:notation>
+    <rdfs:domain rdf:resource="https://sdhss.org/ontology/social-life/1.0/C19_Legal_Integration"/>
+  </rdf:Property>
+  <rdf:Property rdf:about="https://sdhss.org/ontology/social-life/1.0/P28_is_integration_into">
+    <rdfs:range rdf:resource="https://sdhss.org/ontology/social-life/1.0/C17_Custom_or_Law"/>
+    <rdfs:comment xml:lang="en">This property associates the custom or law that integrates (i.e. defines or connotates) the entity under consideration.</rdfs:comment>
+    <rdfs:label xml:lang="en">is integration into</rdfs:label>
+    <skos:notation rdf:datatype="http://www.w3.org/2001/XMLSchema#string">P28</skos:notation>
+    <rdfs:domain rdf:resource="https://sdhss.org/ontology/social-life/1.0/C19_Legal_Integration"/>
+  </rdf:Property>
+  <rdf:Property rdf:about="https://sdhss.org/ontology/social-life/1.0/P29_has_holding_of_a_right_type">
+    <rdfs:range rdf:resource="https://sdhss.org/ontology/social-life/1.0/C31_Holding_of_a_Right_Type"/>
+    <rdfs:comment xml:lang="en">Associates a right holding to the type which defines its identity.</rdfs:comment>
+    <rdfs:label xml:lang="en">has holding of a right type</rdfs:label>
+    <skos:notation rdf:datatype="http://www.w3.org/2001/XMLSchema#string">P29</skos:notation>
+    <rdfs:domain rdf:resource="https://sdhss.org/ontology/social-life/1.0/C14_Holding_of_a_Right_or_Obligation"/>
+  </rdf:Property>
+  <rdf:Property rdf:about="https://sdhss.org/ontology/social-life/1.0/P30_is_validity_of">
+    <rdfs:range rdf:resource="https://sdhss.org/ontology/social-life/1.0/C17_Custom_or_Law"/>
+    <rdfs:comment xml:lang="en">This property associates to the custom or law to its temporal quality or validity time-span in collective intentionality.</rdfs:comment>
+    <rdfs:label xml:lang="en">is validity of</rdfs:label>
+    <skos:notation rdf:datatype="http://www.w3.org/2001/XMLSchema#string">P30</skos:notation>
+    <rdfs:domain rdf:resource="https://sdhss.org/ontology/social-life/1.0/C20_Being_in_Force"/>
+    <rdfs:subPropertyOf rdf:resource="https://sdhss.org/ontology/core/1.0/P49"/>
+  </rdf:Property>
+  <rdf:Property rdf:about="https://sdhss.org/ontology/social-life/1.0/P31_realizes">
+    <rdfs:range rdf:resource="https://sdhss.org/ontology/social-life/1.0/C17_Custom_or_Law"/>
+    <rdfs:comment xml:lang="en">This property associates the object with is subject to the right or obligation.</rdfs:comment>
+    <rdfs:label xml:lang="en">realizes</rdfs:label>
+    <skos:notation rdf:datatype="http://www.w3.org/2001/XMLSchema#string">P31</skos:notation>
+    <rdfs:domain rdf:resource="https://sdhss.org/ontology/social-life/1.0/C14_Holding_of_a_Right_or_Obligation"/>
+  </rdf:Property>
+  <rdf:Property rdf:about="https://sdhss.org/ontology/social-life/1.0/P32_has_custom_or_law_type">
+    <rdfs:range rdf:resource="https://sdhss.org/ontology/social-life/1.0/C21_Custom_or_Law_Type"/>
+    <rdfs:comment xml:lang="en">Associates a C17 Right or obligation instance with the type which defines its identity.</rdfs:comment>
+    <rdfs:label xml:lang="en">has custom or law type</rdfs:label>
+    <skos:notation rdf:datatype="http://www.w3.org/2001/XMLSchema#string">P32</skos:notation>
+    <rdfs:domain rdf:resource="https://sdhss.org/ontology/social-life/1.0/C17_Custom_or_Law"/>
+    <rdfs:subPropertyOf rdf:resource="http://www.cidoc-crm.org/cidoc-crm/P2_has_type"/>
+  </rdf:Property>
+  <rdf:Property rdf:about="https://sdhss.org/ontology/social-life/1.0/P33_is_embodiment_of">
+    <rdfs:range rdf:resource="https://sdhss.org/ontology/social-life/1.0/C12_Actors_Social_Role"/>
+    <rdfs:comment xml:lang="en">This property associates the social role of an actor, understood as a time-indexed quality of it, with the instance of the Social Actor class, i.e. with the  abstract individual that the actor (as group or person) embodies.</rdfs:comment>
+    <rdfs:label xml:lang="en">is embodiment of</rdfs:label>
+    <skos:notation rdf:datatype="http://www.w3.org/2001/XMLSchema#string">P33</skos:notation>
+    <rdfs:domain rdf:resource="https://sdhss.org/ontology/social-life/1.0/C13_Social_Role_Embodiment"/>
+    <rdfs:subPropertyOf rdf:resource="https://sdhss.org/ontology/social-life/1.0/P37_involves_legal_quality"/>
+  </rdf:Property>
+  <rdf:Property rdf:about="https://sdhss.org/ontology/social-life/1.0/P34_is_participation_on_behalf_of">
+    <rdfs:range rdf:resource="http://www.cidoc-crm.org/cidoc-crm/E39_Actor"/>
+    <rdfs:comment xml:lang="en">This property models the fact that an actor participates in an event on behalf of another actor, be this for representing him or for other reasons. One can represent more then one actor in one and the same event, but in this case the time-span of the representation must be the same for all represented actors. Otherwise, several instances of participation should be produced.</rdfs:comment>
+    <rdfs:label xml:lang="en">is participation on behalf of</rdfs:label>
+    <skos:notation rdf:datatype="http://www.w3.org/2001/XMLSchema#string">P34</skos:notation>
+    <rdfs:domain rdf:resource="https://sdhss.org/ontology/social-life/1.0/C15_Participation"/>
+  </rdf:Property>
+  <rdf:Property rdf:about="https://sdhss.org/ontology/social-life/1.0/P35_is_defined_by">
+    <rdfs:range rdf:resource="https://sdhss.org/ontology/social-life/1.0/C24_Religion_or_Religious_Denomination"/>
+    <rdfs:comment xml:lang="en">
+Associates a social quality (temporal entity) with the type which defines its identity
+</rdfs:comment>
+    <rdfs:label xml:lang="en">is defined by</rdfs:label>
+    <skos:notation rdf:datatype="http://www.w3.org/2001/XMLSchema#string">P35</skos:notation>
+    <rdfs:domain rdf:resource="https://sdhss.org/ontology/social-life/1.0/C23_Religious_Identity"/>
+  </rdf:Property>
+  <rdf:Property rdf:about="https://sdhss.org/ontology/social-life/1.0/P36_pertains_to">
+    <rdfs:range rdf:resource="http://www.cidoc-crm.org/cidoc-crm/E21_Person"/>
+    <rdfs:comment xml:lang="en">This property associates the social event to the spatio-temporal, physical event in which the social event (defined in human collective intentionality but not physical space) happens.</rdfs:comment>
+    <rdfs:label xml:lang="en">pertains to</rdfs:label>
+    <skos:notation rdf:datatype="http://www.w3.org/2001/XMLSchema#string">P36</skos:notation>
+    <rdfs:domain rdf:resource="https://sdhss.org/ontology/social-life/1.0/C23_Religious_Identity"/>
+  </rdf:Property>
+  <rdf:Property rdf:about="https://sdhss.org/ontology/social-life/1.0/P37_involves_legal_quality">
+    <rdfs:range rdf:resource="https://sdhss.org/ontology/social-life/1.0/C26_Legal_Quality"/>
+    <rdfs:comment xml:lang="en">Associates the legal quality of an actor to the temporal validity of it</rdfs:comment>
+    <rdfs:label xml:lang="en">involves legal quality</rdfs:label>
+    <skos:notation rdf:datatype="http://www.w3.org/2001/XMLSchema#string">P37</skos:notation>
+    <rdfs:domain rdf:resource="https://sdhss.org/ontology/social-life/1.0/C27_Legal_Fact"/>
+  </rdf:Property>
+  <rdf:Property rdf:about="https://sdhss.org/ontology/social-life/1.0/P38_has_legal_fact_type">
+    <rdfs:range rdf:resource="https://sdhss.org/ontology/social-life/1.0/C22_Legal_Quality_Type"/>
+    <rdfs:comment xml:lang="en">Associates a type to a legal connotation.</rdfs:comment>
+    <rdfs:label xml:lang="en">has legal fact type</rdfs:label>
+    <skos:notation rdf:datatype="http://www.w3.org/2001/XMLSchema#string">P38</skos:notation>
+    <rdfs:domain rdf:resource="https://sdhss.org/ontology/social-life/1.0/C27_Legal_Fact"/>
+  </rdf:Property>
+  <rdf:Property rdf:about="https://sdhss.org/ontology/core/1.0/P39">
+    <rdfs:range rdf:resource="http://www.cidoc-crm.org/cidoc-crm/E1_CRM_Entity"/>
+    <rdfs:comment xml:lang="en">This property associates to the connotation the entity that is integrated into the concerned representations, i.e. that receives a new connotation and becomes part of them, and in this way acquires a specific intentional quality.
+This property is a shortcut to the longer path : sdh:C30 Connotation -&gt;  sdh:P34 has content -&gt; crm:E89 Propositional Object -&gt; crm:P129 is about -&gt; crm:E1 CRM Entity.</rdfs:comment>
+    <rdfs:label xml:lang="en">is connotation of</rdfs:label>
+    <skos:notation rdf:datatype="http://www.w3.org/2001/XMLSchema#string">P39</skos:notation>
+    <rdfs:domain rdf:resource="https://sdhss.org/ontology/core/1.0/C30"/>
+  </rdf:Property>
+  <rdf:Property rdf:about="https://sdhss.org/ontology/social-life/1.0/P39_has_type">
+    <rdfs:range rdf:resource="https://sdhss.org/ontology/social-life/1.0/C22_Legal_Quality_Type"/>
+    <rdfs:comment xml:lang="en">Associates a legal quality to the type that classifies it.</rdfs:comment>
+    <rdfs:label xml:lang="en">has type</rdfs:label>
+    <skos:notation rdf:datatype="http://www.w3.org/2001/XMLSchema#string">P39</skos:notation>
+    <rdfs:domain rdf:resource="https://sdhss.org/ontology/social-life/1.0/C26_Legal_Quality"/>
+  </rdf:Property>
+  <rdf:Property rdf:about="https://sdhss.org/ontology/core/1.0/P40">
+    <rdfs:range rdf:resource="https://sdhss.org/ontology/core/1.0/C26"/>
+    <rdfs:comment xml:lang="en">This property associates a particular intention, be this a state of mind or intentional event, to the representations of an individual intentional entity that are the context of the propositional content of the intention. Generally these representations are shared with the intentional collective or portion of society this individual lives in and is socialized into.
+The same intentional content can be related to different representational contexts. Therefore the n to n quantification of this property.</rdfs:comment>
+    <rdfs:label xml:lang="en">has context</rdfs:label>
+    <skos:notation rdf:datatype="http://www.w3.org/2001/XMLSchema#string">P40</skos:notation>
+    <rdfs:domain rdf:resource="https://sdhss.org/ontology/core/1.0/C4"/>
+  </rdf:Property>
+  <rdf:Property rdf:about="https://sdhss.org/ontology/social-life/1.0/P40_is_valid_in">
+    <rdfs:range rdf:resource="https://sdhss.org/ontology/core/1.0/C13"/>
+    <rdfs:comment xml:lang="en">This property associates the geographical domain of validity of a law, custom, right or obligation</rdfs:comment>
+    <rdfs:label xml:lang="en">is valid in</rdfs:label>
+    <skos:notation rdf:datatype="http://www.w3.org/2001/XMLSchema#string">P40</skos:notation>
+    <rdfs:domain rdf:resource="https://sdhss.org/ontology/social-life/1.0/C20_Being_in_Force"/>
+  </rdf:Property>
+  <rdf:Property rdf:about="https://sdhss.org/ontology/social-life/1.0/P41_is_interaction_of">
+    <rdfs:range rdf:resource="http://www.cidoc-crm.org/cidoc-crm/E21_Person"/>
+    <rdfs:comment xml:lang="en">This property associates the two or more persons involved in the interaction. If more than two persons are involved in one instance of an interaction, e.g. in the case of a meeting, there must be a unity in time and space for all the participants. If a person joins the interaction at a later moment than the beginning, or leaves before the end, the C15 Participation class can be used.</rdfs:comment>
+    <rdfs:label xml:lang="en">is interaction of</rdfs:label>
+    <skos:notation rdf:datatype="http://www.w3.org/2001/XMLSchema#string">P41</skos:notation>
+    <rdfs:domain rdf:resource="https://sdhss.org/ontology/social-life/1.0/C18_Persons_Interaction"/>
+  </rdf:Property>
+  <rdf:Property rdf:about="https://sdhss.org/ontology/social-life/1.0/P43_is_acquisition_by">
+    <rdfs:range rdf:resource="http://www.cidoc-crm.org/cidoc-crm/E77_Persistent_Item"/>
+    <rdfs:comment xml:lang="en">This property associates the persistent item (an actor, a physical thing, a symbol, etc.) that acquires a legal quality. </rdfs:comment>
+    <rdfs:label xml:lang="en">is acquisition by</rdfs:label>
+    <skos:notation rdf:datatype="http://www.w3.org/2001/XMLSchema#string">P43</skos:notation>
+    <rdfs:domain rdf:resource="https://sdhss.org/ontology/social-life/1.0/C29_Legal_Quality_Acquisition"/>
+    <rdfs:subPropertyOf rdf:resource="https://sdhss.org/ontology/core/1.0/P2"/>
+  </rdf:Property>
+  <rdf:Property rdf:about="https://sdhss.org/ontology/social-life/1.0/P44_is_acquisition_of">
+    <rdfs:range rdf:resource="https://sdhss.org/ontology/social-life/1.0/C26_Legal_Quality"/>
+    <rdfs:comment xml:lang="en">This property associates the legal quality acquired by a given actor</rdfs:comment>
+    <rdfs:label xml:lang="en">is acquisition of</rdfs:label>
+    <skos:notation rdf:datatype="http://www.w3.org/2001/XMLSchema#string">P44</skos:notation>
+    <rdfs:domain rdf:resource="https://sdhss.org/ontology/social-life/1.0/C29_Legal_Quality_Acquisition"/>
+  </rdf:Property>
+  <rdf:Property rdf:about="https://sdhss.org/ontology/social-life/1.0/P45_issued_by">
+    <rdfs:range rdf:resource="http://www.cidoc-crm.org/cidoc-crm/E39_Actor"/>
+    <rdfs:comment xml:lang="en">This property associates the individual or group who delivers the legal quality. One or more actors may be involved in conferring a legal quality to another actor. However, it is preferable to associate only the main actors with this property. For more specific cases, or if one wants to specify the roles of the different actors, it is preferable to use more specialized classes or classes modelling the specific participation of an actor in the event.</rdfs:comment>
+    <rdfs:label xml:lang="en">issued by</rdfs:label>
+    <skos:notation rdf:datatype="http://www.w3.org/2001/XMLSchema#string">P45</skos:notation>
+    <rdfs:domain rdf:resource="https://sdhss.org/ontology/social-life/1.0/C29_Legal_Quality_Acquisition"/>
+  </rdf:Property>
+  <rdf:Property rdf:about="https://sdhss.org/ontology/social-life/1.0/P46_has_legal_quality_acquisition_type">
+    <rdfs:range rdf:resource="https://sdhss.org/ontology/social-life/1.0/C30_Actors_Legal_Quality_Acquisition_Type"/>
+    <rdfs:comment xml:lang="en">Associates as Actor''s Legal Quality Acquisition instance with the type which defines its identity.</rdfs:comment>
+    <rdfs:label xml:lang="en">has legal quality acquisition type</rdfs:label>
+    <skos:notation rdf:datatype="http://www.w3.org/2001/XMLSchema#string">P46</skos:notation>
+    <rdfs:domain rdf:resource="https://sdhss.org/ontology/social-life/1.0/C29_Legal_Quality_Acquisition"/>
+  </rdf:Property>
+  <rdf:Property rdf:about="https://sdhss.org/ontology/social-life/1.0/P47_mentions">
+    <rdfs:range rdf:resource="https://sdhss.org/ontology/social-life/1.0/C15_Participation"/>
+    <rdfs:comment xml:lang="en">This property associates a participant description with one or more participations (and therefore indirectly participants) mentioned in the description</rdfs:comment>
+    <rdfs:label xml:lang="en">mentions</rdfs:label>
+    <skos:notation rdf:datatype="http://www.w3.org/2001/XMLSchema#string">P47</skos:notation>
+    <rdfs:domain rdf:resource="https://sdhss.org/ontology/social-life/1.0/C16_Participant_Description"/>
+  </rdf:Property>
+  <rdf:Property rdf:about="https://sdhss.org/ontology/social-life/1.0/P48_has_specific_location">
+    <rdfs:range rdf:resource="https://sdhss.org/ontology/core/1.0/C17"/>
+    <rdfs:comment xml:lang="en">This property associates the address, building or other construction that represents the socially acknowledged location of an actor</rdfs:comment>
+    <rdfs:label xml:lang="en">has specific location</rdfs:label>
+    <skos:notation rdf:datatype="http://www.w3.org/2001/XMLSchema#string">P48</skos:notation>
+    <rdfs:domain rdf:resource="https://sdhss.org/ontology/social-life/1.0/C28_Legal_Location_of_an_Actor"/>
+  </rdf:Property>
+  <rdf:Property rdf:about="https://sdhss.org/ontology/core/1.0/P49">
+    <rdfs:range rdf:resource="https://sdhss.org/ontology/core/1.0/C36"/>
+    <rdfs:comment xml:lang="en">This property associates the plan or design that is held by a person or shared by the group</rdfs:comment>
+    <rdfs:label xml:lang="en">is about</rdfs:label>
+    <skos:notation rdf:datatype="http://www.w3.org/2001/XMLSchema#string">P49</skos:notation>
+    <rdfs:domain rdf:resource="https://sdhss.org/ontology/core/1.0/C37"/>
+  </rdf:Property>
+  <rdf:Property rdf:about="https://sdhss.org/ontology/social-life/1.0/P49_has_location">
+    <rdfs:range rdf:resource="https://sdhss.org/ontology/core/1.0/C13"/>
+    <rdfs:comment xml:lang="en">This property associates the geographical location which represents, in a generic way, the socially acknowledged location of an actor</rdfs:comment>
+    <rdfs:label xml:lang="en">has location</rdfs:label>
+    <skos:notation rdf:datatype="http://www.w3.org/2001/XMLSchema#string">P49</skos:notation>
+    <rdfs:domain rdf:resource="https://sdhss.org/ontology/social-life/1.0/C28_Legal_Location_of_an_Actor"/>
+  </rdf:Property>
+  <rdf:Property rdf:about="https://sdhss.org/ontology/social-life/1.0/P50_has_social_role_type">
+    <rdfs:range rdf:resource="https://sdhss.org/ontology/social-life/1.0/C32_Social_Role_Type"/>
+    <rdfs:comment xml:lang="en">This property associates a type to an instance of the a Social Role class in order to specify its identity</rdfs:comment>
+    <rdfs:label xml:lang="en">has social role type</rdfs:label>
+    <skos:notation rdf:datatype="http://www.w3.org/2001/XMLSchema#string">P50</skos:notation>
+    <rdfs:domain rdf:resource="https://sdhss.org/ontology/social-life/1.0/C12_Actors_Social_Role"/>
+    <rdfs:subPropertyOf rdf:resource="http://www.cidoc-crm.org/cidoc-crm/P2_has_type"/>
+  </rdf:Property>
+  <rdf:Property rdf:about="https://sdhss.org/ontology/social-life/1.0/P51_has_legal_location_type">
+    <rdfs:range rdf:resource="https://sdhss.org/ontology/social-life/1.0/C33_Legal_Location_Type"/>
+    <rdfs:comment xml:lang="en">This property associates a type that provides a specific identity to the given instance of the sdh-so:C28 Legal Location of an Actor class.</rdfs:comment>
+    <rdfs:label xml:lang="en">has legal location type</rdfs:label>
+    <skos:notation rdf:datatype="http://www.w3.org/2001/XMLSchema#string">P51</skos:notation>
+    <rdfs:domain rdf:resource="https://sdhss.org/ontology/social-life/1.0/C28_Legal_Location_of_an_Actor"/>
+    <rdfs:subPropertyOf rdf:resource="http://www.cidoc-crm.org/cidoc-crm/P2_has_type"/>
+  </rdf:Property>
+  <rdf:Property rdf:about="https://sdhss.org/ontology/social-life/1.0/P52_is_legal_fact_of">
+    <rdfs:range rdf:resource="http://www.cidoc-crm.org/cidoc-crm/E77_Persistent_Item"/>
+    <rdfs:comment xml:lang="en">This property associates the persistent item that is provided with a legal quality in the context of specific social representations, i.e. that receives a new legal connotation valid for the society or portion of it sharing the concerned representations.</rdfs:comment>
+    <rdfs:label xml:lang="en">is legal fact of</rdfs:label>
+    <skos:notation rdf:datatype="http://www.w3.org/2001/XMLSchema#string">P52</skos:notation>
+    <rdfs:domain rdf:resource="https://sdhss.org/ontology/social-life/1.0/C27_Legal_Fact"/>
+    <rdfs:subPropertyOf rdf:resource="https://sdhss.org/ontology/core/1.0/P2"/>
+    <rdfs:subPropertyOf rdf:resource="https://sdhss.org/ontology/core/1.0/P39"/>
+  </rdf:Property>
+  <rdf:Property rdf:about="https://sdhss.org/ontology/social-life/1.0/P53_is_in_relation_to">
+    <rdfs:range rdf:resource="http://www.cidoc-crm.org/cidoc-crm/E74_Group"/>
+    <rdfs:comment xml:lang="en">This property associates the legal connotation with a group that represents the context in which the legal quality is realized by or associated to the persisten item.</rdfs:comment>
+    <rdfs:label xml:lang="en">is in relation to</rdfs:label>
+    <skos:notation rdf:datatype="http://www.w3.org/2001/XMLSchema#string">P53</skos:notation>
+    <rdfs:domain rdf:resource="https://sdhss.org/ontology/social-life/1.0/C27_Legal_Fact"/>
+  </rdf:Property>
+  <rdf:Property rdf:about="https://sdhss.org/ontology/social-life/1.0/P54_is_defined_by">
+    <rdfs:range rdf:resource="https://sdhss.org/ontology/social-life/1.0/C17_Custom_or_Law"/>
+    <rdfs:comment xml:lang="en">This property associates a legal quality to the custom or law defining it. This association provides the context of validity of the quality (as type) and can associate more then one law for complex qualities. The moment of the creation of the legal quality can be captured using the sdh-so:C16 Legal Conceptual Object Creation class.
+The temporal existence of the quality, as expressed by this property, is related to the whole duration of the being in force of the traditions, customs or laws defining it. If the duration of validity of the quality is shorter than the whole duration of the considered custom(s) or law(s) then the sdh-so:C19 Legal Integration class should be used to express the fact that a quality stopped to be integrated in the law, and therefore was not any more in force.</rdfs:comment>
+    <rdfs:label xml:lang="en">is defined by</rdfs:label>
+    <skos:notation rdf:datatype="http://www.w3.org/2001/XMLSchema#string">P54</skos:notation>
+    <rdfs:domain rdf:resource="https://sdhss.org/ontology/social-life/1.0/C26_Legal_Quality"/>
+  </rdf:Property>
+  <rdf:Property rdf:about="https://sdhss.org/ontology/social-life/1.0/P55_belongs_to_activity_domain">
+    <rdfs:range rdf:resource="https://sdhss.org/ontology/social-life/1.0/C34_Activity_Domain"/>
+    <rdfs:comment xml:lang="en">This property associates an occupation with the domain of activity it belongs to, i.e. with the activity type that classifies the occupation.</rdfs:comment>
+    <rdfs:label xml:lang="en">belongs to activity domain</rdfs:label>
+    <skos:notation rdf:datatype="http://www.w3.org/2001/XMLSchema#string">P55</skos:notation>
+    <rdfs:domain rdf:resource="https://sdhss.org/ontology/social-life/1.0/C7_Occupation"/>
+  </rdf:Property>
+  <rdf:Property rdf:about="https://sdhss.org/ontology/social-life/1.0/P56_carried_out_in_the_context_of">
+    <rdfs:range rdf:resource="http://www.cidoc-crm.org/cidoc-crm/E74_Group"/>
+    <rdfs:comment xml:lang="en">This property associates the group or organisation within which the social role embodiment is carried out.</rdfs:comment>
+    <rdfs:label xml:lang="en">carried out in the context of</rdfs:label>
+    <skos:notation rdf:datatype="http://www.w3.org/2001/XMLSchema#string">P56</skos:notation>
+    <rdfs:domain rdf:resource="https://sdhss.org/ontology/social-life/1.0/C13_Social_Role_Embodiment"/>
+  </rdf:Property>
+  <rdf:Property rdf:about="https://sdhss.org/ontology/social-life/1.0/P57_is_quality_in_relation_to">
+    <rdfs:range rdf:resource="http://www.cidoc-crm.org/cidoc-crm/E5_Event"/>
+    <rdfs:comment xml:lang="en">This property associates the event to which the actor is associated in the intentionality of observers.</rdfs:comment>
+    <rdfs:label xml:lang="en">is quality in relation to</rdfs:label>
+    <skos:notation rdf:datatype="http://www.w3.org/2001/XMLSchema#string">P57</skos:notation>
+    <rdfs:domain rdf:resource="https://sdhss.org/ontology/social-life/1.0/C35_Actors_Quality_in_Relation_to_an_Event"/>
+    <rdfs:subPropertyOf rdf:resource="http://www.cidoc-crm.org/cidoc-crm/P129_is_about"/>
+  </rdf:Property>
+  <rdf:Property rdf:about="https://sdhss.org/ontology/social-life/1.0/P58_is_about">
+    <rdfs:range rdf:resource="https://sdhss.org/ontology/social-life/1.0/C2_Actors_Social_Quality"/>
+    <rdfs:comment xml:lang="en">This property associates the social quality qualifying an actor in the context of a spatio-temporal or intentional event.</rdfs:comment>
+    <rdfs:label xml:lang="en">is about</rdfs:label>
+    <skos:notation rdf:datatype="http://www.w3.org/2001/XMLSchema#string">P58</skos:notation>
+    <rdfs:domain rdf:resource="https://sdhss.org/ontology/social-life/1.0/C35_Actors_Quality_in_Relation_to_an_Event"/>
+    <rdfs:subPropertyOf rdf:resource="http://www.cidoc-crm.org/cidoc-crm/P129_is_about"/>
+  </rdf:Property>
+  <rdf:Property rdf:about="https://sdhss.org/ontology/social-life/1.0/P59_is_quality_of">
+    <rdfs:range rdf:resource="http://www.cidoc-crm.org/cidoc-crm/E39_Actor"/>
+    <rdfs:comment xml:lang="en">This property associates the actor to which the quality is associated in intentionality</rdfs:comment>
+    <rdfs:label xml:lang="en">is quality of</rdfs:label>
+    <skos:notation rdf:datatype="http://www.w3.org/2001/XMLSchema#string">P59</skos:notation>
+    <rdfs:domain rdf:resource="https://sdhss.org/ontology/social-life/1.0/C35_Actors_Quality_in_Relation_to_an_Event"/>
+    <rdfs:subPropertyOf rdf:resource="http://www.cidoc-crm.org/cidoc-crm/P129_is_about"/>
+  </rdf:Property>
+  <rdf:Property rdf:about="https://sdhss.org/ontology/social-life/1.0/P60_is_quality_in_relation_to_intentional_event">
+    <rdfs:range rdf:resource="https://sdhss.org/ontology/core/1.0/C10"/>
+    <rdfs:comment xml:lang="en">This property associates the intentional event to which the actor is associated in the intentionality of observers.</rdfs:comment>
+    <rdfs:label xml:lang="en">is quality in relation to intentional event</rdfs:label>
+    <skos:notation rdf:datatype="http://www.w3.org/2001/XMLSchema#string">P60</skos:notation>
+    <rdfs:domain rdf:resource="https://sdhss.org/ontology/social-life/1.0/C35_Actors_Quality_in_Relation_to_an_Event"/>
+    <rdfs:subPropertyOf rdf:resource="http://www.cidoc-crm.org/cidoc-crm/P129_is_about"/>
+  </rdf:Property>
+  <rdf:Property rdf:about="https://sdhss.org/ontology/social-life/1.0/P61_is_quality_on_behalf_of">
+    <rdfs:range rdf:resource="http://www.cidoc-crm.org/cidoc-crm/E39_Actor"/>
+    <rdfs:comment xml:lang="en"> 
+
+This property models the fact that the quality of an actor in relation to an event is exercices under the mandated of another actor
+</rdfs:comment>
+    <rdfs:label xml:lang="en">is quality on behalf of</rdfs:label>
+    <skos:notation rdf:datatype="http://www.w3.org/2001/XMLSchema#string">P61</skos:notation>
+    <rdfs:domain rdf:resource="https://sdhss.org/ontology/social-life/1.0/C35_Actors_Quality_in_Relation_to_an_Event"/>
+  </rdf:Property>
+  <rdf:Property rdf:about="https://sdhss.org/ontology/social-life/1.0/P62_is_in_relation_to">
+    <rdfs:range rdf:resource="http://www.cidoc-crm.org/cidoc-crm/E39_Actor"/>
+    <rdfs:comment xml:lang="en">This property associates the legal quality acquisition with a person or, more frequently, group that represents the context in relation to which the legal quality is realized by persisten item.</rdfs:comment>
+    <rdfs:label xml:lang="en">is in relation to</rdfs:label>
+    <skos:notation rdf:datatype="http://www.w3.org/2001/XMLSchema#string">P62</skos:notation>
+    <rdfs:domain rdf:resource="https://sdhss.org/ontology/social-life/1.0/C29_Legal_Quality_Acquisition"/>
+  </rdf:Property>
+  <rdf:Property rdf:about="https://sdhss.org/ontology/social-life/1.0/P63_has_quality_during_membership">
+    <rdfs:range rdf:resource="https://sdhss.org/ontology/social-life/1.0/C2_Actors_Social_Quality"/>
+    <rdfs:comment xml:lang="en">This class comprises the social quality or role of an actor while belonging to a group. It is possible to have more than one quality or role per membership. In the case of institutional functions with different time spans, the sdh-so:C13 Social Role Embodiment class should be preferred to capture the evolution in time of a person''s functions in a group.</rdfs:comment>
+    <rdfs:label xml:lang="en">has quality during membership</rdfs:label>
+    <skos:notation rdf:datatype="http://www.w3.org/2001/XMLSchema#string">P63</skos:notation>
+    <rdfs:domain rdf:resource="https://sdhss.org/ontology/social-life/1.0/C5_Membership"/>
+  </rdf:Property>
+  <rdf:Property rdf:about="https://sdhss.org/ontology/core/1.0/P63">
+    <rdfs:range rdf:resource="http://www.cidoc-crm.org/cidoc-crm/E55_Type"/>
+    <rdfs:comment xml:lang="en">This property associates an entity with a preferred type which expresses its basic or original identity.
+Unlike the crm:P2 has type property the range maximal quantity is restricted to one. Additional types can be added using other typing properties or the classification class. 
+Identifying typs, i.e. types that define the identity of the typed entites and cannot be changed during the whole entity existence should be expressend using the sdh:P67 has kind (is kind of) → sdh:C50 Kind construct.</rdfs:comment>
+    <rdfs:label xml:lang="en">has preferred type</rdfs:label>
+    <skos:notation rdf:datatype="http://www.w3.org/2001/XMLSchema#string">P63</skos:notation>
+    <rdfs:domain rdf:resource="http://www.cidoc-crm.org/cidoc-crm/E1_CRM_Entity"/>
+  </rdf:Property>
+  <rdf:Property rdf:about="https://sdhss.org/ontology/social-life/1.0/P64_has_type_of_participation">
+    <rdfs:range rdf:resource="https://sdhss.org/ontology/social-life/1.0/C36_Participation_Type"/>
+    <rdfs:comment xml:lang="en">Associates the participation with a type that provides its identity</rdfs:comment>
+    <rdfs:label xml:lang="en">has type of participation</rdfs:label>
+    <skos:notation rdf:datatype="http://www.w3.org/2001/XMLSchema#string">P64</skos:notation>
+    <rdfs:domain rdf:resource="https://sdhss.org/ontology/social-life/1.0/C15_Participation"/>
+    <rdfs:subPropertyOf rdf:resource="https://sdhss.org/ontology/core/1.0/P2"/>
+  </rdf:Property>
+  <rdf:Property rdf:about="https://sdhss.org/ontology/social-life/1.0/P65_has_participation_relation_type">
+    <rdfs:range rdf:resource="https://sdhss.org/ontology/social-life/1.0/C40_Participation_Relation_Type"/>
+    <rdfs:comment xml:lang="en">This property associates an instance of sdh-so:C39 Participation Relation and the type that provides a specific identity of that relation, an instance of sdh-so:C40 Participation Relation Type.</rdfs:comment>
+    <rdfs:label xml:lang="en">has participation relation type</rdfs:label>
+    <skos:notation rdf:datatype="http://www.w3.org/2001/XMLSchema#string">P65</skos:notation>
+    <rdfs:domain rdf:resource="https://sdhss.org/ontology/social-life/1.0/C39_Participation_Relation"/>
+  </rdf:Property>
+  <rdf:Property rdf:about="https://sdhss.org/ontology/social-life/1.0/P66_is_participation_relation_of">
+    <rdfs:range rdf:resource="https://sdhss.org/ontology/social-life/1.0/C41_Role_in_Participation_Relation"/>
+    <rdfs:comment xml:lang="en">This property associates an instance of sdh-so:C39 Participation Relation with the propositional object (an instance of sdh-so:C41 Role in Participation Relation) that describes the role of the participant within this relation. The Social Role itself is linked to that instance of sdh-so:C41 Role in Participation Relation</rdfs:comment>
+    <rdfs:label xml:lang="en">is participation relation of</rdfs:label>
+    <skos:notation rdf:datatype="http://www.w3.org/2001/XMLSchema#string">P66</skos:notation>
+    <rdfs:domain rdf:resource="https://sdhss.org/ontology/social-life/1.0/C39_Participation_Relation"/>
+  </rdf:Property>
+  <rdf:Property rdf:about="https://sdhss.org/ontology/social-life/1.0/P67_is_role_in">
+    <rdfs:range rdf:resource="https://sdhss.org/ontology/social-life/1.0/C15_Participation"/>
+    <rdfs:comment xml:lang="en">This property associates a participation with the role of the participant in a specific participation relationship. A participation can have multiple roles, but a role is only linked to a specific participation.</rdfs:comment>
+    <rdfs:label xml:lang="en">is role in</rdfs:label>
+    <skos:notation rdf:datatype="http://www.w3.org/2001/XMLSchema#string">P67</skos:notation>
+    <rdfs:domain rdf:resource="https://sdhss.org/ontology/social-life/1.0/C41_Role_in_Participation_Relation"/>
+  </rdf:Property>
+  <rdf:Property rdf:about="https://sdhss.org/ontology/social-life/1.0/P68_has_role_quality">
+    <rdfs:range rdf:resource="https://sdhss.org/ontology/social-life/1.0/C2_Actors_Social_Quality"/>
+    <rdfs:comment xml:lang="en">This property links the participation role of a participant in an event, to the role itself, documented with a controlled vocabulary.</rdfs:comment>
+    <rdfs:label xml:lang="en">has role quality</rdfs:label>
+    <skos:notation rdf:datatype="http://www.w3.org/2001/XMLSchema#string">P68</skos:notation>
+    <rdfs:domain rdf:resource="https://sdhss.org/ontology/social-life/1.0/C41_Role_in_Participation_Relation"/>
+  </rdf:Property>
+  <rdf:Property rdf:about="https://sdhss.org/ontology/social-life/1.0/P69_is_defined_in_the_context_of">
+    <rdfs:range rdf:resource="https://sdhss.org/ontology/social-life/1.0/C25_Political_or_Administrative_Entity"/>
+    <rdfs:comment xml:lang="en">This property attaches legal qualities to the political or administrative entity in the context of which they are defined and valid.</rdfs:comment>
+    <rdfs:label xml:lang="en">is defined in the context of</rdfs:label>
+    <skos:notation rdf:datatype="http://www.w3.org/2001/XMLSchema#string">P69</skos:notation>
+    <rdfs:domain rdf:resource="https://sdhss.org/ontology/social-life/1.0/C26_Legal_Quality"/>
+  </rdf:Property>
+  <rdf:Property rdf:about="https://sdhss.org/ontology/social-life/1.0/P70_is_embodied_in">
+    <rdfs:range rdf:resource="https://sdhss.org/ontology/social-life/1.0/C25_Political_or_Administrative_Entity"/>
+    <rdfs:comment xml:lang="en">This property associates an instance of C13 Social Role Embodiement with the instance of C25 Political or Administrative Entity in which the social role is carried in.</rdfs:comment>
+    <rdfs:label xml:lang="en">is embodied in</rdfs:label>
+    <skos:notation rdf:datatype="http://www.w3.org/2001/XMLSchema#string">P70</skos:notation>
+    <rdfs:domain rdf:resource="https://sdhss.org/ontology/social-life/1.0/C13_Social_Role_Embodiment"/>
+  </rdf:Property>
+  <rdf:Property rdf:about="https://sdhss.org/ontology/social-life/1.0/P71_has_political_or_administrative_entity_type">
+    <rdfs:range rdf:resource="https://sdhss.org/ontology/social-life/1.0/C42_Political_or_Administrative_Entity_Type"/>
+    <rdfs:comment xml:lang="en">This property associates an instance of C25 Political or Administrative Entity with the type that classifies it.</rdfs:comment>
+    <rdfs:label xml:lang="en">has political or administrative entity type</rdfs:label>
+    <skos:notation rdf:datatype="http://www.w3.org/2001/XMLSchema#string">P71</skos:notation>
+    <rdfs:domain rdf:resource="https://sdhss.org/ontology/social-life/1.0/C25_Political_or_Administrative_Entity"/>
+    <rdfs:subPropertyOf rdf:resource="http://www.cidoc-crm.org/cidoc-crm/P2_has_type"/>
+  </rdf:Property>
+  <rdf:Property rdf:about="https://sdhss.org/ontology/social-life/1.0/P72_has_role_quality">
+    <rdfs:range rdf:resource="https://sdhss.org/ontology/social-life/1.0/C2_Actors_Social_Quality"/>
+    <rdfs:comment xml:lang="en">This property links the Actor''s Role in a Social Relationship to the role itself, documented with a controlled vocabulary.</rdfs:comment>
+    <rdfs:label xml:lang="en">has role quality</rdfs:label>
+    <skos:notation rdf:datatype="http://www.w3.org/2001/XMLSchema#string">P72</skos:notation>
+    <rdfs:domain rdf:resource="https://sdhss.org/ontology/social-life/1.0/C43_Actors_Role_in_a_Social_Relationship"/>
+  </rdf:Property>
+  <rdf:Property rdf:about="https://sdhss.org/ontology/social-life/1.0/P73_is_social_relationship_role_of">
+    <rdfs:range rdf:resource="http://www.cidoc-crm.org/cidoc-crm/E39_Actor"/>
+    <rdfs:comment xml:lang="en">This property associates an actor to the role it has within a social relationship.</rdfs:comment>
+    <rdfs:label xml:lang="en">is social relationship role of</rdfs:label>
+    <skos:notation rdf:datatype="http://www.w3.org/2001/XMLSchema#string">P73</skos:notation>
+    <rdfs:domain rdf:resource="https://sdhss.org/ontology/social-life/1.0/C43_Actors_Role_in_a_Social_Relationship"/>
+  </rdf:Property>
+  <rdf:Property rdf:about="https://sdhss.org/ontology/social-life/1.0/P74_is_role_within">
+    <rdfs:range rdf:resource="https://sdhss.org/ontology/social-life/1.0/C3_Social_Relationship"/>
+    <rdfs:comment xml:lang="en">This property associates an Actor''s Role in a Social Relation with the specific social relationship it has as context.</rdfs:comment>
+    <rdfs:label xml:lang="en">is role within</rdfs:label>
+    <skos:notation rdf:datatype="http://www.w3.org/2001/XMLSchema#string">P74</skos:notation>
+    <rdfs:domain rdf:resource="https://sdhss.org/ontology/social-life/1.0/C43_Actors_Role_in_a_Social_Relationship"/>
+  </rdf:Property>
+  <rdf:Property rdf:about="https://sdhss.org/ontology/social-life/1.0/P75_is_presence_of">
+    <rdfs:range rdf:resource="http://www.cidoc-crm.org/cidoc-crm/E70_Thing"/>
+    <rdfs:comment xml:lang="en">This property associates the thing passively present in the event. Only one thing can be added per class instance.</rdfs:comment>
+    <rdfs:label xml:lang="en">is presence of</rdfs:label>
+    <skos:notation rdf:datatype="http://www.w3.org/2001/XMLSchema#string">P75</skos:notation>
+    <rdfs:domain rdf:resource="https://sdhss.org/ontology/social-life/1.0/C38_Presence_of_a_Thing"/>
+  </rdf:Property>
+  <rdf:Property rdf:about="https://sdhss.org/ontology/social-life/1.0/P76_is_presence_in">
+    <rdfs:range rdf:resource="http://www.cidoc-crm.org/cidoc-crm/E5_Event"/>
+    <rdfs:comment xml:lang="en">This property associates the event to which the presence is related.</rdfs:comment>
+    <rdfs:label xml:lang="en">is presence in</rdfs:label>
+    <skos:notation rdf:datatype="http://www.w3.org/2001/XMLSchema#string">P76</skos:notation>
+    <rdfs:domain rdf:resource="https://sdhss.org/ontology/social-life/1.0/C38_Presence_of_a_Thing"/>
+  </rdf:Property>
+  <rdf:Property rdf:about="https://sdhss.org/ontology/social-life/1.0/P77_has_type_of_presence">
+    <rdfs:range rdf:resource="https://sdhss.org/ontology/social-life/1.0/C44_Presence_of_a_Thing_Type"/>
+    <rdfs:comment xml:lang="en">Associates the presence with a type that provides its identity, i.e. the kind of presence and things role in the event</rdfs:comment>
+    <rdfs:label xml:lang="en">has type of presence</rdfs:label>
+    <skos:notation rdf:datatype="http://www.w3.org/2001/XMLSchema#string">P77</skos:notation>
+    <rdfs:domain rdf:resource="https://sdhss.org/ontology/social-life/1.0/C38_Presence_of_a_Thing"/>
+  </rdf:Property>
+  <rdf:Property rdf:about="https://sdhss.org/ontology/social-life/1.0/P78_has_economic_transaction_identifying_type">
+    <rdfs:range rdf:resource="https://sdhss.org/ontology/social-life/1.0/C45_Economic_Transaction_Type"/>
+    <rdfs:comment xml:lang="en">This property associates an economic transaction with a type that indentifies its ontological substance.</rdfs:comment>
+    <rdfs:label xml:lang="en">has economic transaction identifying type</rdfs:label>
+    <skos:notation rdf:datatype="http://www.w3.org/2001/XMLSchema#string">P78</skos:notation>
+    <rdfs:domain rdf:resource="https://sdhss.org/ontology/social-life/1.0/C37_Economic_Transaction"/>
+    <rdfs:subPropertyOf rdf:resource="https://sdhss.org/ontology/core/1.0/P63"/>
+  </rdf:Property>
+  <rdf:Property rdf:about="https://sdhss.org/ontology/social-life/1.0/P79_in_the_context_of">
+    <rdfs:range rdf:resource="https://sdhss.org/ontology/social-life/1.0/C17_Custom_or_Law"/>
+    <rdfs:comment xml:lang="en">This property associates the legal agreement with the custom or law to which it refers or which constitutes the legal context of the agreement.</rdfs:comment>
+    <rdfs:label xml:lang="en">in the context of</rdfs:label>
+    <skos:notation rdf:datatype="http://www.w3.org/2001/XMLSchema#string">P79</skos:notation>
+    <rdfs:domain rdf:resource="https://sdhss.org/ontology/social-life/1.0/C46_Legal_Agreement"/>
+    <rdfs:subPropertyOf rdf:resource="https://sdhss.org/ontology/core/1.0/P40"/>
+  </rdf:Property>
+  <rdf:Property rdf:about="https://sdhss.org/ontology/social-life/1.0/P80_has_legal_agreement_type">
+    <rdfs:range rdf:resource="https://sdhss.org/ontology/social-life/1.0/C47_Legal_Agreement_Type"/>
+    <rdfs:comment xml:lang="en">This property associates a legal agreement to the type that classifies it.</rdfs:comment>
+    <rdfs:label xml:lang="en">has legal agreement type</rdfs:label>
+    <skos:notation rdf:datatype="http://www.w3.org/2001/XMLSchema#string">P80</skos:notation>
+    <rdfs:domain rdf:resource="https://sdhss.org/ontology/social-life/1.0/C46_Legal_Agreement"/>
+    <rdfs:subPropertyOf rdf:resource="http://www.cidoc-crm.org/cidoc-crm/P2_has_type"/>
+  </rdf:Property>
+  <rdf:Property rdf:about="http://www.cidoc-crm.org/cidoc-crm/P94_has_created">
+    <rdfs:range rdf:resource="http://www.cidoc-crm.org/cidoc-crm/E28_Conceptual_Object"/>
+    <rdfs:comment xml:lang="en">This property allows a conceptual E65 Creation to be linked to the E28 Conceptual Object created by it.
+It represents the act of conceiving the intellectual content of the E28 Conceptual Object. It does not represent the act of creating the first physical carrier of the E28 Conceptual Object. As an example, this is the composition of a poem, not its commitment to paper.</rdfs:comment>
+    <rdfs:label xml:lang="en">has created</rdfs:label>
+    <skos:notation rdf:datatype="http://www.w3.org/2001/XMLSchema#string">P94</skos:notation>
+    <rdfs:domain rdf:resource="http://www.cidoc-crm.org/cidoc-crm/E65_Creation"/>
+  </rdf:Property>
+  <rdf:Property rdf:about="http://www.cidoc-crm.org/cidoc-crm/P129_is_about">
+    <rdfs:range rdf:resource="http://www.cidoc-crm.org/cidoc-crm/E1_CRM_Entity"/>
+    <rdfs:comment xml:lang="en">This property documents that an E89 Propositional Object has as subject an instance of E1 CRM Entity.
+This differs from P67 refers to (is referred to by), which refers to an E1 CRM Entity, in that it describes the primary subject or subjects of an E89 Propositional Object.</rdfs:comment>
+    <rdfs:label xml:lang="en">is about</rdfs:label>
+    <skos:notation rdf:datatype="http://www.w3.org/2001/XMLSchema#string">P129</skos:notation>
+    <rdfs:domain rdf:resource="http://www.cidoc-crm.org/cidoc-crm/E89_Propositional_Object"/>
+  </rdf:Property>
+</rdf:RDF>

@@ -1,0 +1,13 @@
+schema_version: 2
+ontology:
+  family: sdh
+  kind: extension
+  namespace: https://sdhss.org/ontology/social-life/1.0/
+  prefix: sdhso
+  prefixes: [sdhso]
+  title: SDHSO
+require:
+  - {module: github.com/pletka-io/ontologies/sdh, version: "1.0"}
+sources:
+  files: [src/SDHSO_v1.0.rdf]
+  primary: src/SDHSO_v1.0.rdf
