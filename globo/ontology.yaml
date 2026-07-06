@@ -1,0 +1,13 @@
+schema_version: 2
+ontology:
+  family: swiss-art-research
+  kind: extension
+  namespace: https://w3id.org/globalise/ontology/
+  prefix: globo
+  prefixes: [globo]
+  title: GlobO
+require:
+  - {module: github.com/pletka-io/ontologies/pwro, version: "1.0"}
+sources:
+  files: [src/Globo_v1.0.rdf]
+  primary: src/Globo_v1.0.rdf
