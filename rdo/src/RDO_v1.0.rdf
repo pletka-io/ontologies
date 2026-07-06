@@ -1,0 +1,480 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#" xmlns:rdo="http://ontologies.mpiwg-berlin.mpg.de/rdo/" xmlns:xsd="http://www.w3.org/2001/XMLSchema#">
+  <rdf:Description rdf:about="http://ontologies.mpiwg-berlin.mpg.de/rdo/RDE1_Service">
+    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ontologies.mpiwg-berlin.mpg.de/rdo/RDE1_Service">
+    <rdfs:label xml:lang="en">Service</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ontologies.mpiwg-berlin.mpg.de/rdo/RDE1_Service">
+    <rdfs:subClassOf rdf:resource="http://www.cidoc-crm.org/cidoc-crm/E7_Activity"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ontologies.mpiwg-berlin.mpg.de/rdo/RDE2_Hosting_Service">
+    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ontologies.mpiwg-berlin.mpg.de/rdo/RDE2_Hosting_Service">
+    <rdfs:label xml:lang="en">Hosting Service</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ontologies.mpiwg-berlin.mpg.de/rdo/RDE2_Hosting_Service">
+    <rdfs:subClassOf rdf:resource="http://ontologies.mpiwg-berlin.mpg.de/rdo/RDE1_Service"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ontologies.mpiwg-berlin.mpg.de/rdo/RDE3_Curating_Service">
+    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ontologies.mpiwg-berlin.mpg.de/rdo/RDE3_Curating_Service">
+    <rdfs:label xml:lang="en">Curating Service</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ontologies.mpiwg-berlin.mpg.de/rdo/RDE3_Curating_Service">
+    <rdfs:subClassOf rdf:resource="http://ontologies.mpiwg-berlin.mpg.de/rdo/RDE1_Service"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ontologies.mpiwg-berlin.mpg.de/rdo/RDE5_Digital_Hosting_Service">
+    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ontologies.mpiwg-berlin.mpg.de/rdo/RDE5_Digital_Hosting_Service">
+    <rdfs:label xml:lang="en">Digital Hosting Service</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ontologies.mpiwg-berlin.mpg.de/rdo/RDE5_Digital_Hosting_Service">
+    <rdfs:subClassOf rdf:resource="http://ontologies.mpiwg-berlin.mpg.de/rdo/RDE2_Hosting_Service"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ontologies.mpiwg-berlin.mpg.de/rdo/RDE5_Digital_Hosting_Service">
+    <rdfs:subClassOf rdf:resource="http://ontologies.mpiwg-berlin.mpg.de/rdo/RDE8_E-Service"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ontologies.mpiwg-berlin.mpg.de/rdo/RDE8_E-Service">
+    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ontologies.mpiwg-berlin.mpg.de/rdo/RDE8_E-Service">
+    <rdfs:label xml:lang="en">E-Service</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ontologies.mpiwg-berlin.mpg.de/rdo/RDE8_E-Service">
+    <rdfs:subClassOf rdf:resource="http://ontologies.mpiwg-berlin.mpg.de/rdo/RDE1_Service"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ontologies.mpiwg-berlin.mpg.de/rdo/RDE10_Digital_Curating_Service">
+    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ontologies.mpiwg-berlin.mpg.de/rdo/RDE10_Digital_Curating_Service">
+    <rdfs:label xml:lang="en">Digital Curating Service</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ontologies.mpiwg-berlin.mpg.de/rdo/RDE10_Digital_Curating_Service">
+    <rdfs:subClassOf rdf:resource="http://ontologies.mpiwg-berlin.mpg.de/rdo/RDE3_Curating_Service"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ontologies.mpiwg-berlin.mpg.de/rdo/RDE10_Digital_Curating_Service">
+    <rdfs:subClassOf rdf:resource="http://ontologies.mpiwg-berlin.mpg.de/rdo/RDE8_E-Service"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ontologies.mpiwg-berlin.mpg.de/rdo/RDE19_Persistent_Digital_Object">
+    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ontologies.mpiwg-berlin.mpg.de/rdo/RDE19_Persistent_Digital_Object">
+    <rdfs:label xml:lang="en">Persistent Digital Object</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ontologies.mpiwg-berlin.mpg.de/rdo/RDE19_Persistent_Digital_Object">
+    <rdfs:subClassOf rdf:resource="http://www.ics.forth.gr/isl/CRMdig/D1_Digital_Object"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ontologies.mpiwg-berlin.mpg.de/rdo/RDE20_Volatile_Digital_Object">
+    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ontologies.mpiwg-berlin.mpg.de/rdo/RDE20_Volatile_Digital_Object">
+    <rdfs:label xml:lang="en">Volatile Digital Object</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ontologies.mpiwg-berlin.mpg.de/rdo/RDE20_Volatile_Digital_Object">
+    <rdfs:subClassOf rdf:resource="http://ontologies.mpiwg-berlin.mpg.de/rdo/RDE32_Curated_Thing"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ontologies.mpiwg-berlin.mpg.de/rdo/RDE20_Volatile_Digital_Object">
+    <rdfs:subClassOf rdf:resource="http://www.ics.forth.gr/isl/CRMdig/D1_Digital_Object"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ontologies.mpiwg-berlin.mpg.de/rdo/RDE29_Access_Point">
+    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ontologies.mpiwg-berlin.mpg.de/rdo/RDE29_Access_Point">
+    <rdfs:label xml:lang="en">Access Point</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ontologies.mpiwg-berlin.mpg.de/rdo/RDE29_Access_Point">
+    <rdfs:subClassOf rdf:resource="http://www.cidoc-crm.org/cidoc-crm/E51_Contact_Point"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ontologies.mpiwg-berlin.mpg.de/rdo/RDE32_Curated_Thing">
+    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ontologies.mpiwg-berlin.mpg.de/rdo/RDE32_Curated_Thing">
+    <rdfs:label xml:lang="en">Curated Thing</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ontologies.mpiwg-berlin.mpg.de/rdo/RDE32_Curated_Thing">
+    <rdfs:subClassOf rdf:resource="http://www.cidoc-crm.org/cidoc-crm/E70_Thing"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ontologies.mpiwg-berlin.mpg.de/rdo/RDE34_Team">
+    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ontologies.mpiwg-berlin.mpg.de/rdo/RDE34_Team">
+    <rdfs:label xml:lang="en">Team</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ontologies.mpiwg-berlin.mpg.de/rdo/RDE34_Team">
+    <rdfs:subClassOf rdf:resource="http://www.cidoc-crm.org/cidoc-crm/E74_Group"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ontologies.mpiwg-berlin.mpg.de/rdo/RDE35_Project">
+    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ontologies.mpiwg-berlin.mpg.de/rdo/RDE35_Project">
+    <rdfs:label xml:lang="en">Project</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ontologies.mpiwg-berlin.mpg.de/rdo/RDE35_Project">
+    <rdfs:subClassOf rdf:resource="http://www.cidoc-crm.org/cidoc-crm/E7_Activity"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ontologies.mpiwg-berlin.mpg.de/rdo/RDE45_Research_Project">
+    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ontologies.mpiwg-berlin.mpg.de/rdo/RDE45_Research_Project">
+    <rdfs:label xml:lang="en">Research Project</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ontologies.mpiwg-berlin.mpg.de/rdo/RDE45_Research_Project">
+    <rdfs:subClassOf rdf:resource="http://ontologies.mpiwg-berlin.mpg.de/rdo/RDE35_Project"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ontologies.mpiwg-berlin.mpg.de/rdo/RDE46_Service_Project">
+    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ontologies.mpiwg-berlin.mpg.de/rdo/RDE46_Service_Project">
+    <rdfs:label xml:lang="en">Service Project</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ontologies.mpiwg-berlin.mpg.de/rdo/RDE46_Service_Project">
+    <rdfs:subClassOf rdf:resource="http://ontologies.mpiwg-berlin.mpg.de/rdo/RDE35_Project"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ontologies.mpiwg-berlin.mpg.de/rdo/RDP2_provided_by">
+    <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ontologies.mpiwg-berlin.mpg.de/rdo/RDP2_provided_by">
+    <rdfs:label xml:lang="en">provided by</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ontologies.mpiwg-berlin.mpg.de/rdo/RDP2_provided_by">
+    <rdfs:domain rdf:resource="http://ontologies.mpiwg-berlin.mpg.de/rdo/RDE1_Service"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ontologies.mpiwg-berlin.mpg.de/rdo/RDP2_provided_by">
+    <rdfs:range rdf:resource="http://www.cidoc-crm.org/cidoc-crm/E39_Actor"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ontologies.mpiwg-berlin.mpg.de/rdo/RDP2_provided_by">
+    <rdfs:subPropertyOf rdf:resource="http://www.cidoc-crm.org/cidoc-crm/P14_carried_out_by"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ontologies.mpiwg-berlin.mpg.de/rdo/RDP2i_provides">
+    <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ontologies.mpiwg-berlin.mpg.de/rdo/RDP2i_provides">
+    <rdfs:label xml:lang="en">provides</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ontologies.mpiwg-berlin.mpg.de/rdo/RDP2i_provides">
+    <rdfs:domain rdf:resource="http://www.cidoc-crm.org/cidoc-crm/E39_Actor"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ontologies.mpiwg-berlin.mpg.de/rdo/RDP2i_provides">
+    <rdfs:range rdf:resource="http://ontologies.mpiwg-berlin.mpg.de/rdo/RDE1_Service"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ontologies.mpiwg-berlin.mpg.de/rdo/RDP2i_provides">
+    <rdfs:subPropertyOf rdf:resource="http://www.cidoc-crm.org/cidoc-crm/P14i_performed"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ontologies.mpiwg-berlin.mpg.de/rdo/RDP4_hosts_object">
+    <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ontologies.mpiwg-berlin.mpg.de/rdo/RDP4_hosts_object">
+    <rdfs:label xml:lang="en">hosts object</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ontologies.mpiwg-berlin.mpg.de/rdo/RDP4_hosts_object">
+    <rdfs:domain rdf:resource="http://ontologies.mpiwg-berlin.mpg.de/rdo/RDE2_Hosting_Service"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ontologies.mpiwg-berlin.mpg.de/rdo/RDP4_hosts_object">
+    <rdfs:range rdf:resource="http://www.cidoc-crm.org/cidoc-crm/E70_Thing"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ontologies.mpiwg-berlin.mpg.de/rdo/RDP4_hosts_object">
+    <rdfs:subPropertyOf rdf:resource="http://www.cidoc-crm.org/cidoc-crm/P16_used_specific_object"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ontologies.mpiwg-berlin.mpg.de/rdo/RDP4i_is_object_hosted_by">
+    <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ontologies.mpiwg-berlin.mpg.de/rdo/RDP4i_is_object_hosted_by">
+    <rdfs:label xml:lang="en">is object hosted by</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ontologies.mpiwg-berlin.mpg.de/rdo/RDP4i_is_object_hosted_by">
+    <rdfs:domain rdf:resource="http://www.cidoc-crm.org/cidoc-crm/E70_Thing"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ontologies.mpiwg-berlin.mpg.de/rdo/RDP4i_is_object_hosted_by">
+    <rdfs:range rdf:resource="http://ontologies.mpiwg-berlin.mpg.de/rdo/RDE2_Hosting_Service"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ontologies.mpiwg-berlin.mpg.de/rdo/RDP4i_is_object_hosted_by">
+    <rdfs:subPropertyOf rdf:resource="http://www.cidoc-crm.org/cidoc-crm/P16i_was_used_for"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ontologies.mpiwg-berlin.mpg.de/rdo/RDP6_hosts_digital_object">
+    <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ontologies.mpiwg-berlin.mpg.de/rdo/RDP6_hosts_digital_object">
+    <rdfs:label xml:lang="en">hosts digital object</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ontologies.mpiwg-berlin.mpg.de/rdo/RDP6_hosts_digital_object">
+    <rdfs:domain rdf:resource="http://ontologies.mpiwg-berlin.mpg.de/rdo/RDE5_Digital_Hosting_Service"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ontologies.mpiwg-berlin.mpg.de/rdo/RDP6_hosts_digital_object">
+    <rdfs:range rdf:resource="http://www.ics.forth.gr/isl/CRMdig/D1_Digital_Object"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ontologies.mpiwg-berlin.mpg.de/rdo/RDP6_hosts_digital_object">
+    <rdfs:subPropertyOf rdf:resource="http://ontologies.mpiwg-berlin.mpg.de/rdo/RDP4_hosts_object"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ontologies.mpiwg-berlin.mpg.de/rdo/RDP6i_is_digital_object_hosted_by">
+    <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ontologies.mpiwg-berlin.mpg.de/rdo/RDP6i_is_digital_object_hosted_by">
+    <rdfs:label xml:lang="en">is digital object hosted by</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ontologies.mpiwg-berlin.mpg.de/rdo/RDP6i_is_digital_object_hosted_by">
+    <rdfs:domain rdf:resource="http://www.ics.forth.gr/isl/CRMdig/D1_Digital_Object"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ontologies.mpiwg-berlin.mpg.de/rdo/RDP6i_is_digital_object_hosted_by">
+    <rdfs:range rdf:resource="http://ontologies.mpiwg-berlin.mpg.de/rdo/RDE5_Digital_Hosting_Service"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ontologies.mpiwg-berlin.mpg.de/rdo/RDP6i_is_digital_object_hosted_by">
+    <rdfs:subPropertyOf rdf:resource="http://ontologies.mpiwg-berlin.mpg.de/rdo/RDP4i_is_object_hosted_by"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ontologies.mpiwg-berlin.mpg.de/rdo/RDP11_curates_volatile_digital_object">
+    <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ontologies.mpiwg-berlin.mpg.de/rdo/RDP11_curates_volatile_digital_object">
+    <rdfs:label xml:lang="en">curates volatile digital object</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ontologies.mpiwg-berlin.mpg.de/rdo/RDP11_curates_volatile_digital_object">
+    <rdfs:domain rdf:resource="http://ontologies.mpiwg-berlin.mpg.de/rdo/RDE10_Digital_Curating_Service"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ontologies.mpiwg-berlin.mpg.de/rdo/RDP11_curates_volatile_digital_object">
+    <rdfs:range rdf:resource="http://ontologies.mpiwg-berlin.mpg.de/rdo/RDE20_Volatile_Digital_Object"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ontologies.mpiwg-berlin.mpg.de/rdo/RDP11_curates_volatile_digital_object">
+    <rdfs:subPropertyOf rdf:resource="http://ontologies.mpiwg-berlin.mpg.de/rdo/RDP32_curates"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ontologies.mpiwg-berlin.mpg.de/rdo/RDP11i_is_volatile_digital_object_curated_by">
+    <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ontologies.mpiwg-berlin.mpg.de/rdo/RDP11i_is_volatile_digital_object_curated_by">
+    <rdfs:label xml:lang="en">is volatile digital object curated by</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ontologies.mpiwg-berlin.mpg.de/rdo/RDP11i_is_volatile_digital_object_curated_by">
+    <rdfs:domain rdf:resource="http://ontologies.mpiwg-berlin.mpg.de/rdo/RDE20_Volatile_Digital_Object"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ontologies.mpiwg-berlin.mpg.de/rdo/RDP11i_is_volatile_digital_object_curated_by">
+    <rdfs:range rdf:resource="http://ontologies.mpiwg-berlin.mpg.de/rdo/RDE10_Digital_Curating_Service"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ontologies.mpiwg-berlin.mpg.de/rdo/RDP11i_is_volatile_digital_object_curated_by">
+    <rdfs:subPropertyOf rdf:resource="http://ontologies.mpiwg-berlin.mpg.de/rdo/RDP32i_is_curated_by"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ontologies.mpiwg-berlin.mpg.de/rdo/RDP16_has_persistent_digital_object_part">
+    <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ontologies.mpiwg-berlin.mpg.de/rdo/RDP16_has_persistent_digital_object_part">
+    <rdfs:label xml:lang="en">has persistent digital object part</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ontologies.mpiwg-berlin.mpg.de/rdo/RDP16_has_persistent_digital_object_part">
+    <rdfs:domain rdf:resource="http://ontologies.mpiwg-berlin.mpg.de/rdo/RDE19_Persistent_Digital_Object"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ontologies.mpiwg-berlin.mpg.de/rdo/RDP16_has_persistent_digital_object_part">
+    <rdfs:range rdf:resource="http://ontologies.mpiwg-berlin.mpg.de/rdo/RDE19_Persistent_Digital_Object"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ontologies.mpiwg-berlin.mpg.de/rdo/RDP16_has_persistent_digital_object_part">
+    <rdfs:subPropertyOf rdf:resource="http://www.cidoc-crm.org/cidoc-crm/P106_is_composed_of"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ontologies.mpiwg-berlin.mpg.de/rdo/RDP16i_is_persistent_digital_object_part_of">
+    <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ontologies.mpiwg-berlin.mpg.de/rdo/RDP16i_is_persistent_digital_object_part_of">
+    <rdfs:label xml:lang="en">is persistent digital object part of</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ontologies.mpiwg-berlin.mpg.de/rdo/RDP16i_is_persistent_digital_object_part_of">
+    <rdfs:domain rdf:resource="http://ontologies.mpiwg-berlin.mpg.de/rdo/RDE19_Persistent_Digital_Object"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ontologies.mpiwg-berlin.mpg.de/rdo/RDP16i_is_persistent_digital_object_part_of">
+    <rdfs:range rdf:resource="http://ontologies.mpiwg-berlin.mpg.de/rdo/RDE19_Persistent_Digital_Object"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ontologies.mpiwg-berlin.mpg.de/rdo/RDP16i_is_persistent_digital_object_part_of">
+    <rdfs:subPropertyOf rdf:resource="http://www.cidoc-crm.org/cidoc-crm/P106i_forms_part_of"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ontologies.mpiwg-berlin.mpg.de/rdo/RDP17_has_snapshot">
+    <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ontologies.mpiwg-berlin.mpg.de/rdo/RDP17_has_snapshot">
+    <rdfs:label xml:lang="en">has snapshot</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ontologies.mpiwg-berlin.mpg.de/rdo/RDP17_has_snapshot">
+    <rdfs:domain rdf:resource="http://ontologies.mpiwg-berlin.mpg.de/rdo/RDE20_Volatile_Digital_Object"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ontologies.mpiwg-berlin.mpg.de/rdo/RDP17_has_snapshot">
+    <rdfs:range rdf:resource="http://ontologies.mpiwg-berlin.mpg.de/rdo/RDE19_Persistent_Digital_Object"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ontologies.mpiwg-berlin.mpg.de/rdo/RDP17_has_snapshot">
+    <rdfs:subPropertyOf rdf:resource="http://www.cidoc-crm.org/cidoc-crm/P130_shows_features_of"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ontologies.mpiwg-berlin.mpg.de/rdo/RDP17i_is_snapshot_of">
+    <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ontologies.mpiwg-berlin.mpg.de/rdo/RDP17i_is_snapshot_of">
+    <rdfs:label xml:lang="en">is snapshot of</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ontologies.mpiwg-berlin.mpg.de/rdo/RDP17i_is_snapshot_of">
+    <rdfs:domain rdf:resource="http://ontologies.mpiwg-berlin.mpg.de/rdo/RDE19_Persistent_Digital_Object"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ontologies.mpiwg-berlin.mpg.de/rdo/RDP17i_is_snapshot_of">
+    <rdfs:range rdf:resource="http://ontologies.mpiwg-berlin.mpg.de/rdo/RDE20_Volatile_Digital_Object"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ontologies.mpiwg-berlin.mpg.de/rdo/RDP17i_is_snapshot_of">
+    <rdfs:subPropertyOf rdf:resource="http://www.cidoc-crm.org/cidoc-crm/P130i_features_are_also_found_on"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ontologies.mpiwg-berlin.mpg.de/rdo/RDP18_has_digital_object_part">
+    <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ontologies.mpiwg-berlin.mpg.de/rdo/RDP18_has_digital_object_part">
+    <rdfs:label xml:lang="en">has digital object part</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ontologies.mpiwg-berlin.mpg.de/rdo/RDP18_has_digital_object_part">
+    <rdfs:domain rdf:resource="http://ontologies.mpiwg-berlin.mpg.de/rdo/RDE20_Volatile_Digital_Object"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ontologies.mpiwg-berlin.mpg.de/rdo/RDP18_has_digital_object_part">
+    <rdfs:range rdf:resource="http://www.ics.forth.gr/isl/CRMdig/D1_Digital_Object"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ontologies.mpiwg-berlin.mpg.de/rdo/RDP18_has_digital_object_part">
+    <rdfs:subPropertyOf rdf:resource="http://www.cidoc-crm.org/cidoc-crm/P106_is_composed_of"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ontologies.mpiwg-berlin.mpg.de/rdo/RDP18i_is_digital_object_part_of">
+    <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ontologies.mpiwg-berlin.mpg.de/rdo/RDP18i_is_digital_object_part_of">
+    <rdfs:label xml:lang="en">is digital object part of</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ontologies.mpiwg-berlin.mpg.de/rdo/RDP18i_is_digital_object_part_of">
+    <rdfs:domain rdf:resource="http://www.ics.forth.gr/isl/CRMdig/D1_Digital_Object"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ontologies.mpiwg-berlin.mpg.de/rdo/RDP18i_is_digital_object_part_of">
+    <rdfs:range rdf:resource="http://ontologies.mpiwg-berlin.mpg.de/rdo/RDE20_Volatile_Digital_Object"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ontologies.mpiwg-berlin.mpg.de/rdo/RDP18i_is_digital_object_part_of">
+    <rdfs:subPropertyOf rdf:resource="http://www.cidoc-crm.org/cidoc-crm/P106i_forms_part_of"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ontologies.mpiwg-berlin.mpg.de/rdo/RDP32_curates">
+    <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ontologies.mpiwg-berlin.mpg.de/rdo/RDP32_curates">
+    <rdfs:label xml:lang="en">curates</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ontologies.mpiwg-berlin.mpg.de/rdo/RDP32_curates">
+    <rdfs:domain rdf:resource="http://ontologies.mpiwg-berlin.mpg.de/rdo/RDE3_Curating_Service"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ontologies.mpiwg-berlin.mpg.de/rdo/RDP32_curates">
+    <rdfs:range rdf:resource="http://ontologies.mpiwg-berlin.mpg.de/rdo/RDE32_Curated_Thing"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ontologies.mpiwg-berlin.mpg.de/rdo/RDP32i_is_curated_by">
+    <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ontologies.mpiwg-berlin.mpg.de/rdo/RDP32i_is_curated_by">
+    <rdfs:label xml:lang="en">is curated by</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ontologies.mpiwg-berlin.mpg.de/rdo/RDP32i_is_curated_by">
+    <rdfs:domain rdf:resource="http://ontologies.mpiwg-berlin.mpg.de/rdo/RDE32_Curated_Thing"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ontologies.mpiwg-berlin.mpg.de/rdo/RDP32i_is_curated_by">
+    <rdfs:range rdf:resource="http://ontologies.mpiwg-berlin.mpg.de/rdo/RDE3_Curating_Service"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ontologies.mpiwg-berlin.mpg.de/rdo/RDP43_supported_project_activity">
+    <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ontologies.mpiwg-berlin.mpg.de/rdo/RDP43_supported_project_activity">
+    <rdfs:label xml:lang="en">supported project activity</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ontologies.mpiwg-berlin.mpg.de/rdo/RDP43_supported_project_activity">
+    <rdfs:domain rdf:resource="http://ontologies.mpiwg-berlin.mpg.de/rdo/RDE35_Project"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ontologies.mpiwg-berlin.mpg.de/rdo/RDP43_supported_project_activity">
+    <rdfs:range rdf:resource="http://www.cidoc-crm.org/cidoc-crm/E7_Activity"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ontologies.mpiwg-berlin.mpg.de/rdo/RDP43_supported_project_activity">
+    <rdfs:subPropertyOf rdf:resource="http://www.cidoc-crm.org/cidoc-crm/P9_consists_of"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ontologies.mpiwg-berlin.mpg.de/rdo/RDP43i_is_project_activity_supported_by">
+    <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ontologies.mpiwg-berlin.mpg.de/rdo/RDP43i_is_project_activity_supported_by">
+    <rdfs:label xml:lang="en">is project activity supported by</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ontologies.mpiwg-berlin.mpg.de/rdo/RDP43i_is_project_activity_supported_by">
+    <rdfs:domain rdf:resource="http://www.cidoc-crm.org/cidoc-crm/E7_Activity"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ontologies.mpiwg-berlin.mpg.de/rdo/RDP43i_is_project_activity_supported_by">
+    <rdfs:range rdf:resource="http://ontologies.mpiwg-berlin.mpg.de/rdo/RDE35_Project"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ontologies.mpiwg-berlin.mpg.de/rdo/RDP43i_is_project_activity_supported_by">
+    <rdfs:subPropertyOf rdf:resource="http://www.cidoc-crm.org/cidoc-crm/P9i_forms_part_of"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ontologies.mpiwg-berlin.mpg.de/rdo/RDP44_has_maintaining_team">
+    <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ontologies.mpiwg-berlin.mpg.de/rdo/RDP44_has_maintaining_team">
+    <rdfs:label xml:lang="en">has maintaining team</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ontologies.mpiwg-berlin.mpg.de/rdo/RDP44_has_maintaining_team">
+    <rdfs:domain rdf:resource="http://ontologies.mpiwg-berlin.mpg.de/rdo/RDE35_Project"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ontologies.mpiwg-berlin.mpg.de/rdo/RDP44_has_maintaining_team">
+    <rdfs:range rdf:resource="http://ontologies.mpiwg-berlin.mpg.de/rdo/RDE34_Team"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ontologies.mpiwg-berlin.mpg.de/rdo/RDP44_has_maintaining_team">
+    <rdfs:subPropertyOf rdf:resource="http://www.cidoc-crm.org/cidoc-crm/P17_was_motivated_by"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ontologies.mpiwg-berlin.mpg.de/rdo/RDP44i_is_maintaining_team_of">
+    <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ontologies.mpiwg-berlin.mpg.de/rdo/RDP44i_is_maintaining_team_of">
+    <rdfs:label xml:lang="en">is maintaining team of</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ontologies.mpiwg-berlin.mpg.de/rdo/RDP44i_is_maintaining_team_of">
+    <rdfs:domain rdf:resource="http://ontologies.mpiwg-berlin.mpg.de/rdo/RDE34_Team"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ontologies.mpiwg-berlin.mpg.de/rdo/RDP44i_is_maintaining_team_of">
+    <rdfs:range rdf:resource="http://ontologies.mpiwg-berlin.mpg.de/rdo/RDE35_Project"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ontologies.mpiwg-berlin.mpg.de/rdo/RDP44i_is_maintaining_team_of">
+    <rdfs:subPropertyOf rdf:resource="http://www.cidoc-crm.org/cidoc-crm/P17i_motivated"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ontologies.mpiwg-berlin.mpg.de/rdo/RDP49_provides_access_point">
+    <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ontologies.mpiwg-berlin.mpg.de/rdo/RDP49_provides_access_point">
+    <rdfs:label xml:lang="en">provides access point</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ontologies.mpiwg-berlin.mpg.de/rdo/RDP49_provides_access_point">
+    <rdfs:domain rdf:resource="http://ontologies.mpiwg-berlin.mpg.de/rdo/RDE8_E-Service"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ontologies.mpiwg-berlin.mpg.de/rdo/RDP49_provides_access_point">
+    <rdfs:range rdf:resource="http://ontologies.mpiwg-berlin.mpg.de/rdo/RDE29_Access_Point"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ontologies.mpiwg-berlin.mpg.de/rdo/RDP49i_is_access_point_provided_by">
+    <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ontologies.mpiwg-berlin.mpg.de/rdo/RDP49i_is_access_point_provided_by">
+    <rdfs:label xml:lang="en">is access point provided by</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ontologies.mpiwg-berlin.mpg.de/rdo/RDP49i_is_access_point_provided_by">
+    <rdfs:domain rdf:resource="http://ontologies.mpiwg-berlin.mpg.de/rdo/RDE29_Access_Point"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ontologies.mpiwg-berlin.mpg.de/rdo/RDP49i_is_access_point_provided_by">
+    <rdfs:range rdf:resource="http://ontologies.mpiwg-berlin.mpg.de/rdo/RDE8_E-Service"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ontologies.mpiwg-berlin.mpg.de/rdo/RDP50_accessible_at">
+    <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ontologies.mpiwg-berlin.mpg.de/rdo/RDP50_accessible_at">
+    <rdfs:label xml:lang="en">accessible at</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ontologies.mpiwg-berlin.mpg.de/rdo/RDP50_accessible_at">
+    <rdfs:domain rdf:resource="http://www.ics.forth.gr/isl/CRMdig/D1_Digital_Object"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ontologies.mpiwg-berlin.mpg.de/rdo/RDP50_accessible_at">
+    <rdfs:range rdf:resource="http://ontologies.mpiwg-berlin.mpg.de/rdo/RDE29_Access_Point"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ontologies.mpiwg-berlin.mpg.de/rdo/RDP50i_provides_access_to">
+    <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ontologies.mpiwg-berlin.mpg.de/rdo/RDP50i_provides_access_to">
+    <rdfs:label xml:lang="en">provides access to</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ontologies.mpiwg-berlin.mpg.de/rdo/RDP50i_provides_access_to">
+    <rdfs:domain rdf:resource="http://ontologies.mpiwg-berlin.mpg.de/rdo/RDE29_Access_Point"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ontologies.mpiwg-berlin.mpg.de/rdo/RDP50i_provides_access_to">
+    <rdfs:range rdf:resource="http://www.ics.forth.gr/isl/CRMdig/D1_Digital_Object"/>
+  </rdf:Description>
+</rdf:RDF>

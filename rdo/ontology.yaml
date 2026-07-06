@@ -1,0 +1,13 @@
+schema_version: 2
+ontology:
+  family: cidoc-crm
+  kind: extension
+  namespace: http://ontologies.mpiwg-berlin.mpg.de/rdo/
+  prefix: rdo
+  prefixes: [rdo]
+  title: Research Data Ontology
+require:
+  - {module: github.com/pletka-io/ontologies/crm, version: "6.2"}
+sources:
+  files: [src/RDO_v1.0.rdf]
+  primary: src/RDO_v1.0.rdf
