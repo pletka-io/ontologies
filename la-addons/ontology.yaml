@@ -1,0 +1,13 @@
+schema_version: 2
+ontology:
+  family: cidoc-crm
+  kind: extension
+  namespace: https://linked.art/ns/addons/
+  prefix: la-addons
+  prefixes: [la-addons]
+  title: Linked Art Add-ons
+require:
+  - {module: github.com/pletka-io/ontologies/la, version: "0.9"}
+sources:
+  files: [src/LInked_Art_Add_Ons_v.rdf]
+  primary: src/LInked_Art_Add_Ons_v.rdf
