@@ -1,0 +1,13 @@
+schema_version: 2
+ontology:
+  family: cidoc-crm
+  kind: extension
+  namespace: http://isl.ics.forth.gr/ontology/echoes/
+  prefix: hdt
+  prefixes: [hdt]
+  title: Echoes HDT
+require:
+  - {module: github.com/pletka-io/ontologies/crm, version: 7.1.3}
+sources:
+  files: [src/HDT_v1.1.rdf]
+  primary: src/HDT_v1.1.rdf
