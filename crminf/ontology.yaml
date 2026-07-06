@@ -1,0 +1,13 @@
+schema_version: 2
+ontology:
+  family: cidoc-crm
+  kind: extension
+  namespace: http://www.ics.forth.gr/isl/CRMinf/
+  prefix: crminf
+  prefixes: [crminf]
+  title: CRMinf
+require:
+  - {module: github.com/pletka-io/ontologies/crm, version: "6.2"}
+sources:
+  files: [src/CRMinf_v0.7.rdfs]
+  primary: src/CRMinf_v0.7.rdfs
