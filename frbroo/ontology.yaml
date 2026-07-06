@@ -1,0 +1,14 @@
+schema_version: 2
+ontology:
+  family: ifla-library-models
+  kind: base
+  namespace: http://iflastandards.info/ns/fr/frbr/frbroo/
+  namespace_aliases: [http://iflastandards.info/ns/fr/frbr/frbroo/]
+  prefix: frbroo
+  prefixes: [frbroo]
+  title: LRMoo
+require:
+  - {module: github.com/pletka-io/ontologies/crm, version: "6.2"}
+sources:
+  files: [src/FRBRoo_v2.4.rdfs]
+  primary: src/FRBRoo_v2.4.rdfs
