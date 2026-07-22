@@ -1,0 +1,11 @@
+schema_version: 2
+ontology:
+  family: w3c-standards
+  kind: base
+  namespace: https://pletka.io/ontologies/defaults/
+  prefix: defaults
+  prefixes: [dc, dcterms, owl, rdf, rdfs, skos, xsd]
+  title: W3C Defaults
+sources:
+  files: [src/w3c_defaults_v1.0.rdfs]
+  primary: src/w3c_defaults_v1.0.rdfs
