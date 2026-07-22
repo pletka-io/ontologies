@@ -7,5 +7,5 @@ ontology:
   prefixes: [dc, dcterms, owl, rdf, rdfs, skos, xsd]
   title: W3C Defaults
 sources:
-  files: [src/w3c_defaults_v1.0.rdfs]
-  primary: src/w3c_defaults_v1.0.rdfs
+  files: [src/w3c_defaults_v1.3.rdfs]
+  primary: src/w3c_defaults_v1.3.rdfs
