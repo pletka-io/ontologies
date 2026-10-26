@@ -1,0 +1,11 @@
+schema_version: 2
+ontology:
+  family: nfdi
+  kind: base
+  namespace: https://nfdi.fiz-karlsruhe.de/ontology/
+  prefix: nfdicore
+  prefixes: [nfdicore]
+  title: NFDIcore
+sources:
+  files: [src/nfdicore_v3.0.0.rdf]
+  primary: src/nfdicore_v3.0.0.rdf
