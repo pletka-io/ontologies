@@ -1,0 +1,13 @@
+schema_version: 2
+ontology:
+  family: nfdi
+  kind: extension
+  namespace: https://nfdi4culture.de/ontology/
+  prefix: cto
+  prefixes: [cto]
+  title: CTO
+require:
+  - {module: github.com/pletka-io/ontologies/nfdicore, version: 3.0.0}
+sources:
+  files: [src/cto_v3.0.0.rdf]
+  primary: src/cto_v3.0.0.rdf
