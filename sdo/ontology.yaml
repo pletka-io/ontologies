@@ -1,0 +1,13 @@
+schema_version: 2
+ontology:
+  family: nfdi
+  kind: extension
+  namespace: https://nfdi4culture.de/ontology/schema-extension#
+  prefix: sdo
+  prefixes: [sdo]
+  title: NFDI4Culture Schema Extensions
+require:
+  - {module: github.com/pletka-io/ontologies/nfdicore, version: 3.0.0}
+sources:
+  files: [src/schema-extension_v0.2.rdf]
+  primary: src/schema-extension_v0.2.rdf
