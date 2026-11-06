@@ -182,7 +182,7 @@ Used on software (1 of 82). All values are xsd:string.
   <!-- ===== schema-org-extension.xml ===== -->
 <!--
            Schema.org Terms for the NFDI4Culture Application Profile
-           RDFS Implementation, Version 0.3
+           RDFS Implementation, Version 0.4
 
            This document declares, in RDFS, the schema.org terms that are used in the NFDI4Culture
            modelling of the NFDI4Culture Knowledge Graph (CKG), both the research
@@ -240,7 +240,13 @@ Used on software (1 of 82). All values are xsd:string.
 
            6. Scope notes are represented as rdfs:comment elements: "Scope note" quotes schema.org, and
               "Implementation note" records how and why the term is declared as it is.
-           -->
+           Version 0.4 (6 November 2026): merges George Bruseker's 0.3 of the schema.org part
+           (schema:Role placed under obo:BFO_0000001, schema:roleName added, schema:contributor
+           ranged on entity, schema:sameAs ranged on entity for Role nodes) into the 0.3 draft,
+           keeping rdfs:Resource as a second range of schema:sameAs for the plain IRI use, and
+           adds obo:BFO_0000001 as a range of cto:CTO_0001025 (is about real world entity)
+           here instead of patching CTO 3.0.0 in place.
+-->
 
   <!--
            CLASSES
@@ -262,8 +268,9 @@ Declared because it appears as a value type in the NFDI4Culture modelling. No su
 Represents additional information about a relationship or property. For example a Role can be used to say that a 'member' role linking some SportsTeam to a player occurred during a particular time period. (schema.org)
 
 Implementation note:
-Declared because it appears in the schema:memberOf and schema:member paths in the NFDI4Culture modelling (Person → schema:memberOf → schema:Role → schema:memberOf → Organisation). No superclass is asserted.
+Declared because the CKG qualifies three relationships with Role nodes: schema:contributor, schema:member and schema:memberOf. Each Role node is a blank node entered by one of these properties and left by the same property again, which points to the agent or group (e.g. Person → schema:memberOf → schema:Role → schema:memberOf → Organisation). The Role node carries schema:roleName, schema:sameAs (to a named role term, itself typed schema:Role), and optionally schema:startDate and schema:endDate. Placed under obo:BFO_0000001 (entity) in version 0.3 so that the entity-level properties apply to it.
 </rdfs:comment>
+    <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/BFO_0000001" />
     <rdfs:isDefinedBy rdf:resource="https://schema.org/" />
   </rdfs:Class>
   <rdfs:Class rdf:about="https://nfdi4culture.de/ontology/schema-extension#CoordinateBearer">
@@ -602,10 +609,10 @@ Domain nfdi-schema:CoordinateBearer: used on cto:CTO_0001005 (source item) and o
 A secondary contributor to the CreativeWork or Event. (schema.org)
 
 Implementation note:
-Domain obo:BFO_0000001 (entity), the top-level class: used on data portals, data feeds and every RIG work model. Range schema:Role: all values are Role qualifier nodes.
+Domain obo:BFO_0000001 (entity), the top-level class: used on data portals, data feeds and every RIG work model. Range obo:BFO_0000001 (entity) since version 0.3: the value is a Role qualifier node (schema:Role, itself under entity) or the agent directly.
 </rdfs:comment>
     <rdfs:domain rdf:resource="http://purl.obolibrary.org/obo/BFO_0000001" />
-    <rdfs:range rdf:resource="https://schema.org/Role" />
+    <rdfs:range rdf:resource="http://purl.obolibrary.org/obo/BFO_0000001" />
     <rdfs:isDefinedBy rdf:resource="https://schema.org/" />
   </rdf:Property>
   <rdf:Property rdf:about="https://schema.org/keywords">
@@ -938,10 +945,23 @@ Added in version 0.3. Domain schema:DataFeedItem. Range obo:BFO_0000001 (entity)
 URL of a reference Web page that unambiguously indicates the item's identity. (schema.org)
 
 Implementation note:
-Domain obo:BFO_0000001 (entity), the top-level class: used on data portals and data feeds. Range rdfs:Resource: values are IRIs. Distinct from owl:sameAs.
+Domain obo:BFO_0000001 (entity), the top-level class: used on data portals, data feeds and schema:Role. Two ranges: rdfs:Resource for the plain IRI use (data portals, data feeds), and obo:BFO_0000001 (entity) since version 0.3 for Role nodes, which point to one of the 32 named role terms (typed schema:Role) in the CKG. Distinct from owl:sameAs.
 </rdfs:comment>
     <rdfs:domain rdf:resource="http://purl.obolibrary.org/obo/BFO_0000001" />
     <rdfs:range rdf:resource="http://www.w3.org/2000/01/rdf-schema#Resource" />
+    <rdfs:range rdf:resource="http://purl.obolibrary.org/obo/BFO_0000001" />
+    <rdfs:isDefinedBy rdf:resource="https://schema.org/" />
+  </rdf:Property>
+  <rdf:Property rdf:about="https://schema.org/roleName">
+    <rdfs:label xml:lang="en">role name</rdfs:label>
+    <rdfs:comment xml:lang="en">Scope note:
+A role played, performed or filled by a person or organization. For example, the team of creators for a comic book might fill the roles named 'inker', 'penciller', and 'letterer'; or an athlete in a SportsTeam might play in the position named 'Quarterback'. (schema.org)
+
+Implementation note:
+Used only on schema:Role. All values are xsd:string; in the CKG the string repeats the name of the role term the Role node points to with schema:sameAs (e.g. "Affiliation", "Author"). Added in version 0.3.
+</rdfs:comment>
+    <rdfs:domain rdf:resource="https://schema.org/Role" />
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string" />
     <rdfs:isDefinedBy rdf:resource="https://schema.org/" />
   </rdf:Property>
 
@@ -1043,6 +1063,17 @@ Inverse of nfdicore:NFDI_0000191 "published by", which has domain obo:IAO_000003
 </rdfs:comment>
     <rdfs:range rdf:resource="http://purl.obolibrary.org/obo/IAO_0000030" />
     <rdfs:isDefinedBy rdf:resource="https://nfdi.fiz-karlsruhe.de/ontology/" />
+  </rdf:Property>
+  <rdf:Property rdf:about="https://nfdi4culture.de/ontology/CTO_0001025">
+    <rdfs:label xml:lang="en">is about real world entity</rdfs:label>
+    <rdfs:comment xml:lang="en">Scope note:
+A provider URI (cto:source item) is about a real world entity, e.g. an instance of schema:Book, schema:Sculpture or nfdicore:Event. (CTO 3.0.0)
+
+Implementation note:
+CTO 3.0.0 ranges this property on the union of nfdicore:NFDI_0000004, nfdicore:NFDI_0000131, schema:Book, schema:LandmarksOrHistoricalBuildings, schema:Sculpture, schema:SheetMusic and schema:TheaterEvent. The CKG data mostly points to classes outside that union (mo:MusicalManifestation, schema:CreativeWork, schema:VisualArtwork, schema:ImageObject, schema:MusicEvent, schema:MusicComposition, crm:E34_Inscription, crm:E22_Human-Made_Object, cmif Letter), and the five schema.org classes are not placed in the BFO hierarchy. This file adds obo:BFO_0000001 (entity) as a range; the seven upstream ranges stay. Added in version 0.4 (George Bruseker, 6 November 2026).
+</rdfs:comment>
+    <rdfs:range rdf:resource="http://purl.obolibrary.org/obo/BFO_0000001" />
+    <rdfs:isDefinedBy rdf:resource="https://nfdi4culture.de/ontology/" />
   </rdf:Property>
   <rdf:Property rdf:about="https://nfdi.fiz-karlsruhe.de/ontology/NFDI_0010015">
     <rdfs:label xml:lang="en">has acronym</rdfs:label>
