@@ -1,0 +1,48 @@
+schema_version: 2
+bindings:
+  - {namespace: https://ontology.swissartresearch.net/aaao/, prefix: aaao}
+  - {namespace: https://ontology.swissartresearch.net/admo/, prefix: admo}
+  - {namespace: http://purl.org/ontology/bibo/, prefix: bibo}
+  - {namespace: https://ontology.swissartresearch.net/cpro/, prefix: cpro}
+  - {namespace: http://www.cidoc-crm.org/cidoc-crm/, prefix: crm, aliases: [http://erlangen-crm.org/current/]}
+  - {namespace: https://takin.solutions/ontologies/crmaaa/, prefix: crmaaa}
+  - {namespace: http://www.cidoc-crm.org/extensions/crmarchaeo/, prefix: crmarchaeo, aliases: [http://www.cidoc-crm.org/cidoc-crm/CRMarchaeo/]}
+  - {namespace: https://takin.solutions/ontologies/CRMcpr/, prefix: crmcpr}
+  - {namespace: http://www.ics.forth.gr/isl/CRMdig/, prefix: crmdig, aliases: [http://www.cidoc-crm.org/extensions/crmdig/]}
+  - {namespace: http://www.ics.forth.gr/isl/CRMgeo/, prefix: crmgeo, aliases: [http://www.cidoc-crm.org/extensions/crmgeo/]}
+  - {namespace: http://www.ics.forth.gr/isl/CRMinf/, prefix: crminf, aliases: [http://www.cidoc-crm.org/extensions/crminf/]}
+  - {namespace: http://parthenos.d4science.org/CRMext/CRMpe.rdfs/, prefix: crmpe}
+  - {namespace: http://www.cidoc-crm.org/extensions/crmsci/, prefix: crmsci, aliases: [http://www.cidoc-crm.org/CRMsci/]}
+  - {namespace: https://github.com/takinsolutions/crmsurv/, prefix: crmsurv}
+  - {namespace: http://www.cidoc-crm.org/extensions/crmtex/, prefix: crmtex}
+  - {namespace: http://purl.org/dc/elements/1.1/, prefix: dc}
+  - {namespace: http://purl.org/dc/terms/, prefix: dcterms}
+  - {namespace: https://dlnarratives.eu/ontology#, prefix: dln}
+  - {namespace: http://edamontology.org/, prefix: edam}
+  - {namespace: http://xmlns.com/foaf/0.1/, prefix: foaf}
+  - {namespace: http://erlangen-crm.org/efrbroo/, prefix: frbroo}
+  - {namespace: http://www.opengis.net/ont/geosparql#, prefix: geo}
+  - {namespace: https://w3id.org/globalise/ontology/, prefix: globo}
+  - {namespace: http://isl.ics.forth.gr/ontology/echoes/, prefix: hdt}
+  - {namespace: https://linked.art/ns/terms/, prefix: la}
+  - {namespace: https://linked.art/ns/addons/, prefix: la-addons}
+  - {namespace: http://iflastandards.info/ns/lrm/lrmoo/, prefix: lrmoo}
+  - {namespace: https://takin.solutions/ontologies/mahero/, prefix: mahero}
+  - {namespace: http://purl.obolibrary.org/obo/, prefix: obo}
+  - {namespace: http://www.w3.org/2002/07/owl#, prefix: owl}
+  - {namespace: https://ontology.swissartresearch.net/pwro/, prefix: pwro, aliases: [https://w3id.org/pwro/]}
+  - {namespace: http://www.w3.org/1999/02/22-rdf-syntax-ns#, prefix: rdf}
+  - {namespace: http://www.w3.org/2000/01/rdf-schema#, prefix: rdfs}
+  - {namespace: http://ontologies.mpiwg-berlin.mpg.de/rdo/, prefix: rdo}
+  - {namespace: http://w3id.org/sari#, prefix: sari}
+  - {namespace: http://schema.org/, prefix: schema}
+  - {namespace: https://sdhss.org/ontology/core/1.0/, prefix: sdh}
+  - {namespace: https://sdhss.org/ontology/social-life/1.0/, prefix: sdhso}
+  - {namespace: https://schema.org/, prefix: sdo}
+  - {namespace: https://nfdi4culture.de/ontology/schema-extension#, prefix: sdoe}
+  - {namespace: http://www.w3.org/2004/02/skos/core#, prefix: skos}
+  - {namespace: https://r11.eu/ns/similarity/, prefix: so}
+  - {namespace: https://r11.eu/ns/spec/, prefix: spec}
+  - {namespace: http://www.ebi.ac.uk/swo/, prefix: swo}
+  - {namespace: http://purl.org/vocab/vann/, prefix: vann}
+  - {namespace: http://www.w3.org/2001/XMLSchema#, prefix: xsd}
