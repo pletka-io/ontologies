@@ -20,7 +20,7 @@ bindings:
   - {namespace: https://dlnarratives.eu/ontology#, prefix: dln}
   - {namespace: http://edamontology.org/, prefix: edam}
   - {namespace: http://xmlns.com/foaf/0.1/, prefix: foaf}
-  - {namespace: http://erlangen-crm.org/efrbroo/, prefix: frbroo}
+  - {namespace: http://iflastandards.info/ns/fr/frbr/frbroo/, prefix: frbroo, aliases: [http://erlangen-crm.org/efrbroo/]}
   - {namespace: http://www.opengis.net/ont/geosparql#, prefix: geo}
   - {namespace: https://w3id.org/globalise/ontology/, prefix: globo}
   - {namespace: http://isl.ics.forth.gr/ontology/echoes/, prefix: hdt}
