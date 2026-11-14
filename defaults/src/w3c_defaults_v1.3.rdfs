@@ -9,7 +9,7 @@
   <owl:Ontology rdf:about="https://pletka.io/ontologies/defaults/">
     <rdfs:label xml:lang="en">W3C Defaults</rdfs:label>
     <rdfs:comment xml:lang="en">Curated subset of the standard W3C and Dublin Core vocabularies referenced by Pletka fields and ontologies (rdf, rdfs, owl, xsd, skos, dc, dcterms). Terms are declared under their canonical namespaces; this ontology exists so standard terms are first-class rows instead of audit exceptions. Properties declared with domain rdfs:Resource are the RDF basic vocabulary offered on every class in every project; domain-less properties are audit-only.</rdfs:comment>
-    <owl:versionInfo>1.2</owl:versionInfo>
+    <owl:versionInfo>1.3</owl:versionInfo>
   </owl:Ontology>
 
   <!-- Classes -->
@@ -82,8 +82,13 @@
   </rdf:Property>
   <rdf:Property rdf:about="http://www.w3.org/2004/02/skos/core#exactMatch">
     <rdfs:label xml:lang="en">exact match</rdfs:label>
-    <rdfs:domain rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
-    <rdfs:range rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <rdfs:domain rdf:resource="http://www.w3.org/2000/01/rdf-schema#Resource"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2000/01/rdf-schema#Resource"/>
+  </rdf:Property>
+  <rdf:Property rdf:about="http://www.w3.org/2004/02/skos/core#closeMatch">
+    <rdfs:label xml:lang="en">close match</rdfs:label>
+    <rdfs:domain rdf:resource="http://www.w3.org/2000/01/rdf-schema#Resource"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2000/01/rdf-schema#Resource"/>
   </rdf:Property>
   <rdf:Property rdf:about="http://www.w3.org/2004/02/skos/core#topConceptOf">
     <rdfs:label xml:lang="en">top concept of</rdfs:label>
