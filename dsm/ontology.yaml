@@ -1,0 +1,13 @@
+schema_version: 2
+ontology:
+  family: knora
+  kind: extension
+  namespace: http://www.knora.org/ontology/standard-models#
+  prefix: dsm
+  prefixes: [dsm]
+  title: Knora Standard Models Ontology - Flat
+require:
+  - {module: github.com/pletka-io/ontologies/knora-base, version: "60"}
+sources:
+  files: [src/dasch-sm-flat_v3.rdfs]
+  primary: src/dasch-sm-flat_v3.rdfs
