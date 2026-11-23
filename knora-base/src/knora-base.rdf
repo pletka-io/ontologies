@@ -1,0 +1,464 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  knora-base (v60), simplified to RDFS. Base ontology for the DaSCH standard models extensions
+  (dasch-sm-flat, and later dasch-sm-linked).
+  Revised 2026-10-26. Source: knora-base v60 (DaSCH GitHub); reference documentation:
+  https://docs.dasch.swiss/DSP-API/02-dsp-ontologies/knora-base/
+
+  Namespace: http://www.knora.org/ontology/knora-base#  (written "#Name", relative to xml:base)
+  Only the knora-base terms the standard models need are included. Simplifications: OWL
+  restrictions and DSP constraint properties are expressed as rdfs:domain/rdfs:range; mixin
+  classes (ValueBase, DateBase, DecimalBase, UriBase, ...) are folded in; DSP system metadata
+  (permissions, creation dates, UUIDs, standoff) is omitted. rdfs:label is redeclared with
+  domain Resource.
+
+  Layout: rdfs:label; resource classes; value classes; file value classes; properties of
+  Resource; file properties; properties of the file value; properties of the value classes.
+-->
+<rdf:RDF xml:lang="en"
+    xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+    xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+    xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+    xmlns:knora-base="http://www.knora.org/ontology/knora-base#"
+    xml:base="http://www.knora.org/ontology/knora-base">
+
+
+  <!-- ========== PROPERTY: rdfs:label (required on every resource) ========== -->
+
+  <rdf:Property rdf:about="http://www.w3.org/2000/01/rdf-schema#label">
+    <rdfs:label xml:lang="en">Label</rdfs:label>
+    <rdfs:label xml:lang="de">Label</rdfs:label>
+    <rdfs:comment xml:lang="en">The label of a resource. In knora-base every resource has exactly one rdfs:label. Declared here with domain Resource so that it can be used from this ontology and its extensions.</rdfs:comment>
+    <rdfs:domain rdf:resource="#Resource"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
+  </rdf:Property>
+
+
+  <!-- ========== CLASSES: knora-base resource classes the models specialise ========== -->
+
+  <rdfs:Class rdf:about="#Resource">
+    <rdfs:label xml:lang="en">Resource</rdfs:label>
+    <rdfs:comment xml:lang="en">Represents something in the world, or an abstract thing</rdfs:comment>
+  </rdfs:Class>
+
+  <rdfs:Class rdf:about="#Representation">
+    <rdfs:label xml:lang="en">Representation</rdfs:label>
+    <rdfs:comment xml:lang="en">A resource that can store a file</rdfs:comment>
+    <rdfs:subClassOf rdf:resource="#Resource"/>
+  </rdfs:Class>
+
+  <rdfs:Class rdf:about="#ArchiveRepresentation">
+    <rdfs:label xml:lang="en">Representation (Zip)</rdfs:label>
+    <rdfs:subClassOf rdf:resource="#Representation"/>
+  </rdfs:Class>
+
+  <rdfs:Class rdf:about="#AudioRepresentation">
+    <rdfs:label xml:lang="en">Representation (Audio)</rdfs:label>
+    <rdfs:comment xml:lang="en">Represents a file containing audio data</rdfs:comment>
+    <rdfs:subClassOf rdf:resource="#Representation"/>
+  </rdfs:Class>
+
+  <rdfs:Class rdf:about="#DDDRepresentation">
+    <rdfs:label xml:lang="en">Representation (3D)</rdfs:label>
+    <rdfs:comment xml:lang="en">Represents a file containing 3D data</rdfs:comment>
+    <rdfs:subClassOf rdf:resource="#Representation"/>
+  </rdfs:Class>
+
+  <rdfs:Class rdf:about="#DocumentRepresentation">
+    <rdfs:label xml:lang="en">Representation (Document)</rdfs:label>
+    <rdfs:subClassOf rdf:resource="#Representation"/>
+  </rdfs:Class>
+
+  <rdfs:Class rdf:about="#MovingImageRepresentation">
+    <rdfs:label xml:lang="en">Representation (Movie)</rdfs:label>
+    <rdfs:comment xml:lang="en">A resource containing moving image data</rdfs:comment>
+    <rdfs:subClassOf rdf:resource="#Representation"/>
+  </rdfs:Class>
+
+  <rdfs:Class rdf:about="#StillImageRepresentation">
+    <rdfs:label xml:lang="en">Representation (Image)</rdfs:label>
+    <rdfs:comment xml:lang="en">A resource that can contain a two-dimensional still image file</rdfs:comment>
+    <rdfs:subClassOf rdf:resource="#Representation"/>
+  </rdfs:Class>
+
+  <rdfs:Class rdf:about="#TextRepresentation">
+    <rdfs:label xml:lang="en">Representation (Text)</rdfs:label>
+    <rdfs:comment xml:lang="en">A resource containing a text file</rdfs:comment>
+    <rdfs:subClassOf rdf:resource="#Representation"/>
+  </rdfs:Class>
+
+
+  <!-- ========== CLASSES: knora-base value classes, simplified to RDFS ========== -->
+
+  <rdfs:Class rdf:about="#Value">
+    <rdfs:label xml:lang="en">Value</rdfs:label>
+    <rdfs:comment xml:lang="en">The base class of classes representing Knora values</rdfs:comment>
+  </rdfs:Class>
+
+  <rdfs:Class rdf:about="#DateValue">
+    <rdfs:label xml:lang="en">date value</rdfs:label>
+    <rdfs:comment xml:lang="en">Represents a Knora date value</rdfs:comment>
+    <rdfs:subClassOf rdf:resource="#Value"/>
+  </rdfs:Class>
+
+  <rdfs:Class rdf:about="#DecimalValue">
+    <rdfs:label xml:lang="en">decimal value</rdfs:label>
+    <rdfs:comment xml:lang="en">Represents an arbitrary-precision decimal value</rdfs:comment>
+    <rdfs:subClassOf rdf:resource="#Value"/>
+  </rdfs:Class>
+
+  <rdfs:Class rdf:about="#GeonameValue">
+    <rdfs:label xml:lang="en">geoname value</rdfs:label>
+    <rdfs:subClassOf rdf:resource="#Value"/>
+  </rdfs:Class>
+
+  <rdfs:Class rdf:about="#ListValue">
+    <rdfs:label xml:lang="en">list value</rdfs:label>
+    <rdfs:subClassOf rdf:resource="#Value"/>
+  </rdfs:Class>
+
+  <rdfs:Class rdf:about="#TextValue">
+    <rdfs:label xml:lang="en">Text Value</rdfs:label>
+    <rdfs:subClassOf rdf:resource="#Value"/>
+  </rdfs:Class>
+
+  <rdfs:Class rdf:about="#UriValue">
+    <rdfs:label xml:lang="en">URI value</rdfs:label>
+    <rdfs:comment xml:lang="en">Represents a URI</rdfs:comment>
+    <rdfs:subClassOf rdf:resource="#Value"/>
+  </rdfs:Class>
+
+  <rdfs:Class rdf:about="#ListNode">
+    <rdfs:label xml:lang="en">list node</rdfs:label>
+    <rdfs:comment xml:lang="en">Represents a flat or hierarchical list</rdfs:comment>
+  </rdfs:Class>
+
+  <rdfs:Class rdf:about="#License">
+    <rdfs:label xml:lang="en">License</rdfs:label>
+    <rdfs:label xml:lang="de">Lizenz</rdfs:label>
+    <rdfs:comment xml:lang="en">A license. Instances are the licenses enabled for a project, e.g. http://rdfh.ch/licenses/cc-by-4.0, each identified by its canonical URI (hasLicenseUri). In knora-base, License is a subclass of ValueBase; ValueBase is folded in here.</rdfs:comment>
+  </rdfs:Class>
+
+
+  <!-- ========== CLASSES: knora-base file value classes ========== -->
+
+  <rdfs:Class rdf:about="#FileValue">
+    <rdfs:label xml:lang="en">file value</rdfs:label>
+    <rdfs:comment xml:lang="en">A file attached to a Representation. Holds the file name and type and, as in knora-base, the rights in the file (license, copyright holder, authorship).</rdfs:comment>
+    <rdfs:subClassOf rdf:resource="#Value"/>
+  </rdfs:Class>
+
+  <rdfs:Class rdf:about="#StillImageAbstractFileValue">
+    <rdfs:label xml:lang="en">still image abstract file value</rdfs:label>
+    <rdfs:comment xml:lang="en">A file containing a two-dimensional still image</rdfs:comment>
+    <rdfs:subClassOf rdf:resource="#FileValue"/>
+  </rdfs:Class>
+
+  <rdfs:Class rdf:about="#StillImageFileValue">
+    <rdfs:label xml:lang="en">still image file value</rdfs:label>
+    <rdfs:comment xml:lang="en">A file containing a two-dimensional still image</rdfs:comment>
+    <rdfs:subClassOf rdf:resource="#StillImageAbstractFileValue"/>
+  </rdfs:Class>
+
+  <rdfs:Class rdf:about="#MovingImageFileValue">
+    <rdfs:label xml:lang="en">moving image file value</rdfs:label>
+    <rdfs:comment xml:lang="en">Represents a moving image file</rdfs:comment>
+    <rdfs:subClassOf rdf:resource="#FileValue"/>
+  </rdfs:Class>
+
+  <rdfs:Class rdf:about="#AudioFileValue">
+    <rdfs:label xml:lang="en">audio file value</rdfs:label>
+    <rdfs:comment xml:lang="en">Represents an audio file</rdfs:comment>
+    <rdfs:subClassOf rdf:resource="#FileValue"/>
+  </rdfs:Class>
+
+  <rdfs:Class rdf:about="#DDDFileValue">
+    <rdfs:label xml:lang="en">3D file value</rdfs:label>
+    <rdfs:comment xml:lang="en">This represents some 3D-object with mesh data, point cloud, etc.</rdfs:comment>
+    <rdfs:subClassOf rdf:resource="#FileValue"/>
+  </rdfs:Class>
+
+  <rdfs:Class rdf:about="#DocumentFileValue">
+    <rdfs:label xml:lang="en">document file value</rdfs:label>
+    <rdfs:subClassOf rdf:resource="#FileValue"/>
+  </rdfs:Class>
+
+  <rdfs:Class rdf:about="#TextFileValue">
+    <rdfs:label xml:lang="en">Text file value</rdfs:label>
+    <rdfs:comment xml:lang="en">A text file such as plain Unicode text, LaTeX, TEI/XML, etc.</rdfs:comment>
+    <rdfs:subClassOf rdf:resource="#FileValue"/>
+  </rdfs:Class>
+
+  <rdfs:Class rdf:about="#ArchiveFileValue">
+    <rdfs:label xml:lang="en">archive file value</rdfs:label>
+    <rdfs:subClassOf rdf:resource="#FileValue"/>
+  </rdfs:Class>
+
+
+  <!-- ========== PROPERTIES of kb:Resource: the superproperties and the properties the models use directly ========== -->
+
+  <rdf:Property rdf:about="#hasValue">
+    <rdfs:label xml:lang="en">has value</rdfs:label>
+    <rdfs:comment xml:lang="en">The superproperty of all properties that point from a resource to a value.</rdfs:comment>
+    <rdfs:domain rdf:resource="#Resource"/>
+    <rdfs:range rdf:resource="#Value"/>
+  </rdf:Property>
+
+  <rdf:Property rdf:about="#hasLinkTo">
+    <rdfs:label xml:lang="en">has link to</rdfs:label>
+    <rdfs:comment xml:lang="en">Represents a direct connection between two resources</rdfs:comment>
+    <rdfs:domain rdf:resource="#Resource"/>
+    <rdfs:range rdf:resource="#Resource"/>
+  </rdf:Property>
+
+  <rdf:Property rdf:about="#hasTitle">
+    <rdfs:label xml:lang="en">Title</rdfs:label>
+    <rdfs:label xml:lang="de">Titel</rdfs:label>
+    <rdfs:comment xml:lang="en">Indicates the title of a resource</rdfs:comment>
+    <rdfs:comment xml:lang="de">Titel der Ressource</rdfs:comment>
+    <rdfs:subPropertyOf rdf:resource="#hasValue"/>
+    <rdfs:domain rdf:resource="#Resource"/>
+    <rdfs:range rdf:resource="#TextValue"/>
+  </rdf:Property>
+
+  <rdf:Property rdf:about="#hasDescription">
+    <rdfs:label xml:lang="en">Description</rdfs:label>
+    <rdfs:label xml:lang="de">Beschreibung</rdfs:label>
+    <rdfs:comment xml:lang="en">Indicates the description of a resource</rdfs:comment>
+    <rdfs:comment xml:lang="de">Kurzbeschreibung oder Zusammenfassung</rdfs:comment>
+    <rdfs:subPropertyOf rdf:resource="#hasValue"/>
+    <rdfs:domain rdf:resource="#Resource"/>
+    <rdfs:range rdf:resource="#TextValue"/>
+  </rdf:Property>
+
+
+  <!-- ========== PROPERTIES linking a Representation to its file ========== -->
+
+  <rdf:Property rdf:about="#hasFileValue">
+    <rdfs:label xml:lang="en">has file</rdfs:label>
+    <rdfs:comment xml:lang="en">Connects a Representation to a file</rdfs:comment>
+    <rdfs:subPropertyOf rdf:resource="#hasValue"/>
+    <rdfs:domain rdf:resource="#Representation"/>
+    <rdfs:range rdf:resource="#FileValue"/>
+  </rdf:Property>
+
+  <rdf:Property rdf:about="#hasStillImageFileValue">
+    <rdfs:label xml:lang="en">has image file</rdfs:label>
+    <rdfs:comment xml:lang="en">Connects a Representation to an image file</rdfs:comment>
+    <rdfs:subPropertyOf rdf:resource="#hasFileValue"/>
+    <rdfs:domain rdf:resource="#StillImageRepresentation"/>
+    <rdfs:range rdf:resource="#StillImageAbstractFileValue"/>
+  </rdf:Property>
+
+  <rdf:Property rdf:about="#hasMovingImageFileValue">
+    <rdfs:label xml:lang="en">has movie file</rdfs:label>
+    <rdfs:comment xml:lang="en">Connects a Representation to a movie file</rdfs:comment>
+    <rdfs:subPropertyOf rdf:resource="#hasFileValue"/>
+    <rdfs:domain rdf:resource="#MovingImageRepresentation"/>
+    <rdfs:range rdf:resource="#MovingImageFileValue"/>
+  </rdf:Property>
+
+  <rdf:Property rdf:about="#hasAudioFileValue">
+    <rdfs:label xml:lang="en">has audio file</rdfs:label>
+    <rdfs:comment xml:lang="en">Connects a Representation to an audio file</rdfs:comment>
+    <rdfs:subPropertyOf rdf:resource="#hasFileValue"/>
+    <rdfs:domain rdf:resource="#AudioRepresentation"/>
+    <rdfs:range rdf:resource="#AudioFileValue"/>
+  </rdf:Property>
+
+  <rdf:Property rdf:about="#hasDDDFileValue">
+    <rdfs:label xml:lang="en">has 3D-file</rdfs:label>
+    <rdfs:comment xml:lang="en">Connects a Representation to a 3D-file</rdfs:comment>
+    <rdfs:subPropertyOf rdf:resource="#hasFileValue"/>
+    <rdfs:domain rdf:resource="#DDDRepresentation"/>
+    <rdfs:range rdf:resource="#DDDFileValue"/>
+  </rdf:Property>
+
+  <rdf:Property rdf:about="#hasDocumentFileValue">
+    <rdfs:label xml:lang="en">has document</rdfs:label>
+    <rdfs:comment xml:lang="en">Connects a Representation to a document</rdfs:comment>
+    <rdfs:subPropertyOf rdf:resource="#hasFileValue"/>
+    <rdfs:domain rdf:resource="#DocumentRepresentation"/>
+    <rdfs:range rdf:resource="#DocumentFileValue"/>
+  </rdf:Property>
+
+  <rdf:Property rdf:about="#hasTextFileValue">
+    <rdfs:label xml:lang="en">has text file</rdfs:label>
+    <rdfs:comment xml:lang="en">Connects a Representation to a text file</rdfs:comment>
+    <rdfs:subPropertyOf rdf:resource="#hasFileValue"/>
+    <rdfs:domain rdf:resource="#TextRepresentation"/>
+    <rdfs:range rdf:resource="#TextFileValue"/>
+  </rdf:Property>
+
+  <rdf:Property rdf:about="#hasArchiveFileValue">
+    <rdfs:label xml:lang="en">has zip</rdfs:label>
+    <rdfs:comment xml:lang="en">Connects a Representation to a zip archive</rdfs:comment>
+    <rdfs:subPropertyOf rdf:resource="#hasFileValue"/>
+    <rdfs:domain rdf:resource="#ArchiveRepresentation"/>
+    <rdfs:range rdf:resource="#ArchiveFileValue"/>
+  </rdf:Property>
+
+
+  <!-- ========== PROPERTIES of FileValue: file details and rights ========== -->
+
+  <rdf:Property rdf:about="#internalFilename">
+    <rdfs:label xml:lang="en">internal filename</rdfs:label>
+    <rdfs:domain rdf:resource="#FileValue"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+  </rdf:Property>
+
+  <rdf:Property rdf:about="#internalMimeType">
+    <rdfs:label xml:lang="en">internal MIME type</rdfs:label>
+    <rdfs:domain rdf:resource="#FileValue"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+  </rdf:Property>
+
+  <rdf:Property rdf:about="#originalFilename">
+    <rdfs:label xml:lang="en">original filename</rdfs:label>
+    <rdfs:domain rdf:resource="#FileValue"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+  </rdf:Property>
+
+  <rdf:Property rdf:about="#originalMimeType">
+    <rdfs:label xml:lang="en">original MIME type</rdfs:label>
+    <rdfs:domain rdf:resource="#FileValue"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+  </rdf:Property>
+
+  <rdf:Property rdf:about="#hasLicense">
+    <rdfs:label xml:lang="en">Usage license</rdfs:label>
+    <rdfs:label xml:lang="de">Nutzungslizenz</rdfs:label>
+    <rdfs:comment xml:lang="en">The usage license of the file. Declared on FileValue, as in knora-base. The standard data models list it as mandatory for every model, including those without a file; this is a question to DaSCH.</rdfs:comment>
+    <rdfs:comment xml:lang="de">Nutzungslizenz</rdfs:comment>
+    <rdfs:domain rdf:resource="#FileValue"/>
+    <rdfs:range rdf:resource="#License"/>
+  </rdf:Property>
+
+  <rdf:Property rdf:about="#hasCopyrightHolder">
+    <rdfs:label xml:lang="en">Copyright holder</rdfs:label>
+    <rdfs:label xml:lang="de">Urheberrechtsinhaber</rdfs:label>
+    <rdfs:comment xml:lang="en">The copyright holder of the file. Declared on FileValue, as in knora-base. The standard data models list it as mandatory for every model, including those without a file; this is a question to DaSCH.</rdfs:comment>
+    <rdfs:comment xml:lang="de">Urheberrechtsinhaber</rdfs:comment>
+    <rdfs:domain rdf:resource="#FileValue"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+  </rdf:Property>
+
+  <rdf:Property rdf:about="#hasAuthorship">
+    <rdfs:label xml:lang="en">Authorship</rdfs:label>
+    <rdfs:label xml:lang="de">Autorenschaft</rdfs:label>
+    <rdfs:comment xml:lang="en">Credit, moral rights, author(s) of the file. Declared on FileValue, as in knora-base. The standard data models list it as mandatory for every model, including those without a file; this is a question to DaSCH.</rdfs:comment>
+    <rdfs:comment xml:lang="de">Autorenschaft</rdfs:comment>
+    <rdfs:domain rdf:resource="#FileValue"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+  </rdf:Property>
+
+
+  <!-- ========== PROPERTIES of the value classes (simplified) ========== -->
+
+  <rdf:Property rdf:about="#valueHasString">
+    <rdfs:label xml:lang="en">value has string</rdfs:label>
+    <rdfs:comment xml:lang="en">A string representation of a value, required for full-text searches and search results.</rdfs:comment>
+    <rdfs:domain rdf:resource="#Value"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+  </rdf:Property>
+
+  <rdf:Property rdf:about="#valueHasComment">
+    <rdfs:label xml:lang="en">value has comment</rdfs:label>
+    <rdfs:comment xml:lang="en">A comment on a value</rdfs:comment>
+    <rdfs:domain rdf:resource="#Value"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+  </rdf:Property>
+
+  <rdf:Property rdf:about="#valueHasLanguage">
+    <rdfs:label xml:lang="en">value has language</rdfs:label>
+    <rdfs:domain rdf:resource="#TextValue"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+  </rdf:Property>
+
+  <rdf:Property rdf:about="#valueHasXml">
+    <rdfs:label xml:lang="en">value has XML</rdfs:label>
+    <rdfs:comment xml:lang="en">The canonical XML of a text value with markup, rendered from its standoff at write time so that a raw export is self-contained.</rdfs:comment>
+    <rdfs:domain rdf:resource="#TextValue"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+  </rdf:Property>
+
+  <rdf:Property rdf:about="#valueHasCalendar">
+    <rdfs:label xml:lang="en">value has calendar</rdfs:label>
+    <rdfs:comment xml:lang="en">Name of the calendar to be used, such as "GREGORIAN" or "JULIAN".</rdfs:comment>
+    <rdfs:domain rdf:resource="#DateValue"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+  </rdf:Property>
+
+  <rdf:Property rdf:about="#valueHasStartJDN">
+    <rdfs:label xml:lang="en">value has start JDN</rdfs:label>
+    <rdfs:comment xml:lang="en">Contains the start of a date as a Julian Day Number (JDN)</rdfs:comment>
+    <rdfs:domain rdf:resource="#DateValue"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+  </rdf:Property>
+
+  <rdf:Property rdf:about="#valueHasEndJDN">
+    <rdfs:label xml:lang="en">value has end JDN</rdfs:label>
+    <rdfs:comment xml:lang="en">Contains the end of a date as a Julian Day Number (JDN)</rdfs:comment>
+    <rdfs:domain rdf:resource="#DateValue"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+  </rdf:Property>
+
+  <rdf:Property rdf:about="#valueHasStartPrecision">
+    <rdfs:label xml:lang="en">value has start precision</rdfs:label>
+    <rdfs:comment xml:lang="en">The precision the start of a date. Allowed values are "DAY", "MONTH", or "YEAR".</rdfs:comment>
+    <rdfs:domain rdf:resource="#DateValue"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+  </rdf:Property>
+
+  <rdf:Property rdf:about="#valueHasEndPrecision">
+    <rdfs:label xml:lang="en">value has end precision</rdfs:label>
+    <rdfs:comment xml:lang="en">Precision of knowledge about the end of the date. Allowed are "DAY", "MONTH" or "YEAR".</rdfs:comment>
+    <rdfs:domain rdf:resource="#DateValue"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+  </rdf:Property>
+
+  <rdf:Property rdf:about="#valueHasDecimal">
+    <rdfs:label xml:lang="en">value has decimal</rdfs:label>
+    <rdfs:domain rdf:resource="#DecimalValue"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#decimal"/>
+  </rdf:Property>
+
+  <rdf:Property rdf:about="#valueHasUri">
+    <rdfs:label xml:lang="en">value has URI</rdfs:label>
+    <rdfs:domain rdf:resource="#UriValue"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#anyURI"/>
+  </rdf:Property>
+
+  <rdf:Property rdf:about="#valueHasGeonameCode">
+    <rdfs:label xml:lang="en">value has geoname code</rdfs:label>
+    <rdfs:domain rdf:resource="#GeonameValue"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+  </rdf:Property>
+
+  <rdf:Property rdf:about="#valueHasListNode">
+    <rdfs:label xml:lang="en">value has list node</rdfs:label>
+    <rdfs:domain rdf:resource="#ListValue"/>
+    <rdfs:range rdf:resource="#ListNode"/>
+  </rdf:Property>
+
+  <rdf:Property rdf:about="#hasSubListNode">
+    <rdfs:label xml:lang="en">has sub-list-node</rdfs:label>
+    <rdfs:comment xml:lang="en">A hierarchical list is formed using the "hasSubListNode"-property</rdfs:comment>
+    <rdfs:domain rdf:resource="#ListNode"/>
+    <rdfs:range rdf:resource="#ListNode"/>
+  </rdf:Property>
+
+  <rdf:Property rdf:about="#listNodeName">
+    <rdfs:label xml:lang="en">list node name</rdfs:label>
+    <rdfs:domain rdf:resource="#ListNode"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+  </rdf:Property>
+
+  <rdf:Property rdf:about="#hasLicenseUri">
+    <rdfs:label xml:lang="en">has license URI</rdfs:label>
+    <rdfs:comment xml:lang="en">The canonical URI to the license.</rdfs:comment>
+    <rdfs:domain rdf:resource="#License"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#anyURI"/>
+  </rdf:Property>
+
+</rdf:RDF>

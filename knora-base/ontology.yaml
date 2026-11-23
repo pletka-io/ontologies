@@ -1,0 +1,11 @@
+schema_version: 2
+ontology:
+  family: knora
+  kind: base
+  namespace: http://www.knora.org/ontology/knora-base#
+  prefix: knora-base
+  prefixes: [knora-base]
+  title: Knora Base Ontology
+sources:
+  files: [src/knora-base.rdf]
+  primary: src/knora-base.rdf
