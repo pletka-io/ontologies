@@ -182,7 +182,7 @@ Used on software (1 of 82). All values are xsd:string.
   <!-- ===== schema-org-extension.xml ===== -->
 <!--
            Schema.org Terms for the NFDI4Culture Application Profile
-           RDFS Implementation, Version 0.2
+           RDFS Implementation, Version 0.3
 
            This document declares, in RDFS, the schema.org terms that are used in the NFDI4Culture
            modelling of the NFDI4Culture Knowledge Graph (CKG), both the research
@@ -199,17 +199,25 @@ Used on software (1 of 82). All values are xsd:string.
            Created by George Bruseker (Takin.solutions), 2 November 2026
            Version 0.2 (2 November 2026): adds the schema.org terms used in the Data feed,
            Data portal and Research Information Graph (RIG) models
+           Version 0.3 (5 November 2026, drafted by Delving for review): re-declares
+           schema:associatedMedia and schema:dataFeedElement with domain and range (CTO 3.0.0 types
+           them but gives them neither, so a path builder cannot offer them), adds schema:DataFeedItem
+           and schema:item for the Data feed element paths; two further sections add ranges to
+           NFDIcore properties that have none and declare the RDFS/OWL/BFO terms the modelling uses
            Namespace of terms introduced here : https://nfdi4culture.de/ontology/schema-extension#
 
            Contents:
-           - 15 classes
-           - 40 properties
+           - 16 classes
+           - 43 properties
            - 1 inverse property
 
            Encoding Rules:
            1. Only schema.org terms used in the NFDI4Culture modelling and not declared in CTO 3.0.0 are
-              declared here. schema:associatedMedia, schema:dataFeedElement, schema:item and
-              schema:license are declared in CTO 3.0.0 and are not repeated.
+              declared here, with two exceptions. schema:associatedMedia and schema:dataFeedElement are
+              typed in CTO 3.0.0 as owl:ObjectProperty without domain or range; they are re-declared here
+              with the domain and range of their CKG usage so that tools can offer them. schema:item is
+              not declared in CTO 3.0.0 and is declared here. schema:license is declared in CTO 3.0.0 and
+              is not repeated.
 
            2. schema.org terms keep their schema.org IRIs, in the namespace used by CTO 3.0.0
               (https://schema.org/). No new IRIs are minted except nfdi-schema:CoordinateBearer.
@@ -222,8 +230,10 @@ Used on software (1 of 82). All values are xsd:string.
               schema:latitude / schema:longitude, for which nfdi-schema:CoordinateBearer is the domain.
 
            4. No subclass or subproperty relations are asserted, either among these terms or to CTO and
-              NFDIcore terms. schema.org's own schema:domainIncludes and schema:rangeIncludes are not
-              carried over.
+              NFDIcore terms, with one exception: schema:DataFeedItem is a subclass of obo:BFO_0000001
+              (entity), so that the entity-level properties (schema:dateCreated, schema:dateModified)
+              apply to feed items. schema.org's own schema:domainIncludes and schema:rangeIncludes are
+              not carried over.
 
            5. RDFS cannot express inverse properties. schema:member, the inverse of schema:memberOf in
               schema.org, is declared separately in the section on inverse properties, without an axiom.
@@ -234,7 +244,7 @@ Used on software (1 of 82). All values are xsd:string.
 
   <!--
            CLASSES
-           This version counts 15 classes.
+           This version counts 16 classes.
            -->
   <rdfs:Class rdf:about="https://schema.org/DefinedTerm">
     <rdfs:label xml:lang="en">Defined Term</rdfs:label>
@@ -383,6 +393,17 @@ The geographic coordinates of a place or event. (schema.org)
 Implementation note:
 Declared because schema:latitude and schema:longitude are used on it in the CKG. No superclass is asserted.
 </rdfs:comment>
+    <rdfs:isDefinedBy rdf:resource="https://schema.org/" />
+  </rdfs:Class>
+  <rdfs:Class rdf:about="https://schema.org/DataFeedItem">
+    <rdfs:label xml:lang="en">Data Feed Item</rdfs:label>
+    <rdfs:comment xml:lang="en">Scope note:
+A single item within a larger data feed. (schema.org)
+
+Implementation note:
+Added in version 0.3. The object of schema:dataFeedElement on a schema:DataFeed (CTO 3.0.0) and the subject of schema:item, schema:dateCreated and schema:dateModified in the Data feed model. Declared a subclass of obo:BFO_0000001 (entity), the one subclass assertion in this file, so that the entity-level properties apply to it.
+</rdfs:comment>
+    <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/BFO_0000001" />
     <rdfs:isDefinedBy rdf:resource="https://schema.org/" />
   </rdfs:Class>
 
@@ -875,6 +896,42 @@ Domain obo:BFO_0000001 (entity), the top-level class: in the profiled models use
     <rdfs:range rdf:resource="http://purl.obolibrary.org/obo/BFO_0000001" />
     <rdfs:isDefinedBy rdf:resource="https://schema.org/" />
   </rdf:Property>
+  <rdf:Property rdf:about="https://schema.org/associatedMedia">
+    <rdfs:label xml:lang="en">associated media</rdfs:label>
+    <rdfs:comment xml:lang="en">Scope note:
+A media object that encodes this CreativeWork. This property is a synonym for encoding. (schema.org)
+
+Implementation note:
+Added in version 0.3. CTO 3.0.0 types this property as owl:ObjectProperty without domain or range. Domain obo:BFO_0000001 (entity), the top-level class: used on cto:CTO_0001005 (source item). Range schema:MediaObject, declared in CTO 3.0.0.
+</rdfs:comment>
+    <rdfs:domain rdf:resource="http://purl.obolibrary.org/obo/BFO_0000001" />
+    <rdfs:range rdf:resource="https://schema.org/MediaObject" />
+    <rdfs:isDefinedBy rdf:resource="https://schema.org/" />
+  </rdf:Property>
+  <rdf:Property rdf:about="https://schema.org/dataFeedElement">
+    <rdfs:label xml:lang="en">data feed element</rdfs:label>
+    <rdfs:comment xml:lang="en">Scope note:
+An item within a data feed. Data feeds may have many elements. (schema.org)
+
+Implementation note:
+Added in version 0.3. CTO 3.0.0 types this property as owl:ObjectProperty without domain or range. Domain schema:DataFeed, declared in CTO 3.0.0. Range schema:DataFeedItem.
+</rdfs:comment>
+    <rdfs:domain rdf:resource="https://schema.org/DataFeed" />
+    <rdfs:range rdf:resource="https://schema.org/DataFeedItem" />
+    <rdfs:isDefinedBy rdf:resource="https://schema.org/" />
+  </rdf:Property>
+  <rdf:Property rdf:about="https://schema.org/item">
+    <rdfs:label xml:lang="en">item</rdfs:label>
+    <rdfs:comment xml:lang="en">Scope note:
+An entity represented by an entry in a list or data feed (e.g. an 'artist' in a list of 'artists'). (schema.org)
+
+Implementation note:
+Added in version 0.3. Domain schema:DataFeedItem. Range obo:BFO_0000001 (entity), the top-level class: the item is any entity the feed describes.
+</rdfs:comment>
+    <rdfs:domain rdf:resource="https://schema.org/DataFeedItem" />
+    <rdfs:range rdf:resource="http://purl.obolibrary.org/obo/BFO_0000001" />
+    <rdfs:isDefinedBy rdf:resource="https://schema.org/" />
+  </rdf:Property>
   <rdf:Property rdf:about="https://schema.org/sameAs">
     <rdfs:label xml:lang="en">same as</rdfs:label>
     <rdfs:comment xml:lang="en">Scope note:
@@ -904,5 +961,147 @@ This property is the inverse of schema:memberOf. RDFS cannot state the inverse r
     <rdfs:range rdf:resource="http://purl.obolibrary.org/obo/BFO_0000001" />
     <rdfs:isDefinedBy rdf:resource="https://schema.org/" />
   </rdf:Property>
-</rdf:RDF>
 
+  <!-- ===== nfdicore-range-extension.xml ===== -->
+<!--
+           Ranges for NFDIcore Properties used in the NFDI4Culture Application Profile
+           RDFS Implementation, Version 0.1
+
+           This document adds an rdfs:range to NFDIcore 3.0.0 properties that are used in the NFDI4Culture
+           modelling but declared there without one. A property without a range cannot be followed by a
+           class (or a literal) in a path, so the fields that use it cannot be completed in a path builder.
+
+           Note that this is NOT a definition of these properties, which belong to NFDIcore. Ranges reflect
+           NFDI4Culture usage only.
+
+           Drafted by Delving, 5 November 2026, for review by George Bruseker (Takin.solutions)
+           Namespace of the declared terms : https://nfdi.fiz-karlsruhe.de/ontology/
+
+           Contents:
+           - 5 properties
+
+           Encoding Rules:
+           1. Only NFDIcore properties used in the NFDI4Culture modelling and declared without rdfs:range in
+              NFDIcore 3.0.0 are listed. They keep their NFDIcore IRIs. Nothing else about them is repeated.
+
+           2. Only rdfs:range is added. No rdfs:domain is added: in NFDIcore 3.0.0 these properties have no
+              domain and so apply to any class, which is how the modelling uses them (scope obo:BFO_0000001).
+
+           3. For the four inverse properties the range is the domain NFDIcore gives the forward property
+              where it gives one (nfdicore:NFDI_0000191 "published by" has domain obo:IAO_0000030), else
+              obo:BFO_0000001 (entity). nfdicore:NFDI_0010015 "has acronym" is an annotation property with
+              string values and gets xsd:string.
+
+           4. Scope notes quote the NFDIcore rdfs:comment; "Implementation note" records why the range is
+              declared as it is.
+           -->
+
+  <!--
+           PROPERTIES
+           This version counts 5 properties.
+           -->
+  <rdf:Property rdf:about="https://nfdi.fiz-karlsruhe.de/ontology/NFDI_0000113">
+    <rdfs:label xml:lang="en">contact point of</rdfs:label>
+    <rdfs:comment xml:lang="en">Scope note:
+inverse of property "has contact point". (NFDIcore 3.0.0)
+
+Implementation note:
+Inverse of nfdicore:NFDI_0000112 "has contact point", which has range nfdicore:NFDI_0000102 (agent) and no domain. Range obo:BFO_0000001 (entity), the top-level class: values are the resources, organisations and services the agent is a contact point of.
+</rdfs:comment>
+    <rdfs:range rdf:resource="http://purl.obolibrary.org/obo/BFO_0000001" />
+    <rdfs:isDefinedBy rdf:resource="https://nfdi.fiz-karlsruhe.de/ontology/" />
+  </rdf:Property>
+  <rdf:Property rdf:about="https://nfdi.fiz-karlsruhe.de/ontology/NFDI_0000117">
+    <rdfs:label xml:lang="en">contributor of</rdfs:label>
+    <rdfs:comment xml:lang="en">Scope note:
+inverse of property "has contributor". (NFDIcore 3.0.0)
+
+Implementation note:
+Inverse of nfdicore:NFDI_0000116 "has contributor", which has range nfdicore:NFDI_0000102 (agent) and no domain. Range obo:BFO_0000001 (entity), the top-level class.
+</rdfs:comment>
+    <rdfs:range rdf:resource="http://purl.obolibrary.org/obo/BFO_0000001" />
+    <rdfs:isDefinedBy rdf:resource="https://nfdi.fiz-karlsruhe.de/ontology/" />
+  </rdf:Property>
+  <rdf:Property rdf:about="https://nfdi.fiz-karlsruhe.de/ontology/NFDI_0001028">
+    <rdfs:label xml:lang="en">creator of</rdfs:label>
+    <rdfs:comment xml:lang="en">Scope note:
+inverse of property "has creator". (NFDIcore 3.0.0)
+
+Implementation note:
+Inverse of nfdicore:NFDI_0001027 "has creator", which has range nfdicore:NFDI_0000102 (agent) and no domain. Range obo:BFO_0000001 (entity), the top-level class. NFDIcore 3.0.0 gives this property only a German-tagged label; the English label is supplied here.
+</rdfs:comment>
+    <rdfs:range rdf:resource="http://purl.obolibrary.org/obo/BFO_0000001" />
+    <rdfs:isDefinedBy rdf:resource="https://nfdi.fiz-karlsruhe.de/ontology/" />
+  </rdf:Property>
+  <rdf:Property rdf:about="https://nfdi.fiz-karlsruhe.de/ontology/NFDI_0000192">
+    <rdfs:label xml:lang="en">publisher of</rdfs:label>
+    <rdfs:comment xml:lang="en">Scope note:
+inverse of property "has publisher". (NFDIcore 3.0.0)
+
+Implementation note:
+Inverse of nfdicore:NFDI_0000191 "published by", which has domain obo:IAO_0000030 (information content entity) and range nfdicore:NFDI_0000102 (agent). Range obo:IAO_0000030.
+</rdfs:comment>
+    <rdfs:range rdf:resource="http://purl.obolibrary.org/obo/IAO_0000030" />
+    <rdfs:isDefinedBy rdf:resource="https://nfdi.fiz-karlsruhe.de/ontology/" />
+  </rdf:Property>
+  <rdf:Property rdf:about="https://nfdi.fiz-karlsruhe.de/ontology/NFDI_0010015">
+    <rdfs:label xml:lang="en">has acronym</rdfs:label>
+    <rdfs:comment xml:lang="en">Scope note:
+A relation between an entity and its abbreviated form, representing a shortened version of the original term or phrase. (NFDIcore 3.0.0)
+
+Implementation note:
+An owl:AnnotationProperty in NFDIcore 3.0.0 with no range. Values are strings. Range xsd:string.
+</rdfs:comment>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string" />
+    <rdfs:isDefinedBy rdf:resource="https://nfdi.fiz-karlsruhe.de/ontology/" />
+  </rdf:Property>
+
+  <!-- ===== rdfs-owl-extension.xml ===== -->
+<!--
+           BFO Terms for the NFDI4Culture Application Profile
+           RDFS Implementation, Version 0.1
+
+           This document declares, in RDFS, the Basic Formal Ontology term that the
+           NFDI4Culture modelling uses as a field and that no loaded ontology declares with a domain:
+           obo:BFO_0000050 (part of). Its purpose is to let this field be modelled without importing
+           BFO as a whole. It is a bridging encoding with the least possible commitment.
+
+           RDF Schema and OWL basics (rdfs:label, rdfs:comment, rdfs:seeAlso, owl:sameAs) are not
+           declared here: the platform's defaults vocabulary offers them on every class.
+
+           Note that this is NOT a definition of the term. The scope note quotes its source; domain and
+           range reflect NFDI4Culture usage only.
+
+           Drafted by Delving, 5 November 2026, for review by George Bruseker (Takin.solutions)
+           Namespace of the declared term : http://purl.obolibrary.org/obo/
+
+           Contents:
+           - 1 property
+
+           Encoding Rules:
+           1. The term keeps its IRI. No subclass or subproperty relations are asserted.
+
+           2. The domain and range are the top-level class obo:BFO_0000001 (entity), shared by NFDIcore
+              and CTO, so the property can be used on any class.
+
+           3. Scope notes are represented as rdfs:comment elements: "Scope note" quotes the source
+              vocabulary, and "Implementation note" records how and why the term is declared as it is.
+           -->
+
+  <!--
+           PROPERTIES
+           This version counts 1 property.
+           -->
+  <rdf:Property rdf:about="http://purl.obolibrary.org/obo/BFO_0000050">
+    <rdfs:label xml:lang="en">part of</rdfs:label>
+    <rdfs:comment xml:lang="en">Scope note:
+a core relation that holds between a part and its whole (Basic Formal Ontology)
+
+Implementation note:
+Not included in the BFO subset that NFDIcore 3.0.0 imports. Domain obo:BFO_0000001 (entity), the top-level class: used as the Part of field. Range obo:BFO_0000001 (entity).
+</rdfs:comment>
+    <rdfs:domain rdf:resource="http://purl.obolibrary.org/obo/BFO_0000001" />
+    <rdfs:range rdf:resource="http://purl.obolibrary.org/obo/BFO_0000001" />
+    <rdfs:isDefinedBy rdf:resource="http://purl.obolibrary.org/obo/" />
+  </rdf:Property>
+</rdf:RDF>
