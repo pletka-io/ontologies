@@ -10,7 +10,13 @@ crm/
 ```
 
 The module path is `github.com/pletka-io/ontologies/<prefix>`. A version is a
-tag `<prefix>/v<version>`, for example `crm/v7.1.3`. Tags never move.
+tag `<prefix>/v<version>`, for example `crm/v7.1.3`. One exception: the
+module `sdo` has prefix `sdoe`, because the namespace table binds `sdo` to
+`https://schema.org/`.
+
+While this repository has no outside users, a tag may still move to fix a
+module's metadata; the source RDF never changes under a tag. Once it has
+outside users, tags never move and a fix gets a new version.
 
 ## Using a module
 
@@ -65,7 +71,7 @@ module. `defaults/` declares the W3C basics (`dc`, `dcterms`, `owl`, `rdf`,
 | `so` (Similarity Ontology) | 0.1 | `https://r11.eu/ns/similarity/` |
 | `nfdicore` | 3.0.0 | `https://nfdi.fiz-karlsruhe.de/ontology/` |
 | `cto` | 3.0.0 | `https://nfdi4culture.de/ontology/` |
-| `sdo` (NFDI4Culture schema extensions) | 0.2, 0.4 | `https://nfdi4culture.de/ontology/schema-extension#` |
+| `sdo` (NFDI4Culture schema extensions, prefix `sdoe`) | 0.2, 0.4 | `https://nfdi4culture.de/ontology/schema-extension#` |
 | `knora-base` | 60 | `http://www.knora.org/ontology/knora-base#` |
 | `dsm` (Knora standard models, flat) | 3 | `http://www.knora.org/ontology/standard-models#` |
 | `defaults` (W3C basics) | 1.0, 1.3 | `https://pletka.io/ontologies/defaults/` |
@@ -83,7 +89,7 @@ it by commit id (a 40-hex selector instead of a version):
 | `cto` | 3.0.0 | `c56b8943e3da1b318a7f52848504208fabb928a6`, `4a86b0983e3fb55d3697705ee766e366d2484896` |
 | `defaults` | 1.3 | `2262a298434aa495669bd302c54c3793367fd26a`, `ebe9a2f701f0525ad6ae9412430c9a5508daf043`, `af949c0c2947e89a656722b8822283954e4d559e` |
 | `nfdicore` | 3.0.0 | `b94e6a2598cb04ee73cdd21f0cbfc58608db823d`, `7795cedc5a088ad4f899026af5a164616a47c6ea`, `b7d11b37a245062a0f9b9943bcba4d9d8db2ac05`, `27b4032e7701d7234c24d6378f7bbafc95b3632f` |
-| `sdo` | 0.4 | `ae30c155a7d9a87da8bece57fa4c7771b9a0d05a` |
+| `sdo` | 0.4 | `e415fdca7003935506d9b3057ad5cbf76a14922b` (supersedes `ae30c155a7d9a87da8bece57fa4c7771b9a0d05a`, same bytes, prefix `sdo`) |
 
 ## Licences
 
